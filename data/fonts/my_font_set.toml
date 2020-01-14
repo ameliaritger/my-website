@@ -1,0 +1,11 @@
+# Font style metadata
+name = "Special Elite"
+
+# Optional Google font URL
+google_fonts = "Amatic+SC|Bree+Serif|Girassol|Special+Elite"
+
+# Font families
+heading_font = "Girassol"
+body_font = "Amatic SC"
+nav_font = "Girassol"
+mono_font = "Special Elite"
