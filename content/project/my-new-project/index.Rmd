@@ -25,4 +25,3 @@ An amazing plot!
 ```{r}
 plot(cars)
 ```
-

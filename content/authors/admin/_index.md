@@ -4,17 +4,23 @@ authors:
 bio:
 education:
   courses:
-  - course: PhD in grass eating
-    institution: china
-    year: 2012
+  - course: B.A. Biology; Anthropology modified with Environmental Studies
+    institution: Dartmouth College (2015)
+    # year:
+  - course: Ph.D. Ecology, Evolution, and Marine Biology
+    institution: University of California, Santa Barbara (in progress)
+    # year:
 email: ""
 interests:
-- other pandas
+- intraspecific variation
+- phenotypic plasticity
+- local adaptation
+- behavioral ecology
 name: Amelia the Panda
 organizations:
-- name: China University
+- name: University of California, Santa Barbara
   url: ""
-role: Professor of Panda Intelligence
+role: PhD Student
 social:
 - icon: envelope
   icon_pack: fas

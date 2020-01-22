@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
@@ -15,16 +15,48 @@
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
       <description>&lt;p&gt;Amelia eats grass because she is a panda.&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>Josep Martin-Fernandez</title>
+      <link>/authors/josep-martin-fernandez/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/josep-martin-fernandez/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kimberly Bourne</title>
+      <link>/authors/kimberly-bourne/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kimberly-bourne/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michele Pierotti</title>
+      <link>/authors/michele-pierotti/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/michele-pierotti/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tyler Fountain</title>
+      <link>/authors/tyler-fountain/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/tyler-fountain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Robert Ford</title>
       <link>/authors/robert-ford/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       <guid>/authors/robert-ford/</guid>
       <description></description>
     </item>
