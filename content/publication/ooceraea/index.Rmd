@@ -1,0 +1,41 @@
+---
+abstract: Queens and workers of eusocial Hymenoptera are considered homologous to the reproductive and brood care phases of an ancestral subsocial life cycle. However, the molecular mechanisms underlying the evolution of reproductive division of labor remain obscure. Using a brain transcriptomics screen, we identified a single gene, insulin-like peptide 2 (ilp2), which is always up-regulated in ant reproductives, likely because they are better nourished than their nonreproductive nestmates. In clonal raider ants (*Ooceraea biroi*), larval signals inhibit adult reproduction by suppressing ilp2, thus producing a colony reproductive cycle reminiscent of ancestral subsociality. However, increasing ILP2 peptide levels overrides larval suppression, thereby breaking the colony cycle and inducing a stable division of labor. These findings suggest a simple model for the origin of ant eusociality via nutritionally determined reproductive asymmetries potentially amplified by larval signals.
+
+
+authors:
+- Vikram Chandra
+- Ingrid Fetter-Pruneda
+- Peter Oxley
+- admin
+- Sean McKenzie
+- Romain Libbrecht
+- Daniel Kronauer
+date: "2018-07-27"
+doi: "10.1126/science.aar5723"
+featured: false
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: true
+projects: []
+publication: '*Science* (361)'
+publication_short: ""
+publication_types:
+- "2"
+publishDate: ""
+slides:
+summary:
+tags:
+- Source Themes
+title: Social regulation of insulin signaling and the evolution of eusociality in ants
+url_code: ""
+url_dataset: ""
+url_pdf: ""
+url_poster: ""
+url_project: ""
+url_slides: ""
+url_source: ""
+url_video: ""
+---
+
+Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
