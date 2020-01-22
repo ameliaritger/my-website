@@ -27,7 +27,7 @@ tags:
 title: Diet choice in a generalist predator, the invasive lionfish (*Pterois volitans/miles*)
 url_code: ""
 url_dataset: ""
-url_pdf: ""
+url_pdf: "http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf"
 url_poster: ""
 url_project: ""
 url_slides: ""
