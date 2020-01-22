@@ -1,8 +1,7 @@
 +++
-# Accomplishments widget.
-widget = "accomplishments"  # See https://sourcethemes.com/academic/docs/page-builder/
+widget = "pages"
 headless = true  # This file represents a page section.
-active = true # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 weight = 65  # Order that this section will appear.
 
 title = "Teaching"
@@ -12,21 +11,33 @@ subtitle = ""
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
 date_format = "Jan 2006"
 
-# Accomplishments.
-#   Add/remove as many `[[item]]` blocks below as you like.
-#   `title`, `organization` and `date_start` are the required parameters.
-#   Leave other parameters empty if not required.
-#   Begin/end multi-line descriptions with 3 quotes `"""`.
+[content]
+  # Page type to display. E.g. post, talk, or publication.
+  page_type = "teaching"
+  
+  # Choose how much pages you would like to display (0 = all pages)
+  count = 0
+  
+  # Choose how many pages you would like to offset by
+  offset = 0
 
-[[item]]
-  organization = "Ocean Global Change Biology REU"
-  organization_url = "https://oceanchangereuucsb.com/"
-  title = "Mentor"
-  url = ""
-  certificate_url = ""
-  date_start = "2019-06-24"
-  date_end = ""
-  description = "Xavius Boone, UC Davis"
+  # Page order. Descending (desc) or ascending (asc) date.
+  order = "desc"
+
+  # Filter posts by a taxonomy term.
+  [content.filters]
+    tag = ""
+    category = ""
+    publication_type = ""
+    exclude_featured = false
+  
+[design]
+  # Toggle between the various page layout types.
+  #   1 = List
+  #   2 = Compact
+  #   3 = Card
+  #   4 = Citation (publication only)
+  view = 1
   
 [design.background]
   # Apply a background color, gradient, or image.
@@ -46,6 +57,12 @@ date_format = "Jan 2006"
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
-  text_color_light = false
-
+  text_color_light = false 
+  
+[advanced]
+ # Custom CSS. 
+ css_style = ""
+ 
+ # CSS class.
+ css_class = ""
 +++

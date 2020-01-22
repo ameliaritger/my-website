@@ -27,5 +27,29 @@
 </description>
     </item>
     
+    <item>
+      <title>I will do this later!</title>
+      <link>/teaching/my-new-project/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/teaching/my-new-project/</guid>
+      <description>
+
+
+&lt;p&gt;[[item]]
+organization = “Ocean Global Change Biology REU”
+organization_url = “&lt;a href=&#34;https://oceanchangereuucsb.com/&#34; class=&#34;uri&#34;&gt;https://oceanchangereuucsb.com/&lt;/a&gt;”
+title = “Mentor”
+url = &#34;&#34;
+certificate_url = &#34;&#34;
+date_start = “2019-06-24”
+date_end = &#34;&#34;
+description = “Xavius Boone, UC Davis”&lt;/p&gt;
+&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
+&lt;p&gt;An amazing plot!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/teaching/xavius/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

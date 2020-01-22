@@ -23,7 +23,11 @@ publishDate: ""
 slides:
 summary:
 tags:
-- Source Themes
+  - lionfish
+  - predator-prey
+  - animal behavior
+  - Curaçao
+  - post baccalaureate
 title: Diet choice in a generalist predator, the invasive lionfish (*Pterois volitans/miles*)
 url_code: ""
 url_dataset: ""

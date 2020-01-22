@@ -5,13 +5,13 @@ name = "Amelia's theme"
 light = true
 
 # Primary
-primary = "#904708"
+primary = "#A82D0F"
 
 # Menu
 menu_primary = "#F0EBDE"
-menu_text = "	#66CDAA"
-menu_text_active = "#2962ff"
-menu_title = "#2b2b2b"
+menu_text = "	#261D1B"
+menu_text_active = "#CE5638"
+menu_title = "#261D1B"
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"

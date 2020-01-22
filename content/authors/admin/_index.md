@@ -41,3 +41,5 @@ user_groups:
 ---
 
 Amelia eats grass because she is a panda.
+
+<a href="files/cv.pdf" target="_blank">View my CV</a> 

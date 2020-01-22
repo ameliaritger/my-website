@@ -26,7 +26,10 @@ publishDate: ""
 slides:
 summary:
 tags:
-- Source Themes
+  - ants
+  - animal behavior
+  - evolution
+  - post baccalaureate
 title: Social regulation of insulin signaling and the evolution of eusociality in ants
 url_code: ""
 url_dataset: ""

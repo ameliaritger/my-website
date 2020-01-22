@@ -1,0 +1,38 @@
+---
+title: I will do this later!
+author: ''
+date: '2019-06-24'
+slug: my-new-project
+categories: []
+tags:
+  - dogs
+  - hiking
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-01-09T15:02:28-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+[[item]]
+  organization = "Ocean Global Change Biology REU"
+  organization_url = "https://oceanchangereuucsb.com/"
+  title = "Mentor"
+  url = ""
+  certificate_url = ""
+  date_start = "2019-06-24"
+  date_end = ""
+  description = "Xavius Boone, UC Davis"
+  
+
+Here's some sweet code!
+
+An amazing plot!
+```{r}
+plot(cars)
+```

@@ -21,7 +21,10 @@ publishDate: ""
 slides:
 summary:
 tags:
-- Source Themes
+  - lionfish
+  - pollution
+  - Curaçao
+  - post baccalaureate
 title: Bioaccumulation of mercury and other metal contaminants in invasive lionﬁsh (*Pterois volitans/miles*) from Curaçao
 url_code: ""
 url_dataset: ""

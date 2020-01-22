@@ -1,0 +1,23 @@
+---
+date: "2018-01-01"
+external_link: ""
+image:
+  caption: 
+  focal_point:
+links:
+- icon: github
+  icon_pack: fab
+  name: Repository
+  url: https://github.com/ameliaritger/lionfish-diet-choice
+slides: 
+summary: What do you want to know?
+tags:
+- lionfish
+title: Invasive lionfish
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+---
+
+Insert project details right here
