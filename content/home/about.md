@@ -11,4 +11,12 @@ title = "About Me"
 # This should be the username of a profile in your `content/authors/` folder.
 # See https://sourcethemes.com/academic/docs/get-started/#introduce-yourself
 author = "admin"
+
+[design.background]
+  # Background color.
+  color = "#518393"
+  
+  # Text color (true=light or false=dark).
+  text_color_light = true
+  
 +++

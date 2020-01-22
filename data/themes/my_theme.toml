@@ -1,14 +1,14 @@
 # Theme metadata
-name = "Minimal"
+name = "Amelia's theme"
 
 # Is theme light or dark?
 light = true
 
 # Primary
-primary = "#A373F0"
+primary = "#904708"
 
 # Menu
-menu_primary = "#fff"
+menu_primary = "#F0EBDE"
 menu_text = "	#66CDAA"
 menu_text_active = "#2962ff"
 menu_title = "#2b2b2b"

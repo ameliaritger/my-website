@@ -1,11 +1,11 @@
 # Font style metadata
-name = "Special Elite"
+name = "Hello, world!"
 
 # Optional Google font URL
-google_fonts = "Amatic+SC|Bree+Serif|Girassol|Special+Elite"
+google_fonts = "Alice|Alegreya|Playfair+Display|Crimson+Text|Cabin"
 
 # Font families
-heading_font = "Girassol"
-body_font = "Amatic SC"
-nav_font = "Girassol"
-mono_font = "Special Elite"
+heading_font = "Alice"
+body_font = "Alegreya"
+nav_font = "Crimson Text"
+mono_font = "Cabin"
