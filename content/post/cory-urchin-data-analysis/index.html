@@ -1,0 +1,254 @@
+---
+title: Urchin Deterrence Experiment
+author: ''
+date: '2020-01-22'
+slug: kelp-consumption
+categories: []
+links:
+- icon: github
+  icon_pack: fab
+  name: Repository
+  url: https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence
+tags:
+  - kelp forest
+  - purple urchin
+  - corynactis
+  - species interaction
+subtitle: ""
+summary: ""
+authors: []
+lastmod: ""
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+---
+
+
+
+<div id="load-packages-load-data-tidy-data" class="section level3">
+<h3>Load packages, load data, tidy data</h3>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.2</code></pre>
+<pre><code>## Warning: package &#39;zoo&#39; was built under R version 3.6.2</code></pre>
+</div>
+<div id="visualize-the-data" class="section level3">
+<h3>Visualize the data</h3>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png" width="400px" height="300px" />
+&lt;&lt; This is a potential plot for WSN poster</p>
+<p>It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so…</p>
+</div>
+<div id="is-there-any-difference-between-urchins-that-ate-or-didnt-eat-kelp" class="section level2">
+<h2>Is there any difference between urchins that ate or didn’t eat kelp?</h2>
+<div id="rough-visualization-of-distribution-using-chi-square-test" class="section level4">
+<h4>Rough visualization of distribution using chi-square test</h4>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  cory and eat
+## X-squared = 2.2096, df = 1, p-value = 0.1372</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t1
+## X-squared = 5.9308, df = 3, p-value = 0.115</code></pre>
+<pre><code>## Adjusted p-values used the bonferroni method.</code></pre>
+<pre><code>##           comparison  raw.p  adj.p
+## 1 Control vs. Orange 0.4513 1.0000
+## 2   Control vs. Pink 0.2828 1.0000
+## 3    Control vs. Red 0.0329 0.1974
+## 4    Orange vs. Pink 1.0000 1.0000
+## 5     Orange vs. Red 0.1939 1.0000
+## 6       Pink vs. Red 0.3175 1.0000</code></pre>
+</div>
+</div>
+<div id="what-is-the-effect-of-corynactis-color-on-whether-or-not-urchins-ate-kelp-averaged-amongst-tiles" class="section level2">
+<h2>What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?</h2>
+<div id="treat-the-data-as-bernoulli-sucesses-vs.-failures" class="section level4">
+<h4>Treat the data as Bernoulli (sucesses vs. failures)</h4>
+<pre class="r"><code>#create the model
+library(lme4)
+#treating the data as bernoulli, sucesses given failures amongst treatments and tiles
+m1 &lt;- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
+summary(m1)</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = cbind(success, count_per_tile - success) ~ treatment, 
+##     family = binomial, data = data_avg)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.9985  -0.3789  -0.3183   0.9756   1.9437  
+## 
+## Coefficients:
+##                 Estimate Std. Error z value Pr(&gt;|z|)  
+## (Intercept)       1.3863     0.6455   2.148   0.0317 *
+## treatmentOrange  -0.8473     0.8018  -1.057   0.2906  
+## treatmentPink    -0.9343     0.8065  -1.158   0.2467  
+## treatmentRed     -1.8383     0.8065  -2.279   0.0226 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 37.621  on 30  degrees of freedom
+## Residual deviance: 31.533  on 27  degrees of freedom
+## AIC: 63.099
+## 
+## Number of Fisher Scoring iterations: 3</code></pre>
+<pre class="r"><code>aov(m1)</code></pre>
+<pre><code>## Call:
+##    aov(formula = m1)
+## 
+## Terms:
+##                 treatment Residuals
+## success          118.4968   10.6000
+##                   5.60968  11.10000
+## Deg. of Freedom         3        27
+## 
+## Residual standard errors: 0.6265721 0.6411795
+## Estimated effects may be unbalanced</code></pre>
+</div>
+</div>
+<div id="among-the-urchins-that-ate-does-corynactis-matter-in-how-much-kelp-was-consumed" class="section level2">
+<h2>Among the urchins that ate, does Corynactis matter in how much kelp was consumed?</h2>
+<div id="look-at-univariate-distribution-of-kelp-consumption" class="section level4">
+<h4>Look at univariate distribution of kelp consumption</h4>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png" width="400px" height="300px" /><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png" width="400px" height="300px" /><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png" width="400px" height="300px" /></p>
+</div>
+<div id="maybe-remove-two-outliers" class="section level4">
+<h4>Maybe remove two outliers?</h4>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png" width="400px" height="300px" /><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png" width="400px" height="300px" /><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png" width="400px" height="300px" /></p>
+<p>Sure, looks better</p>
+</div>
+<div id="now-visualize-the-relationship-between-treatment-and-kelp-consumption" class="section level4">
+<h4>Now visualize the relationship between treatment and kelp consumption</h4>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png" width="400px" height="300px" />
+&lt;&lt; This is a potential plot for WSN poster</p>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png" width="400px" height="300px" /></p>
+<p>There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let’s run stats anyway for good measure</p>
+</div>
+<div id="mixed-model-anova" class="section level3">
+<h3>Mixed model ANOVA</h3>
+<div id="treatment-is-a-fixed-effect-tile-number-is-a-random-effect" class="section level4">
+<h4>Treatment is a fixed effect, tile number is a random effect</h4>
+<pre><code>## Warning: package &#39;lmerTest&#39; was built under R version 3.6.2</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: area_corrected ~ treatment + (1 | cory_tile_number)
+##    Data: data_consumption
+## 
+## REML criterion at convergence: 277.2
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.2553 -0.8677  0.3024  0.6240  1.5906 
+## 
+## Random effects:
+##  Groups           Name        Variance Std.Dev.
+##  cory_tile_number (Intercept)  2.676   1.636   
+##  Residual                     98.903   9.945   
+## Number of obs: 40, groups:  cory_tile_number, 23
+## 
+## Fixed effects:
+##                 Estimate Std. Error      df t value Pr(&gt;|t|)
+## (Intercept)      21.9241     3.3043  0.2185   6.635    0.489
+## treatmentOrange   2.5179     4.4151  0.5975   0.570    0.714
+## treatmentPink     1.6795     4.4988  0.6508   0.373    0.795
+## treatmentRed      1.5188     5.6076  1.3136   0.271    0.823
+## 
+## Correlation of Fixed Effects:
+##             (Intr) trtmnO trtmnP
+## tretmntOrng -0.748              
+## treatmntPnk -0.734  0.550       
+## treatmentRd -0.589  0.441  0.433</code></pre>
+<pre><code>## Type III Analysis of Variance Table with Satterthwaite&#39;s method
+##           Sum Sq Mean Sq NumDF DenDF F value Pr(&gt;F)
+## treatment 32.676  10.892     3     2  0.1101 0.9466</code></pre>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png" width="400px" height="300px" /></p>
+<p>Yep, as suspected, there was no effect of treatment on amount of kelp consumed by urchins, when any kelp was consumed</p>
+</div>
+</div>
+</div>
+<div id="so-in-conclusion" class="section level1">
+<h1>So, in conclusion:</h1>
+<ul>
+<li><h4 id="red-color-morph-increases-probability-urchin-will-fail-to-eat-any-kelp">Red color morph increases probability urchin will fail to eat any kelp</h4></li>
+<li><h4 id="but-there-was-no-effect-of-color-morph-or-even-the-simple-presence-of-corynactis-on-amount-of-kelp-consumed-when-looking-only-at-urchins-that-did-consume-kelp">But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp</h4></li>
+</ul>
+<div id="in-the-context-of-wsn-here-are-a-few-plots-that-might-be-useful-for-presentations" class="section level3">
+<h3>In the context of WSN, here are a few plots that might be useful for presentations</h3>
+<pre class="r"><code>a &lt;- data %&gt;%
+  group_by(treatment) %&gt;%
+  tally() %&gt;%
+  ungroup() #(15,19,18,18)
+b &lt;- data %&gt;%
+  group_by(treatment) %&gt;%   
+  summarise(consumption_binary = sum(consumption_binary)) %&gt;%
+  ungroup() #(12,12,11,7)
+prop &lt;- merge(a,b)
+prop &lt;- prop %&gt;%
+  mutate(no_eat = n-consumption_binary,
+         no_eat_pcnt = no_eat/n,
+         eat_pcnt = consumption_binary/n)
+# vertical plot with color coding 
+ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
+  geom_col(aes(fill=treatment), show.legend=FALSE) +
+  scale_fill_manual(values=c(&quot;cadetblue4&quot;, &quot;orange&quot;, &quot;pink&quot;, &quot;red&quot;)) + #manually change point colors
+  labs(x=&quot;Treatment&quot;, y=&quot;Proportion of urchins that consumed kelp&quot;) +
+  geom_text(aes(label=c(&quot;A&quot;, &quot;AB&quot;, &quot;AB&quot;, &quot;B&quot;)), vjust=-1, size=4.5) +
+  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
+  theme(panel.grid.major.y  = element_line(color = &quot;grey90&quot;),
+      panel.background = element_rect(fill = &quot;white&quot;),
+      panel.border = element_rect(color = &quot;white&quot;, fill = NA),
+      axis.line = element_line(color = &quot;black&quot;),
+      axis.ticks = element_line(color = &quot;black&quot;),
+      axis.text = element_text(color = &quot;black&quot;, size=12),
+      axis.title.y = element_text(vjust=4, size=14),
+      axis.title.x = element_text(size=14),
+      plot.margin=unit(c(0.5,0,0.2,0.5), &quot;cm&quot;))</code></pre>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png" width="400px" height="300px" /></p>
+<pre class="r"><code># vertical plot with image coding (?!)
+library(ggtextures)
+ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
+    &quot;https://live.staticflickr.com/7344/16596942925_ecbb1fed55_h.jpg&quot;,
+    &quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/orange.jpg?raw=true&quot;,
+    &quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/pink.jpg?raw=true&quot;,
+    &quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/red.jpg?raw=true&quot;))) +
+  geom_col(aes(fill=treatment), show.legend=FALSE) +
+  ggtextures::geom_textured_col(img_width=unit(3,&quot;in&quot;)) +
+  labs(x=&quot;Treatment&quot;, y=&quot;Proportion of urchins that consumed kelp&quot;) +
+  geom_text(aes(label=c(&quot;A&quot;, &quot;AB&quot;, &quot;AB&quot;, &quot;B&quot;)), vjust=-1, size=4.5) +
+  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
+  theme(panel.grid.major.y  = element_line(color = &quot;grey90&quot;),
+      panel.background = element_rect(fill = &quot;white&quot;),
+      panel.border = element_rect(color = &quot;white&quot;, fill = NA),
+      axis.line = element_line(color = &quot;black&quot;),
+      axis.ticks = element_line(color = &quot;black&quot;),
+      axis.text = element_text(color = &quot;black&quot;, size=12),
+      axis.title.y = element_text(vjust=4, size=14),
+      axis.title.x = element_text(size=14),
+      plot.margin=unit(c(0.5,0,0.2,0.5), &quot;cm&quot;))</code></pre>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png" width="400px" height="300px" /></p>
+<p>Let’s see how it looks flipped</p>
+<pre class="r"><code>ggplot(data=prop, aes(x=fct_reorder(treatment, -eat_pcnt), y=eat_pcnt)) +
+  geom_col(aes(fill=treatment), show.legend=FALSE) +
+  scale_fill_manual(values=c(&quot;cadetblue4&quot;, &quot;orange&quot;, &quot;pink&quot;, &quot;red&quot;)) + #manually change point colors
+  labs(x=expression(~italic(Corynactis)~&#39; color morph&#39;), y=&quot;Proportion of urchins that consumed kelp&quot;) +
+  geom_text(aes(label=c(&quot;B&quot;, &quot;AB&quot;, &quot;AB&quot;, &quot;A&quot;)), hjust=-1, size=5) +
+  geom_text(label=c(&quot;(n=15)&quot;, &quot;(n=19)&quot;, &quot;(n=18)&quot;, &quot;(n=18)&quot;), color=c(&quot;white&quot;,&quot;black&quot;,&quot;black&quot;,&quot;black&quot;), y=0.07, size=3.5) +
+  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
+  coord_flip() +
+  theme(panel.grid.major.x  = element_line(color = &quot;grey90&quot;),
+      panel.background = element_rect(fill = &quot;white&quot;),
+      panel.border = element_rect(color = &quot;white&quot;, fill = NA),
+      axis.line = element_line(color = &quot;black&quot;),
+      axis.ticks = element_line(color = &quot;black&quot;),
+      axis.text = element_text(color = &quot;black&quot;, size=16),
+      axis.title.y = element_text(vjust=4, size=18),
+      axis.title.x = element_text(size=18),
+      plot.margin=unit(c(0,0.5,0.2,0.5), &quot;cm&quot;))</code></pre>
+<p><img src="/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png" width="400px" height="300px" /></p>
+</div>
+</div>
