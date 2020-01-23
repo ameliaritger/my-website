@@ -84,273 +84,594 @@
     </item>
     
     <item>
-      <title>Urchin Deterrence Experiment</title>
-      <link>/esm244/kelp-consumption/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/esm244/kelp-consumption/</guid>
+      <title>My awesome post!</title>
+      <link>/post/my-new-project/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/my-new-project/</guid>
       <description>
 
 
-&lt;div id=&#34;load-packages-load-data-tidy-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Load packages, load data, tidy data&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;tidyverse&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;zoo&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;visualize-the-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Visualize the data&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so…&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;is-there-any-difference-between-urchins-that-ate-or-didnt-eat-kelp&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Is there any difference between urchins that ate or didn’t eat kelp?&lt;/h2&gt;
-&lt;div id=&#34;rough-visualization-of-distribution-using-chi-square-test&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Rough visualization of distribution using chi-square test&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
-## 
-## data:  cory and eat
-## X-squared = 2.2096, df = 1, p-value = 0.1372&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Pearson&amp;#39;s Chi-squared test
-## 
-## data:  t1
-## X-squared = 5.9308, df = 3, p-value = 0.115&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Adjusted p-values used the bonferroni method.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##           comparison  raw.p  adj.p
-## 1 Control vs. Orange 0.4513 1.0000
-## 2   Control vs. Pink 0.2828 1.0000
-## 3    Control vs. Red 0.0329 0.1974
-## 4    Orange vs. Pink 1.0000 1.0000
-## 5     Orange vs. Red 0.1939 1.0000
-## 6       Pink vs. Red 0.3175 1.0000&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;what-is-the-effect-of-corynactis-color-on-whether-or-not-urchins-ate-kelp-averaged-amongst-tiles&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?&lt;/h2&gt;
-&lt;div id=&#34;treat-the-data-as-bernoulli-sucesses-vs.-failures&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Treat the data as Bernoulli (sucesses vs. failures)&lt;/h4&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#create the model
-library(lme4)
-#treating the data as bernoulli, sucesses given failures amongst treatments and tiles
-m1 &amp;lt;- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
-summary(m1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Call:
-## glm(formula = cbind(success, count_per_tile - success) ~ treatment, 
-##     family = binomial, data = data_avg)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.9985  -0.3789  -0.3183   0.9756   1.9437  
-## 
-## Coefficients:
-##                 Estimate Std. Error z value Pr(&amp;gt;|z|)  
-## (Intercept)       1.3863     0.6455   2.148   0.0317 *
-## treatmentOrange  -0.8473     0.8018  -1.057   0.2906  
-## treatmentPink    -0.9343     0.8065  -1.158   0.2467  
-## treatmentRed     -1.8383     0.8065  -2.279   0.0226 *
-## ---
-## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 37.621  on 30  degrees of freedom
-## Residual deviance: 31.533  on 27  degrees of freedom
-## AIC: 63.099
-## 
-## Number of Fisher Scoring iterations: 3&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov(m1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Call:
-##    aov(formula = m1)
-## 
-## Terms:
-##                 treatment Residuals
-## success          118.4968   10.6000
-##                   5.60968  11.10000
-## Deg. of Freedom         3        27
-## 
-## Residual standard errors: 0.6265721 0.6411795
-## Estimated effects may be unbalanced&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;among-the-urchins-that-ate-does-corynactis-matter-in-how-much-kelp-was-consumed&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Among the urchins that ate, does Corynactis matter in how much kelp was consumed?&lt;/h2&gt;
-&lt;div id=&#34;look-at-univariate-distribution-of-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Look at univariate distribution of kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;maybe-remove-two-outliers&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Maybe remove two outliers?&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Sure, looks better&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;now-visualize-the-relationship-between-treatment-and-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Now visualize the relationship between treatment and kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let’s run stats anyway for good measure&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mixed-model-anova&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Mixed model ANOVA&lt;/h3&gt;
-&lt;div id=&#34;treatment-is-a-fixed-effect-tile-number-is-a-random-effect&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Treatment is a fixed effect, tile number is a random effect&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;lmerTest&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Linear mixed model fit by REML. t-tests use Satterthwaite&amp;#39;s method [
-## lmerModLmerTest]
-## Formula: area_corrected ~ treatment + (1 | cory_tile_number)
-##    Data: data_consumption
-## 
-## REML criterion at convergence: 277.2
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -2.2553 -0.8677  0.3024  0.6240  1.5906 
-## 
-## Random effects:
-##  Groups           Name        Variance Std.Dev.
-##  cory_tile_number (Intercept)  2.676   1.636   
-##  Residual                     98.903   9.945   
-## Number of obs: 40, groups:  cory_tile_number, 23
-## 
-## Fixed effects:
-##                 Estimate Std. Error      df t value Pr(&amp;gt;|t|)
-## (Intercept)      21.9241     3.3043  0.2185   6.635    0.489
-## treatmentOrange   2.5179     4.4151  0.5975   0.570    0.714
-## treatmentPink     1.6795     4.4988  0.6508   0.373    0.795
-## treatmentRed      1.5188     5.6076  1.3136   0.271    0.823
-## 
-## Correlation of Fixed Effects:
-##             (Intr) trtmnO trtmnP
-## tretmntOrng -0.748              
-## treatmntPnk -0.734  0.550       
-## treatmentRd -0.589  0.441  0.433&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Type III Analysis of Variance Table with Satterthwaite&amp;#39;s method
-##           Sum Sq Mean Sq NumDF DenDF F value Pr(&amp;gt;F)
-## treatment 32.676  10.892     3     2  0.1101 0.9466&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Yep, as suspected, there was no effect of treatment on amount of kelp consumed by urchins, when any kelp was consumed&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;so-in-conclusion&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;So, in conclusion:&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&#34;red-color-morph-increases-probability-urchin-will-fail-to-eat-any-kelp&#34;&gt;Red color morph increases probability urchin will fail to eat any kelp&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;&lt;h4 id=&#34;but-there-was-no-effect-of-color-morph-or-even-the-simple-presence-of-corynactis-on-amount-of-kelp-consumed-when-looking-only-at-urchins-that-did-consume-kelp&#34;&gt;But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;in-the-context-of-wsn-here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;In the context of WSN, here are a few plots that might be useful for presentations&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- data %&amp;gt;%
-  group_by(treatment) %&amp;gt;%
-  tally() %&amp;gt;%
-  ungroup() #(15,19,18,18)
-b &amp;lt;- data %&amp;gt;%
-  group_by(treatment) %&amp;gt;%   
-  summarise(consumption_binary = sum(consumption_binary)) %&amp;gt;%
-  ungroup() #(12,12,11,7)
-prop &amp;lt;- merge(a,b)
-prop &amp;lt;- prop %&amp;gt;%
-  mutate(no_eat = n-consumption_binary,
-         no_eat_pcnt = no_eat/n,
-         eat_pcnt = consumption_binary/n)
-# vertical plot with color coding 
-ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  scale_fill_manual(values=c(&amp;quot;cadetblue4&amp;quot;, &amp;quot;orange&amp;quot;, &amp;quot;pink&amp;quot;, &amp;quot;red&amp;quot;)) + #manually change point colors
-  labs(x=&amp;quot;Treatment&amp;quot;, y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;A&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;B&amp;quot;)), vjust=-1, size=4.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  theme(panel.grid.major.y  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=12),
-      axis.title.y = element_text(vjust=4, size=14),
-      axis.title.x = element_text(size=14),
-      plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# vertical plot with image coding (?!)
-library(ggtextures)
-ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
-    &amp;quot;https://live.staticflickr.com/7344/16596942925_ecbb1fed55_h.jpg&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/orange.jpg?raw=true&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/pink.jpg?raw=true&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/red.jpg?raw=true&amp;quot;))) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  ggtextures::geom_textured_col(img_width=unit(3,&amp;quot;in&amp;quot;)) +
-  labs(x=&amp;quot;Treatment&amp;quot;, y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;A&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;B&amp;quot;)), vjust=-1, size=4.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  theme(panel.grid.major.y  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=12),
-      axis.title.y = element_text(vjust=4, size=14),
-      axis.title.x = element_text(size=14),
-      plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Let’s see how it looks flipped&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data=prop, aes(x=fct_reorder(treatment, -eat_pcnt), y=eat_pcnt)) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  scale_fill_manual(values=c(&amp;quot;cadetblue4&amp;quot;, &amp;quot;orange&amp;quot;, &amp;quot;pink&amp;quot;, &amp;quot;red&amp;quot;)) + #manually change point colors
-  labs(x=expression(~italic(Corynactis)~&amp;#39; color morph&amp;#39;), y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;B&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;A&amp;quot;)), hjust=-1, size=5) +
-  geom_text(label=c(&amp;quot;(n=15)&amp;quot;, &amp;quot;(n=19)&amp;quot;, &amp;quot;(n=18)&amp;quot;, &amp;quot;(n=18)&amp;quot;), color=c(&amp;quot;white&amp;quot;,&amp;quot;black&amp;quot;,&amp;quot;black&amp;quot;,&amp;quot;black&amp;quot;), y=0.07, size=3.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  coord_flip() +
-  theme(panel.grid.major.x  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=16),
-      axis.title.y = element_text(vjust=4, size=18),
-      axis.title.x = element_text(size=18),
-      plot.margin=unit(c(0,0.5,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
+&lt;p&gt;An amazing plot!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Urchin Deterrence Experiment</title>
+      <title>OTHER RANDOM PROJ</title>
+      <link>/post/my-new-project/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/my-new-project/</guid>
+      <description>
+
+
+&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
+&lt;p&gt;An amazing plot!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/other-random-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lionfish diet choice experiment</title>
+      <link>/post/lionfish-diet-choice/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/lionfish-diet-choice/</guid>
+      <description>
+
+
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Lion fish preference index
+# june 2018 written
+# Cleaned by Amelia Ritger in January 2020
+
+###############################################################
+# save.image(&amp;quot;lionfish.RData&amp;quot;)
+# load(&amp;quot;lionfish.RData&amp;quot;)
+###############################################################
+##RUN THIS
+data_all &amp;lt;- read.csv(&amp;quot;lionfishdata.csv&amp;quot;)
+
+data_x &amp;lt;-data.frame(Starve_time = data_all$Starvationtime_hours,
+                    cloudcover = data_all$Cloudcover,sex = data_all$Sex,
+                    lf_std_length = data_all$Lionfishstandardlength_cm, lf_wetwgt = data_all$LionfishWetWeight_g,
+                    mooncycle = data_all$Mooncycle,depthcaptured = data_all$Depthcaptured_m,bodycond = data_all$BodyCondition,Lionfish_totlength = data_all$Lionfishtotallength_cm)
+counts &amp;lt;- data.frame(N_chromis = data_all$Numberchromisconsumed, N_goby = data_all$Numbergobyconsumed,N_wrasse = data_all$Numberwrasseconsumed)
+########################
+# Use zCompositions to replace zeros using bayesian multiplicative methods
+library(&amp;#39;zCompositions&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;zCompositions&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: MASS&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: NADA&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: survival&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;NADA&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     cor&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: truncnorm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_tot &amp;lt;- counts$N_chromis + counts$N_wrasse + counts$N_goby
+rep_p &amp;lt;- cmultRepl(counts,method = &amp;quot;SQ&amp;quot;) # proportions data with zeros replaced&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## No. corrected values:  3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rep_count&amp;lt;-rep_p*c_tot
+
+colnames(rep_count) &amp;lt;- colnames(rep_p) &amp;lt;- colnames(counts)
+
+rep_biomass &amp;lt;- rep_count*matrix(rep(c(0.641,0.129,0.655),nrow = nrow(rep_count)))
+###################################
+# MAIL MICHELE:
+### 11chromis, 55 gobies, 11wrasses
+#############################
+# T^2 hotelling
+library(rrcov)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;rrcov&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: robustbase&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;robustbase&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:survival&amp;#39;:
+## 
+##     heart&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Scalable Robust Estimators with High Breakdown Point (version 1.4-9)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#
+fsbp2ilr&amp;lt;-function(s){
+  # given a vector (or a set of vectors) of a SBP formed by 0,+1,-1 
+  # returns the ilr-vector (or set of) or balance
+  # author: Martin (2015)
+  
+  bal=s
+  
+  if(is.null(dim(s))) 
+  {
+    
+    den&amp;lt;-sum(bal==-1)
+    num&amp;lt;-sum(bal==1)  
+    bal[s==1]&amp;lt;-sqrt(den/((den+num)*num))
+    bal[s==-1]&amp;lt;--sqrt(num/((den+num)*den))
+    
+    
+  }
+  else
+  {
+    numsbp=dim(s)[1]
+    for (f in 1:numsbp) {
+      den&amp;lt;-sum(bal[f,]==-1)
+      num&amp;lt;-sum(bal[f,]==1)  
+      bal[f,bal[f,]==1]&amp;lt;-sqrt(den/((den+num)*num))
+      bal[f,bal[f,]==-1]&amp;lt;--sqrt(num/((den+num)*den))
+      
+    }
+    
+  }
+  
+  return(bal)
+}
+
+# AND A FEASIBLE LOG-RATIO COULD BE
+tU3=as.matrix(fsbp2ilr(rbind(c(1,-1,-1),c(0,1,-1))))
+U3=t(tU3)
+
+ilr_rep_p&amp;lt;-log(as.matrix(rep_p))%*%U3 
+ilr_ref&amp;lt;-log(as.vector(c(11,55,11)/sum(c(11,55,11))))%*%U3 
+#T2.test(as.matrix(ilr_rep_p),mu=as.vector(ilr_ref))
+# T2 = 80.475, F = 38.120, df1 = 2, df2 = 18, p-value = 3.383e-07
+# 
+#  In average, the preference of the data set is different from the NULL HIPOT
+#  of NO-PREFERENCE, the (11,55,11) composition
+#
+#
+##########################################################
+# INDEX of PREFERENCE based on Aitchison distance
+#########################################################
+# Aitchison distance
+fdAit&amp;lt;-function(x,y){
+  log(x) - mean(log(x))
+  return(sqrt(sum((log(x) - mean(log(x)) - log(y) + mean(log(y)))^2)))
+}
+#
+############################################################
+# Non-Scaled Index 
+fIndexPref&amp;lt;-function (x,xref) 
+{
+  if (is.vector(x)) {
+    return(fdAit(x,xref)^2)
+  }
+  else {
+    return(apply(x,1,fdAit,xref)^2)
+  }
+}
+#
+# [0,1]-Scaled Index 
+fIndexPrefS&amp;lt;-function (x,xref) 
+{
+  if (is.vector(x)) {
+    d&amp;lt;-fdAit(x,xref)^2
+  }
+  else {
+    d&amp;lt;-apply(x,1,fdAit,xref)^2
+  }
+  return(1-exp(-d))
+}
+#
+###############################################
+# no preference
+fIndexPref(c(3,15,3),c(11,55,11))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1.972152e-31&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fIndexPrefS(c(3,15,3),c(11,55,11))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# check for the first fish
+fIndexPref(rep_count[1,],c(11,55,11))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        1 
+## 3.128256&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fIndexPrefS(rep_count[1,],c(11,55,11))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         1 
+## 0.9562059&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# for all 20 fish with counts
+(lindex_count &amp;lt;-fIndexPref(rep_count,c(11,55,11)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 3.1282556 6.4482142 7.0868658 7.6099070 7.0798673 1.9272730 7.0798673
+##  [8] 7.6099070 3.4627070 7.2212980 6.2468504 6.2468504 7.6099070 6.2468504
+## [15] 2.0280870 0.4918928 1.5206318 7.0798673 3.4627070 6.3834017&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(lindexS_count &amp;lt;-fIndexPrefS(rep_count,c(11,55,11)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 0.9562059 0.9984167 0.9991640 0.9995045 0.9991581 0.8544554 0.9991581
+##  [8] 0.9995045 0.9686552 0.9992691 0.9980635 0.9980635 0.9995045 0.9980635
+## [15] 0.8684130 0.3885321 0.7814263 0.9991581 0.9686552 0.9983106&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lindex_count &amp;lt;- as.data.frame(lindex_count)
+lindexS_count &amp;lt;- as.data.frame(lindexS_count)
+
+# for all 20 fish with biomass
+(lindex_biom &amp;lt;-fIndexPref(rep_biomass,c(7.051,7.095,7.205)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 9.3055855 8.0746900 6.9824973 8.7533181 0.3465590 1.9881106 8.2232784
+##  [8] 0.4693835 3.5610722 4.0478786 0.1900499 6.3436792 8.7533181 0.1900499
+## [15] 2.1091024 8.5532824 5.9457466 7.1858132 8.5873856 1.6021300&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;(lindexS_biom &amp;lt;-fIndexPrefS(rep_biomass,c(7.051,7.095,7.205)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] 0.9999091 0.9996887 0.9990720 0.9998421 0.2928829 0.8630461 0.9997317
+##  [8] 0.3746123 0.9715917 0.9825406 0.1730822 0.9982422 0.9998421 0.1730822
+## [15] 0.8786532 0.9998071 0.9973831 0.9992427 0.9998136 0.7985331&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lindex_biom &amp;lt;- as.data.frame(lindex_biom)
+lindexS_biom &amp;lt;- as.data.frame(lindexS_biom)
+############################################
+# total for each fish
+totalN&amp;lt;-apply(rep_count,1,sum)
+#############################################
+###
+####
+# CORRELATION BETWEEN bodycondition and index of preference
+# not scaled
+cor(data_x$bodycond,lindex_count) # 0.479191&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      lindex_count
+## [1,]     0.479191&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# WITH LOGs
+cor(log(data_x$bodycond),log(lindex_count)) # 0.3974944&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      lindex_count
+## [1,]    0.3974944&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# scaled
+cor(data_x$bodycond,lindexS_count) # 0.2113215&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      lindexS_count
+## [1,]     0.2113215&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#
+#########################################
+#########################################
+ait &amp;lt;- numeric()
+for (i in 1:nrow(rep_count)){ait &amp;lt;- c(ait,fdAit(as.numeric(rep_count[i,]),c(11,55,11)))}
+#########################################
+#########################################
+### levels curves for Scaled index
+library(compositions)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: tensorA&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;tensorA&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:base&amp;#39;:
+## 
+##     norm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: bayesm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Welcome to compositions, a package for compositional data analysis.
+## Find an intro with &amp;quot;? compositions&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;compositions&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:NADA&amp;#39;:
+## 
+##     cor&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     cor, cov, dist, var&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     %*%, scale, scale.default&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;##
+# freq repeated
+(rep_count/apply(rep_count,1,sum))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     N_chromis     N_goby   N_wrasse
+## 1  0.56566478 0.37710985 0.05722537
+## 2  0.07222222 0.12068966 0.80708812
+## 3  0.07222222 0.10173666 0.82604111
+## 4  0.84313197 0.09150635 0.06536168
+## 5  0.82559429 0.10173666 0.07266905
+## 6  0.50000000 0.37500000 0.12500000
+## 7  0.82559429 0.10173666 0.07266905
+## 8  0.84313197 0.09150635 0.06536168
+## 9  0.62309221 0.31154611 0.06536168
+## 10 0.68636364 0.08484848 0.22878788
+## 11 0.79310345 0.12068966 0.08620690
+## 12 0.79310345 0.12068966 0.08620690
+## 13 0.84313197 0.09150635 0.06536168
+## 14 0.79310345 0.12068966 0.08620690
+## 15 0.46366548 0.46366548 0.07266905
+## 16 0.07222222 0.85510873 0.07266905
+## 17 0.11111111 0.44444444 0.44444444
+## 18 0.82559429 0.10173666 0.07266905
+## 19 0.62309221 0.31154611 0.06536168
+## 20 0.44913167 0.10173666 0.44913167&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fq&amp;lt;-c(1,1,1,3,3,1,3,3,2,1,3,3,3,3,1,1,1,3,2,1)
+##
+
+niv=seq(0.1,0.9, by=0.1)
+niv&amp;lt;-c(niv,0.99)
+rad&amp;lt;-sqrt(-log(1-niv))
+plot(acomp(c(11,55,11)),labels=colnames(counts),col=&amp;quot;black&amp;quot;,pch=&amp;quot;+&amp;quot;)
+plot(acomp(rep_count),labels=colnames(counts),add=TRUE,pch=20, cex=1*fq)
+
+for (i in 1:length(niv)){
+  ellipses(acomp(c(11,55,11)),diag(rep(1,3)),r=rad[i],col=&amp;quot;black&amp;quot;,lty=3,lwd=2)
+}
+legend(&amp;quot;topright&amp;quot;, inset=c(0,0.2),legend=c(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;), 
+       pch=20,pt.cex=c(0.5,1,1.5),xjust=0.5,title=&amp;quot;fish number&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/lionfish-data-analysis/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;######################################
+# Martin&amp;#39;s normalization + linear adjustment
+a&amp;lt;-0 #min possible value
+b&amp;lt;-8 #max possible value
+nlindex &amp;lt;- dplyr::pull((lindex_count-a)/(b-a)) #USE THESE VALUES
+
+######################################
+## For normalized (0,1) non-linear data
+reg_data &amp;lt;-  data.frame(Bodycondition = data_all$BodyCondition, Index=nlindex)
+
+breaks &amp;lt;- seq(0.011,0.018,by = 0.0001)
+mse &amp;lt;- numeric()
+for (b in breaks){
+  piecewise &amp;lt;- lm(Index ~ (Bodycondition &amp;gt; b), data = reg_data)
+  mse &amp;lt;- rbind(mse,c(b,as.numeric(sqrt(mean(summary(piecewise)$residuals^2))),as.numeric(summary(piecewise)$r.squared)))
+}
+
+b &amp;lt;- mse[which(mse[,2] == min(mse[,2])),1]
+b &amp;lt;- 0.0124
+
+## Two sample t-test to compare group means
+library(car)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;car&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: carData&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;reg_data$group[reg_data$Bodycondition &amp;gt; b] &amp;lt;- 2
+reg_data$group[reg_data$Bodycondition &amp;lt; b] &amp;lt;- 1
+reg_data$group &amp;lt;- as.factor(reg_data$group)
+leveneTest(reg_data$Index, reg_data$group) #not signficant, variance can be considered equal (TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Levene&amp;#39;s Test for Homogeneity of Variance (center = median)
+##       Df F value Pr(&amp;gt;F)
+## group  1  0.0899 0.7678
+##       18&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;t.test(reg_data$Index~reg_data$group,var.equal=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Two Sample t-test
+## 
+## data:  reg_data$Index by reg_data$group
+## t = -3.1185, df = 18, p-value = 0.005934
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.6298545 -0.1227968
+## sample estimates:
+## mean in group 1 mean in group 2 
+##       0.3988921       0.7752177&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(reg_data$Index~reg_data$group)
+  
+piecewise1 &amp;lt;- lm(Index ~ Bodycondition, data = reg_data[which(reg_data$Bodycondition &amp;lt; b),])
+piecewise2 &amp;lt;- lm(Index ~ Bodycondition, data = reg_data[which(reg_data$Bodycondition &amp;gt; b),])
+  
+piecewise &amp;lt;- lm(Index ~ (Bodycondition &amp;gt; b), data = reg_data)
+summary(piecewise)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Call:
+## lm(formula = Index ~ (Bodycondition &amp;gt; b), data = reg_data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.71373 -0.04224  0.02676  0.11484  0.48609 
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&amp;gt;|t|)    
+## (Intercept)             0.3989     0.1010   3.951 0.000937 ***
+## Bodycondition &amp;gt; bTRUE   0.3763     0.1207   3.119 0.005934 ** 
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## Residual standard error: 0.2473 on 18 degrees of freedom
+## Multiple R-squared:  0.3508, Adjusted R-squared:  0.3147 
+## F-statistic: 9.725 on 1 and 18 DF,  p-value: 0.005934&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;m_1 &amp;lt;- 0.3989 #mean group 1
+m_2 &amp;lt;- m_1+0.3763 #mean group 2
+
+pred1 &amp;lt;- predict(piecewise1,newdata = data.frame(Bodycondition = breaks[breaks &amp;lt; b]))
+  pred2 &amp;lt;- predict(piecewise2,newdata = data.frame(Bodycondition = breaks[breaks &amp;gt; b]))
+
+######################################
+###From Amelia
+library(ggplot2)
+library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;tidyverse&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Attaching packages ---------------------------------- tidyverse 1.3.0 --&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## v tibble  2.1.3     v dplyr   0.8.3
+## v tidyr   1.0.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.4.0
+## v purrr   0.3.3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Conflicts ------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## x dplyr::recode() masks car::recode()
+## x dplyr::select() masks MASS::select()
+## x purrr::some()   masks car::some()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(grid)
+#create new column for each category
+norm_data &amp;lt;-  data.frame(bodycondition = data_all$BodyCondition, index =reg_data$Index)
+#names(norm_data) &amp;lt;- c(&amp;quot;bodycondition&amp;quot;, &amp;quot;lindex&amp;quot;)
+norm_data$category &amp;lt;- ifelse(norm_data$bodycondition&amp;lt;b, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;)
+
+#plot with colored thresholds
+a &amp;lt;- ggplot(norm_data, aes(x=bodycondition, y=index, color=category)) +
+  geom_hline(yintercept=0.99, linetype=&amp;quot;dashed&amp;quot;, color=&amp;quot;#F0E442&amp;quot;, size=1) + #add prey preference line
+  annotate(&amp;quot;rect&amp;quot;, xmin = -Inf, xmax = 0.0184, ymin = 0.99, ymax = Inf, fill = &amp;quot;#F0E442&amp;quot;, alpha = .3, color = NA) + #add prey preference olor
+  geom_hline(yintercept=0.03, linetype=&amp;quot;dashed&amp;quot;, color=&amp;quot;#E69F00&amp;quot;, size=1) + #add no preference line
+  annotate(&amp;quot;rect&amp;quot;, xmin = -Inf, xmax = 0.0184, ymin = -Inf, ymax = 0.03, fill = &amp;quot;#E69F00&amp;quot;, alpha = .2, color = NA) + #add no preference color
+  annotate(&amp;quot;text&amp;quot;, x = 0.0183, y = 0.01, hjust = -0.215, vjust = 0, label=&amp;quot;no prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=3.5) +
+  annotate(&amp;quot;text&amp;quot;, x = 0.018, y = 1.0, hjust = -0.215, vjust = 0, label=&amp;quot;strong prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=3.5) +
+  geom_point(aes(shape=category), size=3, alpha=0.9, show.legend=FALSE) + #plot points
+  scale_color_manual(values=c(&amp;quot;#0072B2&amp;quot;, &amp;quot;#CC79A7&amp;quot;)) + #manually change point colors
+  labs(x=&amp;quot;Body condition&amp;quot;, y=&amp;quot;Index of Selectivity&amp;quot;) + #change axis labels
+  geom_segment(x=0.011,xend=b,y=mean(pred1), yend=mean(pred1), colour=&amp;quot;#0072B2&amp;quot;) + #add group 1 mean line
+  geom_segment(x=b,xend=0.018,y=mean(pred2), yend=mean(pred2), colour=&amp;quot;#CC79A7&amp;quot;) + #add group 2 mean line
+  theme_classic() + #remove background crap
+  theme(plot.margin=unit(c(1,3.6,0,0), &amp;quot;cm&amp;quot;)) + #extend plot area to allow text
+  coord_cartesian(xlim = c(0.011, 0.018), clip=&amp;quot;off&amp;quot;) + #limit plot area
+  scale_y_continuous(limits=c(0,1.02), #change min and max values on y axis
+                     expand=c(0,0),
+                     breaks=c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_x_continuous(limits=c(0.011, 0.0185),
+                     breaks=c(0.010,0.012,0.014,0.016,0.018)) #change min and max values on x axis
+#annotation_custom(grob = linesGrob(), xmin = 0.019, xmax = 0.019, ymin = 0.05, ymax = 0.95) +
+#annotation_custom(grob = linesGrob(), xmin = 0.0195, xmax = 0.019, ymin = 0.05, ymax = 0.15)
+
+# Disable clip-area.
+gt &amp;lt;- ggplot_gtable(ggplot_build(a))
+gt$layout$clip[gt$layout$name == &amp;quot;panel&amp;quot;] &amp;lt;- &amp;quot;off&amp;quot;
+grid.draw(gt)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/lionfish-data-analysis/index_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(gt)
+
+# plot without thresholds
+c &amp;lt;- ggplot(norm_data, aes(x=bodycondition, y=index, group=category)) +
+  #geom_hline(yintercept=0.99, linetype=&amp;quot;dashed&amp;quot;, color=&amp;quot;#F0E442&amp;quot;, size=1) + #add prey preference line
+  #annotate(&amp;quot;rect&amp;quot;, xmin = -Inf, xmax = Inf, ymin = 0.99, ymax = Inf, fill = &amp;quot;#F0E442&amp;quot;, alpha = .3, color = NA) + #add prey preference color
+  #geom_hline(yintercept=0.03, linetype=&amp;quot;dashed&amp;quot;, color=&amp;quot;#E69F00&amp;quot;, size=1) + #add no preference line
+  #annotate(&amp;quot;rect&amp;quot;, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = 0.03, fill = &amp;quot;#E69F00&amp;quot;, alpha = .2, color = NA) + #add no preference color
+  #annotate(&amp;quot;text&amp;quot;, x = 0.018, y = 0.01, hjust = -0.4, vjust = 0, label=&amp;quot;no prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=6) +
+  #annotate(&amp;quot;text&amp;quot;, x = 0.018, y = 1.0, hjust = -0.215, vjust = 0, label=&amp;quot;strong prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=6) +
+  #annotate(&amp;quot;text&amp;quot;, x = 0.0175, y = 0.065, label=&amp;quot;no prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=4) +
+  #annotate(&amp;quot;text&amp;quot;, x = 0.0175, y = 0.95, label=&amp;quot;strong prey preference&amp;quot;, color = &amp;quot;black&amp;quot;, size=4) +
+  geom_segment(x=0.0108,xend=b,y=m_1, yend=m_1, size=1.5, linetype=&amp;quot;dashed&amp;quot;, color=&amp;quot;black&amp;quot;) + #add group 1 mean line
+  geom_segment(x=b,xend=0.018,y=m_2, yend=m_2, size=1.5, linetype=&amp;quot;dotted&amp;quot;, color=&amp;quot;black&amp;quot;) + #add group 2 mean line
+  geom_point(aes(color=category, fill=category), shape=21, size=7, alpha=0.9, show.legend=FALSE) + #plot points
+  scale_color_manual(values=c(&amp;quot;grey19&amp;quot;, &amp;quot;black&amp;quot;)) + #manually change point colors
+  scale_fill_manual(values=c(&amp;quot;black&amp;quot;, &amp;quot;white&amp;quot;)) +
+  labs(x=&amp;quot;Body condition&amp;quot;, y=&amp;quot;Index of Selectivity&amp;quot;) + #change axis labels
+  #annotate(&amp;quot;segment&amp;quot;, x=0.0175, xend=0.0175, y=0.915, yend=0.085, color=&amp;quot;black&amp;quot;, size=1, arrow=arrow(length=unit(0.08,&amp;quot;npc&amp;quot;))) + #add arrow
+  theme_classic() + #remove background crap
+  theme(plot.margin=unit(c(4,5,4,4), &amp;quot;cm&amp;quot;),
+        axis.text=element_text(size=24),
+        axis.title=element_text(size=30)) + #extend plot area to allow text
+  scale_y_continuous(limits=c(0,1.02), #change min and max values on y axis
+                     expand=c(0,0),
+                     breaks=c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_x_continuous(limits=c(0.011, 0.018),
+                     breaks=c(0.010,0.012,0.014,0.016,0.018)) #change min and max values on x axis
+
+
+# Disable clip-area.
+gt &amp;lt;- ggplot_gtable(ggplot_build(c))
+gt$layout$clip[gt$layout$name == &amp;quot;panel&amp;quot;] &amp;lt;- &amp;quot;off&amp;quot;
+grid.draw(gt)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/lionfish-data-analysis/index_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Urchin deterrence experiment</title>
       <link>/post/kelp-consumption/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/kelp-consumption/</guid>
       <description>
 
 
+&lt;p&gt;This project explored how intraspecific variation might play a role in the ability of the strawberry anemone (Corynactis californica) to act as a deterrent to urchin foraging.&lt;/p&gt;
+&lt;p&gt;Purple urchins, starved for a minimum of 7 days, were placed in aquaria containing kelp (Macrocystis pyrifera) protected by a barrier of strawberry anemones. 3 color morphs of strawberry anemones were used (Red, Pink, and Orange) in trials to assess any differences in the ability of genets (genetically identical individuals) to deter urchins from grazing on kelp. Kelp consumption by urchins was measured using photos taken of kelp blades before and after experimental trials, which lasted between 19:00 and 7:00 (30 minutes before and after sunrise and sunset, respectively) in late August-early September. Urchin behavior was tracked using photos (taken by GoPro Hero3+) of the experimental set up each minute for approximately 5 hours at the start of each experiment. Urchin behavior was compared between genets to examine how intraspecific variation might play a role in the associational refuge offered by the strawberry anemone to macroalgae in temperate kelp forests.&lt;/p&gt;
+&lt;p&gt;The following code works through data organization and analysis of urchin foraging behavior ( minus video analysis), analysis using logistic regression treating binary kelp consumption (yes/no) as a Bernoulli distribution and mixed model ANOVA treating tile as a random effect in kelp consumption by urchins&lt;/p&gt;
 &lt;div id=&#34;load-packages-load-data-tidy-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Load packages, load data, tidy data&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;tidyverse&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;zoo&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#LOAD PACKAGES
+library(tidyverse)
+library(zoo)
+library(GGally)
+library(ggplot2)
+library(janitor)
+library(here)
+
+## LOAD DATA
+data &amp;lt;- read.csv(&amp;quot;raw.csv&amp;quot;)
+
+## TIDY DATA
+# my own OCD, fix &amp;quot;Trial&amp;quot; issue
+colnames(data)[colnames(data)==&amp;quot;ï..Trial.number&amp;quot;] &amp;lt;- &amp;quot;Trial&amp;quot;
+
+# Clean names for R
+data &amp;lt;- data %&amp;gt;%
+  clean_names()
+
+# To remove instances where we have video evidence of urchins not moving (and not eating kelp)
+data &amp;lt;- data[(data$urchin_deterred_during_video!=&amp;quot;urchin never tried&amp;quot; | data$kelp_visibly_consumed==&amp;quot;yes&amp;quot;),]
+
+# To compare across treatments, presence/absence of Corynactis
+data$corynactis_binary &amp;lt;- ifelse(data$treatment_number&amp;gt;1, &amp;quot;present&amp;quot;, &amp;quot;absent&amp;quot;)
+
+# Create variables: kelp area consumed, percent kelp consumed
+data &amp;lt;- data %&amp;gt;%
+  mutate(area_consumed=(kelp_before_cm_2-kelp_after_cm_2)) %&amp;gt;%
+  mutate(percent_consumed=(area_consumed/kelp_before_cm_2))
+
+# look at &amp;quot;minimum % kelp consumed cutoff&amp;quot; contradictions between ImageJ and visual analysis
+#datan &amp;lt;- subset(data, Visible_consumption==&amp;quot;no&amp;quot;)
+#datay &amp;lt;- subset(data, Visible_consumption==&amp;quot;yes&amp;quot;)
+#sort(datan$percent_consumed) #If any percent consumption is less than 0.04, we assume there was no consumption (aka &amp;#39;remove&amp;#39; ImageJ analysis error)...minus the one piece of kelp that definitely had a tiny bit of urchin chewing it
+#data$percent_corrected &amp;lt;- ifelse(data$`Percent of Kelp Consumed`&amp;gt;0.04, data$`Percent of Kelp Consumed`, 0)
+data$percent_corrected &amp;lt;- ifelse(data$kelp_visibly_consumed==&amp;quot;no&amp;quot;, 0, data$percent_consumed)
+data$area_corrected &amp;lt;- ifelse(data$kelp_visibly_consumed==&amp;quot;no&amp;quot;, 0, data$area_consumed)
+
+# To compare consumption (yes, no) across treatments
+data$consumption_binary &amp;lt;- ifelse(data$percent_corrected&amp;gt;0, 1, 0)
+
+# Average urchin body weight before and after trials
+data &amp;lt;- data %&amp;gt;%
+  mutate(urchin_avg_g = rowMeans(cbind(urchin_weight_before_g,urchin_weight_after_g)))
+
+# To see if balcony versus wet lab location had an effect
+data$experiment_location &amp;lt;- ifelse(data$tank_number&amp;gt;6, &amp;quot;Balcony&amp;quot;, &amp;quot;Lab&amp;quot;)
+
+# take averages (kelp consumption) of each tile, create new data frame from subsetted averages
+# keep all control values rather than average them (if I pursue averaging repeated tiles), assign each control trial a unique number
+#data$cory_tile_number[data$cory_tile_number==0] &amp;lt;- c(-1:-15)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;visualize-the-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Visualize the data&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data, aes(y=area_corrected, x=treatment)) +
+  geom_boxplot() +
+  geom_jitter(size=1.5,alpha=0.9, width=0.1) +
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so…&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;is-there-any-difference-between-urchins-that-ate-or-didnt-eat-kelp&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Is there any difference between urchins that ate or didn’t eat kelp?&lt;/h2&gt;
 &lt;div id=&#34;rough-visualization-of-distribution-using-chi-square-test&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Rough visualization of distribution using chi-square test&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;####################################################
+# Tiered Analysis: Urchins that ate vs didn&amp;#39;t eat kelp
+####################################################
+library(corrplot)
+library(boot)
+library(spdep)
+library(DCluster)
+
+# assign variables
+treat &amp;lt;- as.factor(data$treatment)
+eat &amp;lt;- data$consumption_binary
+cory &amp;lt;- data$corynactis_binary
+
+# Chi-square test for kelp consumption versus no consumption for yes/no Corynactis
+t1 &amp;lt;-table(cory, eat)
+chisq.test(cory,eat)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
 ## 
 ## data:  cory and eat
 ## X-squared = 2.2096, df = 1, p-value = 0.1372&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Chi-square test for kelp consumption versus no consumption across treatments
+t1 &amp;lt;- table(treat, eat)
+chisq.test(t1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Pearson&amp;#39;s Chi-squared test
 ## 
 ## data:  t1
 ## X-squared = 5.9308, df = 3, p-value = 0.115&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## from fifer package (which no longer exists)
+chisq.post.hoc &amp;lt;- function(tbl,test=c(&amp;quot;fisher.test&amp;quot;), popsInRows=TRUE,control=c(&amp;quot;fdr&amp;quot;,&amp;quot;BH&amp;quot;,&amp;quot;BY&amp;quot;,&amp;quot;bonferroni&amp;quot;,&amp;quot;holm&amp;quot;,&amp;quot;hochberg&amp;quot;,&amp;quot;hommel&amp;quot;),digits=4, ...) {
+    #### extract correction method
+  control &amp;lt;- match.arg(control)
+    #### extract which test (fisher or chi square) 
+  test = match.fun(test)
+    #### test rows or columns
+  if (!popsInRows) tbl &amp;lt;- t(tbl)
+  popsNames &amp;lt;- rownames(tbl)
+    #### come up with all possible comparisons
+  prs &amp;lt;- combn(1:nrow(tbl),2)
+    #### preallocate  
+  tests &amp;lt;- ncol(prs)
+  pvals &amp;lt;- numeric(tests)
+  lbls &amp;lt;- character(tests)
+  for (i in 1:tests) {
+    pvals[i] &amp;lt;- test(tbl[prs[,i],], ...)$p.value
+    lbls[i] &amp;lt;- paste(popsNames[prs[,i]],collapse=&amp;quot; vs. &amp;quot;)
+  }
+  adj.pvals &amp;lt;- p.adjust(pvals,method=control)
+  cat(&amp;quot;Adjusted p-values used the&amp;quot;,control,&amp;quot;method.\n\n&amp;quot;)
+  data.frame(comparison=lbls,raw.p=round(pvals,digits),adj.p=round(adj.pvals,digits))
+}
+
+chisq.post.hoc(t1, control = &amp;quot;bonferroni&amp;quot;, popsInRows  = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Adjusted p-values used the bonferroni method.&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##           comparison  raw.p  adj.p
 ## 1 Control vs. Orange 0.4513 1.0000
@@ -359,14 +680,47 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
 ## 4    Orange vs. Pink 1.0000 1.0000
 ## 5     Orange vs. Red 0.1939 1.0000
 ## 6       Pink vs. Red 0.3175 1.0000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Control and Red are different&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-is-the-effect-of-corynactis-color-on-whether-or-not-urchins-ate-kelp-averaged-amongst-tiles&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?&lt;/h2&gt;
 &lt;div id=&#34;treat-the-data-as-bernoulli-sucesses-vs.-failures&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Treat the data as Bernoulli (sucesses vs. failures)&lt;/h4&gt;
+&lt;p&gt;Because not every tile was actually used twice (thanks to urchins not moving, etc), get the total counts each tile was used and add it as a column to data frame&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- data[order(data$cory_tile_number),] #sort whole data frame by tile number
+
+df &amp;lt;- data # separate this organization from the whole data frame in case you mess something up
+
+df &amp;lt;- df[order(df$cory_tile_number),] #sort subsetted data frame by tile number
+
+df$cory_tile_number[df$cory_tile_number==0] &amp;lt;- c(-1:-15) #change all controls to unique negative numbers to get count values
+
+new &amp;lt;- count(df, cory_tile_number) #count values for each tile number
+
+duptimes &amp;lt;- c(new$n) #how many replicates I want of each row
+
+indx &amp;lt;- rep(1:nrow(new), duptimes) # Create an index of the rows I want with duplications
+dupdf &amp;lt;- new[indx,] # Use that index to generate new data frame
+dupdf$cory_tile_number[1:15] &amp;lt;-0 #change control values back to tile number &amp;quot;0&amp;quot;
+dupdf$n[1:15] &amp;lt;- 15 #change duplications for control tiles to 15
+data$count_per_tile &amp;lt;- dupdf$n #add the counts to the whole data frame
+
+#now put it all together 
+#library(dplyr)
+data_avg &amp;lt;- data %&amp;gt;%
+  group_by(cory_tile_number) %&amp;gt;%                                     # group tile numbers together
+  mutate(success=sum(consumption_binary, na.rm=TRUE)) %&amp;gt;%     #number of successes
+  mutate(failure=ifelse(count_per_tile==2, abs(success-2), ifelse(count_per_tile==1,abs(success-1), 3))) %&amp;gt;%  #number of failures, given number of times tile was used
+  mutate(binary_avg=mean(consumption_binary, na.rm=TRUE)) %&amp;gt;% #average successes/total attempts
+  mutate(avg_area=mean(area_consumed, na.rm=TRUE))  %&amp;gt;%       # mean kelp consumption of each tile group
+  mutate(avg_percent=mean(percent_consumed, na.rm=TRUE)) %&amp;gt;%  # mean % kelp consumption of each tile group
+  ungroup() %&amp;gt;%                                               # ungroup data REALLY IMPT when using group_by
+  distinct(cory_tile_number, .keep_all = TRUE) %&amp;gt;%                   # remove duplicate tiles
+  dplyr::select(treatment, cory_tile_number, urchin_avg_g, success, failure, binary_avg, count_per_tile, kelp_before_cm_2, kelp_after_cm_2, area_corrected) # clean up! extract only columns you want&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#create the model
 library(lme4)
+
 #treating the data as bernoulli, sucesses given failures amongst treatments and tiles
 m1 &amp;lt;- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
 summary(m1)&lt;/code&gt;&lt;/pre&gt;
@@ -413,25 +767,57 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Among the urchins that ate, does Corynactis matter in how much kelp was consumed?&lt;/h2&gt;
 &lt;div id=&#34;look-at-univariate-distribution-of-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Look at univariate distribution of kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create new data frame for instances where urchins ate something (not nothing)
+data_consumption &amp;lt;- subset(data, data$area_corrected&amp;gt;0)
+
+# Univariate analysis for Y
+hist(data_consumption$area_corrected, main=&amp;quot;&amp;quot;) #looks fine&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(data_consumption$area_corrected) #2 outliers&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqnorm(data_consumption$area_corrected)
+qqline(data_consumption$area_corrected) #could be better, but let&amp;#39;s look at the model/residuals&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;maybe-remove-two-outliers&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Maybe remove two outliers?&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Isolate outliers in data
+outliers &amp;lt;- boxplot(data_consumption$area_corrected)$out&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_consumption &amp;lt;- data_consumption[-which(data_consumption$area_corrected %in% outliers),]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Univariate analysis for Y (minus outliers)
+hist(data_consumption$area_corrected, main=&amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(data_consumption$area_corrected)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqnorm(data_consumption$area_corrected)
+qqline(data_consumption$area_corrected)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Sure, looks better&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;now-visualize-the-relationship-between-treatment-and-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Now visualize the relationship between treatment and kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data_consumption,aes(x=corynactis_binary,y=area_corrected))+
+  geom_boxplot()+
+  geom_jitter()+
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed, when consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data_consumption,aes(x=treatment,y=area_corrected))+
+  geom_boxplot()+
+  geom_jitter()+
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed, when consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let’s run stats anyway for good measure&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;mixed-model-anova&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Mixed model ANOVA&lt;/h3&gt;
 &lt;div id=&#34;treatment-is-a-fixed-effect-tile-number-is-a-random-effect&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Treatment is a fixed effect, tile number is a random effect&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;lmerTest&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# add tile as a random effect
+library(lmerTest)
+m2 &amp;lt;- lmer(area_corrected ~ treatment + (1|cory_tile_number), data = data_consumption)
+summary(m2)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Linear mixed model fit by REML. t-tests use Satterthwaite&amp;#39;s method [
 ## lmerModLmerTest]
 ## Formula: area_corrected ~ treatment + (1 | cory_tile_number)
@@ -461,10 +847,16 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 ## tretmntOrng -0.748              
 ## treatmntPnk -0.734  0.550       
 ## treatmentRd -0.589  0.441  0.433&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;anova(m2)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Type III Analysis of Variance Table with Satterthwaite&amp;#39;s method
 ##           Sum Sq Mean Sq NumDF DenDF F value Pr(&amp;gt;F)
 ## treatment 32.676  10.892     3     2  0.1101 0.9466&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# let&amp;#39;s look at the residuals
+data_consumption$predicted &amp;lt;- predict(m2)
+data_consumption$residuals &amp;lt;- residuals(m2)
+plot(residuals~predicted, data=data_consumption) #looks fine
+abline(0, 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Yep, as suspected, there was no effect of treatment on amount of kelp consumed by urchins, when any kelp was consumed&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -475,21 +867,25 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;h4 id=&#34;red-color-morph-increases-probability-urchin-will-fail-to-eat-any-kelp&#34;&gt;Red color morph increases probability urchin will fail to eat any kelp&lt;/h4&gt;&lt;/li&gt;
 &lt;li&gt;&lt;h4 id=&#34;but-there-was-no-effect-of-color-morph-or-even-the-simple-presence-of-corynactis-on-amount-of-kelp-consumed-when-looking-only-at-urchins-that-did-consume-kelp&#34;&gt;But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp&lt;/h4&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div id=&#34;in-the-context-of-wsn-here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;In the context of WSN, here are a few plots that might be useful for presentations&lt;/h3&gt;
+&lt;div id=&#34;here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Here are a few plots that might be useful for presentations&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- data %&amp;gt;%
   group_by(treatment) %&amp;gt;%
   tally() %&amp;gt;%
   ungroup() #(15,19,18,18)
+
 b &amp;lt;- data %&amp;gt;%
   group_by(treatment) %&amp;gt;%   
   summarise(consumption_binary = sum(consumption_binary)) %&amp;gt;%
   ungroup() #(12,12,11,7)
+
 prop &amp;lt;- merge(a,b)
+
 prop &amp;lt;- prop %&amp;gt;%
   mutate(no_eat = n-consumption_binary,
          no_eat_pcnt = no_eat/n,
          eat_pcnt = consumption_binary/n)
+
 # vertical plot with color coding 
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
   geom_col(aes(fill=treatment), show.legend=FALSE) +
@@ -506,7 +902,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
       axis.title.y = element_text(vjust=4, size=14),
       axis.title.x = element_text(size=14),
       plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# vertical plot with image coding (?!)
 library(ggtextures)
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
@@ -528,7 +924,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
       axis.title.y = element_text(vjust=4, size=14),
       axis.title.x = element_text(size=14),
       plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Let’s see how it looks flipped&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data=prop, aes(x=fct_reorder(treatment, -eat_pcnt), y=eat_pcnt)) +
   geom_col(aes(fill=treatment), show.legend=FALSE) +
@@ -547,310 +943,9 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
       axis.title.y = element_text(vjust=4, size=18),
       axis.title.x = element_text(size=18),
       plot.margin=unit(c(0,0.5,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>LIONFISH DATA ANALYSIS</title>
-      <link>/esm244/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/esm244/my-new-project/</guid>
-      <description>&lt;p&gt;Here&#39;s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;plot(cars)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>LIONFISH DATA ANALYSIS</title>
-      <link>/post/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/my-new-project/</guid>
-      <description>&lt;p&gt;Here&#39;s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;plot(cars)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My awesome post!</title>
-      <link>/esm244/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/esm244/my-new-project/</guid>
-      <description>
-
-
-&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My awesome post!</title>
-      <link>/post/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/my-new-project/</guid>
-      <description>
-
-
-&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>OTHER RANDOM PROJ</title>
-      <link>/esm244/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/esm244/my-new-project/</guid>
-      <description>
-
-
-&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/other-random-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>OTHER RANDOM PROJ</title>
-      <link>/post/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/my-new-project/</guid>
-      <description>
-
-
-&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
-&lt;p&gt;An amazing plot!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/other-random-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Writing technical content in Academic</title>
-      <link>/esm244/writing-technical-content/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/esm244/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&#39;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```python
-import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$...$&lt;/code&gt; or &lt;code&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right |^2}$$&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;$\nabla F(\mathbf{x}_{n})$&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code&gt;\\&lt;/code&gt; math linebreak:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\
-1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \&lt;br&gt;
-1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$&lt;/p&gt;
-&lt;h3 id=&#34;diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the &lt;code&gt;diagram&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file or by adding &lt;code&gt;diagram: true&lt;/code&gt; to your page front matter.&lt;/p&gt;
-&lt;p&gt;An example &lt;strong&gt;flowchart&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;sequence diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;Gantt diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;class diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;state diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Do something else&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;asides&#34;&gt;Asides&lt;/h3&gt;
-&lt;p&gt;Academic supports a &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#alerts&#34;&gt;shortcode for asides&lt;/a&gt;, also referred to as &lt;em&gt;notices&lt;/em&gt;, &lt;em&gt;hints&lt;/em&gt;, or &lt;em&gt;alerts&lt;/em&gt;. By wrapping a paragraph in &lt;code&gt;{{% alert note %}} ... {{% /alert %}}&lt;/code&gt;, it will render as an aside.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% alert note %}}
-A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
 </description>
     </item>
     
@@ -1097,50 +1192,6 @@ description = “Xavius Boone, UC Davis”&lt;/p&gt;
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>/esm244/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/esm244/jupyter/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
-
-# Put any other Academic metadata here...
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&#39;s folder.&lt;/p&gt;
-&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Display Jupyter Notebooks with Academic</title>
       <link>/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>/post/jupyter/</guid>
@@ -1379,31 +1430,10 @@ Three
     
     <item>
       <title>External Project</title>
-      <link>/esm244/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/esm244/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
       <link>/post/external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/post/external-project/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>/esm244/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/esm244/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
     </item>
     
     <item>
@@ -1416,104 +1446,6 @@ Three
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website builder for Hugo</title>
-      <link>/esm244/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/esm244/getting-started/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&#39;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discourse.gohugo.io&#34;&gt;&lt;strong&gt;Ask a question&lt;/strong&gt; on the forum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👥 &lt;a href=&#34;https://spectrum.chat/academic&#34;&gt;Chat with the &lt;strong&gt;community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/source_themes&#34;&gt;@source_themes&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithAcademic&amp;amp;src=typd&#34;&gt;#MadeWithAcademic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;❤ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
-&lt;ul&gt;
-&lt;li&gt;☕️ &lt;a href=&#34;https://paypal.me/cushen&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💵 &lt;a href=&#34;https://www.patreon.com/cushen&#34;&gt;Become a backer on &lt;strong&gt;Patreon&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🖼️ &lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34;&gt;Decorate your laptop or journal with an Academic &lt;strong&gt;sticker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👕 &lt;a href=&#34;https://academic.threadless.com/&#34;&gt;Wear the &lt;strong&gt;T-shirt&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👩‍💻 &lt;a href=&#34;https://sourcethemes.com/academic/docs/contribute/&#34;&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; data-caption=&#34;Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34;&gt;
-&lt;img data-src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Key features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://sourcethemes.com/academic/docs/jupyter/&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 15+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Academic comes with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can  choose their preferred mode - click the sun/moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully &lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#custom-theme&#34;&gt;customizable&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-web-browser&#34;&gt;&lt;strong&gt;one-click install using your web browser (recommended)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-git&#34;&gt;install on your computer using &lt;strong&gt;Git&lt;/strong&gt; with the Command Prompt/Terminal app&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-zip&#34;&gt;install on your computer by downloading the &lt;strong&gt;ZIP files&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;install on your computer with &lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Then &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34;&gt;personalize and deploy your new site&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;View the Update Guide&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34;&gt;Github&lt;/a&gt; to help keep track of &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34;&gt;updates&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
     </item>
     

@@ -113,47 +113,12 @@
   </url>
   
   <url>
-    <loc>/tags/corynactis/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/esm244/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+    <loc>/tags/dogs/</loc>
+    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/kelp-forest/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/purple-urchin/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/species-interaction/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/esm244/kelp-consumption/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/kelp-consumption/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/dogs/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
@@ -163,7 +128,7 @@
   </url>
   
   <url>
-    <loc>/esm244/my-new-project/</loc>
+    <loc>/post/my-new-project/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
@@ -173,28 +138,38 @@
   </url>
   
   <url>
-    <loc>/esm244/my-new-project/</loc>
+    <loc>/tags/diet/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/my-new-project/</loc>
+    <loc>/post/lionfish-diet-choice/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/esm244/my-new-project/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
+    <loc>/tags/corynactis/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/my-new-project/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
+    <loc>/tags/kelp-forest/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/esm244/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>/tags/purple-urchin/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/species-interaction/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/kelp-consumption/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -210,11 +185,6 @@
   <url>
     <loc>/teaching/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/esm244/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -333,17 +303,7 @@
   </url>
   
   <url>
-    <loc>/esm244/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/esm244/internal-project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -354,11 +314,6 @@
   
   <url>
     <loc>/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/esm244/getting-started/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   

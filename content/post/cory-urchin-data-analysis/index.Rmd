@@ -1,7 +1,7 @@
 ---
-title: Urchin Deterrence Experiment
+title: Urchin deterrence experiment
 author: ''
-date: '2020-01-22'
+date: '2019-09-01'
 slug: kelp-consumption
 categories: []
 links:
@@ -26,13 +26,19 @@ image:
 projects: []
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE, out.width="400px", out.height="300px")
 ```
 
+This project explored how intraspecific variation might play a role in the ability of the strawberry anemone (Corynactis californica) to act as a deterrent to urchin foraging.
+
+Purple urchins, starved for a minimum of 7 days, were placed in aquaria containing kelp (Macrocystis pyrifera) protected by a barrier of strawberry anemones. 3 color morphs of strawberry anemones were used (Red, Pink, and Orange) in trials to assess any differences in the ability of genets (genetically identical individuals) to deter urchins from grazing on kelp. Kelp consumption by urchins was measured using photos taken of kelp blades before and after experimental trials, which lasted between 19:00 and 7:00 (30 minutes before and after sunrise and sunset, respectively) in late August-early September. Urchin behavior was tracked using photos (taken by GoPro Hero3+) of the experimental set up each minute for approximately 5 hours at the start of each experiment. Urchin behavior was compared between genets to examine how intraspecific variation might play a role in the associational refuge offered by the strawberry anemone to macroalgae in temperate kelp forests.
+
+The following code works through data organization and analysis of urchin foraging behavior ( minus video analysis), analysis using logistic regression treating binary kelp consumption (yes/no) as a Bernoulli distribution and mixed model ANOVA treating tile as a random effect in kelp consumption by urchins
+
 ### Load packages, load data, tidy data
 
-```{r, echo=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 #LOAD PACKAGES
 library(tidyverse)
 library(zoo)
@@ -88,21 +94,20 @@ data$experiment_location <- ifelse(data$tank_number>6, "Balcony", "Lab")
 
 ### Visualize the data
 
-```{r, echo=FALSE}
+```{r}
 ggplot(data, aes(y=area_corrected, x=treatment)) +
   geom_boxplot() +
   geom_jitter(size=1.5,alpha=0.9, width=0.1) +
   labs(x="Treatment", y=expression("Kelp area consumed "(~cm^2))) +
   theme_bw()
 ```
-<< This is a potential plot for WSN poster
 
 It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so...
 
 ## Is there any difference between urchins that ate or didn't eat kelp?
 
 #### Rough visualization of distribution using chi-square test
-```{r, echo=FALSE, message=FALSE}
+```{r, message=FALSE}
 ####################################################
 # Tiered Analysis: Urchins that ate vs didn't eat kelp
 ####################################################
@@ -148,14 +153,17 @@ chisq.post.hoc <- function(tbl,test=c("fisher.test"), popsInRows=TRUE,control=c(
   data.frame(comparison=lbls,raw.p=round(pvals,digits),adj.p=round(adj.pvals,digits))
 }
 
-chisq.post.hoc(t1, control = "bonferroni", popsInRows  = TRUE) #Control and Red are different
+chisq.post.hoc(t1, control = "bonferroni", popsInRows  = TRUE)
 ```
+
+Control and Red are different
 
 ## What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?
 
 #### Treat the data as Bernoulli (sucesses vs. failures)
-```{r, echo=FALSE, message=FALSE}
-# Because not every tile was actually used twice (thanks to urchins not moving, etc), get the total counts each tile was used and add it as a column to data frame
+
+Because not every tile was actually used twice (thanks to urchins not moving, etc), get the total counts each tile was used and add it as a column to data frame
+```{r, message=FALSE}
 data <- data[order(data$cory_tile_number),] #sort whole data frame by tile number
 
 df <- data # separate this organization from the whole data frame in case you mess something up
@@ -173,6 +181,7 @@ dupdf <- new[indx,] # Use that index to generate new data frame
 dupdf$cory_tile_number[1:15] <-0 #change control values back to tile number "0"
 dupdf$n[1:15] <- 15 #change duplications for control tiles to 15
 data$count_per_tile <- dupdf$n #add the counts to the whole data frame
+
 #now put it all together 
 #library(dplyr)
 data_avg <- data %>%
@@ -190,6 +199,7 @@ data_avg <- data %>%
 ```{r, message=FALSE}
 #create the model
 library(lme4)
+
 #treating the data as bernoulli, sucesses given failures amongst treatments and tiles
 m1 <- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
 summary(m1)
@@ -199,9 +209,10 @@ aov(m1)
 ## Among the urchins that ate, does Corynactis matter in how much kelp was consumed?
 
 #### Look at univariate distribution of kelp consumption 
-```{r, echo=FALSE}
+```{r}
 # create new data frame for instances where urchins ate something (not nothing)
 data_consumption <- subset(data, data$area_corrected>0)
+
 # Univariate analysis for Y
 hist(data_consumption$area_corrected, main="") #looks fine
 boxplot(data_consumption$area_corrected) #2 outliers
@@ -211,13 +222,13 @@ qqline(data_consumption$area_corrected) #could be better, but let's look at the 
 
 #### Maybe remove two outliers?
 
-```{r, echo=FALSE, fig.show="hide"}
+```{r, fig.show="hide"}
 # Isolate outliers in data
 outliers <- boxplot(data_consumption$area_corrected)$out
 data_consumption <- data_consumption[-which(data_consumption$area_corrected %in% outliers),]
 ```
 
-```{r, echo=FALSE}
+```{r}
 # Univariate analysis for Y (minus outliers)
 hist(data_consumption$area_corrected, main="")
 boxplot(data_consumption$area_corrected)
@@ -228,16 +239,15 @@ qqline(data_consumption$area_corrected)
 Sure, looks better
 
 #### Now visualize the relationship between treatment and kelp consumption
-```{r, echo=FALSE}
+```{r}
 ggplot(data_consumption,aes(x=corynactis_binary,y=area_corrected))+
   geom_boxplot()+
   geom_jitter()+
   labs(x="Treatment", y=expression("Kelp area consumed, when consumed "(~cm^2))) +
   theme_bw()
 ```
-<< This is a potential plot for WSN poster
 
-```{r, echo=FALSE}
+```{r}
 ggplot(data_consumption,aes(x=treatment,y=area_corrected))+
   geom_boxplot()+
   geom_jitter()+
@@ -245,16 +255,17 @@ ggplot(data_consumption,aes(x=treatment,y=area_corrected))+
   theme_bw()
 ```
 
-There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let's run stats anyway for good measure 
+There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let's run stats anyway for good measure
 
 ### Mixed model ANOVA
 #### Treatment is a fixed effect, tile number is a random effect
-```{r, echo=FALSE, message=FALSE, results="show"}
+```{r, message=FALSE, results="show", warning=FALSE}
 # add tile as a random effect
 library(lmerTest)
 m2 <- lmer(area_corrected ~ treatment + (1|cory_tile_number), data = data_consumption)
 summary(m2)
 anova(m2)
+
 # let's look at the residuals
 data_consumption$predicted <- predict(m2)
 data_consumption$residuals <- residuals(m2)
@@ -269,21 +280,25 @@ Yep, as suspected, there was no effect of treatment on amount of kelp consumed b
 - #### But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp
 
 
-### In the context of WSN, here are a few plots that might be useful for presentations
+### Here are a few plots that might be useful for presentations
 ```{r}
 a <- data %>%
   group_by(treatment) %>%
   tally() %>%
   ungroup() #(15,19,18,18)
+
 b <- data %>%
   group_by(treatment) %>%   
   summarise(consumption_binary = sum(consumption_binary)) %>%
   ungroup() #(12,12,11,7)
+
 prop <- merge(a,b)
+
 prop <- prop %>%
   mutate(no_eat = n-consumption_binary,
          no_eat_pcnt = no_eat/n,
          eat_pcnt = consumption_binary/n)
+
 # vertical plot with color coding 
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
   geom_col(aes(fill=treatment), show.legend=FALSE) +
@@ -300,6 +315,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
       axis.title.y = element_text(vjust=4, size=14),
       axis.title.x = element_text(size=14),
       plot.margin=unit(c(0.5,0,0.2,0.5), "cm"))
+
 # vertical plot with image coding (?!)
 library(ggtextures)
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(

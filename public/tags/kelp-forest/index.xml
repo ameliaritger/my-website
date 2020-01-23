@@ -5,7 +5,7 @@
     <link>/tags/kelp-forest/</link>
       <atom:link href="/tags/kelp-forest/index.xml" rel="self" type="application/rss+xml" />
     <description>kelp forest</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>kelp forest</title>
@@ -13,273 +13,138 @@
     </image>
     
     <item>
-      <title>Urchin Deterrence Experiment</title>
-      <link>/esm244/kelp-consumption/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/esm244/kelp-consumption/</guid>
-      <description>
-
-
-&lt;div id=&#34;load-packages-load-data-tidy-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Load packages, load data, tidy data&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;tidyverse&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;zoo&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;visualize-the-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Visualize the data&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so…&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;is-there-any-difference-between-urchins-that-ate-or-didnt-eat-kelp&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Is there any difference between urchins that ate or didn’t eat kelp?&lt;/h2&gt;
-&lt;div id=&#34;rough-visualization-of-distribution-using-chi-square-test&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Rough visualization of distribution using chi-square test&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
-## 
-## data:  cory and eat
-## X-squared = 2.2096, df = 1, p-value = 0.1372&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Pearson&amp;#39;s Chi-squared test
-## 
-## data:  t1
-## X-squared = 5.9308, df = 3, p-value = 0.115&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Adjusted p-values used the bonferroni method.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##           comparison  raw.p  adj.p
-## 1 Control vs. Orange 0.4513 1.0000
-## 2   Control vs. Pink 0.2828 1.0000
-## 3    Control vs. Red 0.0329 0.1974
-## 4    Orange vs. Pink 1.0000 1.0000
-## 5     Orange vs. Red 0.1939 1.0000
-## 6       Pink vs. Red 0.3175 1.0000&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;what-is-the-effect-of-corynactis-color-on-whether-or-not-urchins-ate-kelp-averaged-amongst-tiles&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?&lt;/h2&gt;
-&lt;div id=&#34;treat-the-data-as-bernoulli-sucesses-vs.-failures&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Treat the data as Bernoulli (sucesses vs. failures)&lt;/h4&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#create the model
-library(lme4)
-#treating the data as bernoulli, sucesses given failures amongst treatments and tiles
-m1 &amp;lt;- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
-summary(m1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Call:
-## glm(formula = cbind(success, count_per_tile - success) ~ treatment, 
-##     family = binomial, data = data_avg)
-## 
-## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.9985  -0.3789  -0.3183   0.9756   1.9437  
-## 
-## Coefficients:
-##                 Estimate Std. Error z value Pr(&amp;gt;|z|)  
-## (Intercept)       1.3863     0.6455   2.148   0.0317 *
-## treatmentOrange  -0.8473     0.8018  -1.057   0.2906  
-## treatmentPink    -0.9343     0.8065  -1.158   0.2467  
-## treatmentRed     -1.8383     0.8065  -2.279   0.0226 *
-## ---
-## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 37.621  on 30  degrees of freedom
-## Residual deviance: 31.533  on 27  degrees of freedom
-## AIC: 63.099
-## 
-## Number of Fisher Scoring iterations: 3&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov(m1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Call:
-##    aov(formula = m1)
-## 
-## Terms:
-##                 treatment Residuals
-## success          118.4968   10.6000
-##                   5.60968  11.10000
-## Deg. of Freedom         3        27
-## 
-## Residual standard errors: 0.6265721 0.6411795
-## Estimated effects may be unbalanced&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;among-the-urchins-that-ate-does-corynactis-matter-in-how-much-kelp-was-consumed&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Among the urchins that ate, does Corynactis matter in how much kelp was consumed?&lt;/h2&gt;
-&lt;div id=&#34;look-at-univariate-distribution-of-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Look at univariate distribution of kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;maybe-remove-two-outliers&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Maybe remove two outliers?&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Sure, looks better&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;now-visualize-the-relationship-between-treatment-and-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Now visualize the relationship between treatment and kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let’s run stats anyway for good measure&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mixed-model-anova&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Mixed model ANOVA&lt;/h3&gt;
-&lt;div id=&#34;treatment-is-a-fixed-effect-tile-number-is-a-random-effect&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;Treatment is a fixed effect, tile number is a random effect&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;lmerTest&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Linear mixed model fit by REML. t-tests use Satterthwaite&amp;#39;s method [
-## lmerModLmerTest]
-## Formula: area_corrected ~ treatment + (1 | cory_tile_number)
-##    Data: data_consumption
-## 
-## REML criterion at convergence: 277.2
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -2.2553 -0.8677  0.3024  0.6240  1.5906 
-## 
-## Random effects:
-##  Groups           Name        Variance Std.Dev.
-##  cory_tile_number (Intercept)  2.676   1.636   
-##  Residual                     98.903   9.945   
-## Number of obs: 40, groups:  cory_tile_number, 23
-## 
-## Fixed effects:
-##                 Estimate Std. Error      df t value Pr(&amp;gt;|t|)
-## (Intercept)      21.9241     3.3043  0.2185   6.635    0.489
-## treatmentOrange   2.5179     4.4151  0.5975   0.570    0.714
-## treatmentPink     1.6795     4.4988  0.6508   0.373    0.795
-## treatmentRed      1.5188     5.6076  1.3136   0.271    0.823
-## 
-## Correlation of Fixed Effects:
-##             (Intr) trtmnO trtmnP
-## tretmntOrng -0.748              
-## treatmntPnk -0.734  0.550       
-## treatmentRd -0.589  0.441  0.433&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Type III Analysis of Variance Table with Satterthwaite&amp;#39;s method
-##           Sum Sq Mean Sq NumDF DenDF F value Pr(&amp;gt;F)
-## treatment 32.676  10.892     3     2  0.1101 0.9466&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Yep, as suspected, there was no effect of treatment on amount of kelp consumed by urchins, when any kelp was consumed&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;so-in-conclusion&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;So, in conclusion:&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&#34;red-color-morph-increases-probability-urchin-will-fail-to-eat-any-kelp&#34;&gt;Red color morph increases probability urchin will fail to eat any kelp&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;&lt;h4 id=&#34;but-there-was-no-effect-of-color-morph-or-even-the-simple-presence-of-corynactis-on-amount-of-kelp-consumed-when-looking-only-at-urchins-that-did-consume-kelp&#34;&gt;But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;in-the-context-of-wsn-here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;In the context of WSN, here are a few plots that might be useful for presentations&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- data %&amp;gt;%
-  group_by(treatment) %&amp;gt;%
-  tally() %&amp;gt;%
-  ungroup() #(15,19,18,18)
-b &amp;lt;- data %&amp;gt;%
-  group_by(treatment) %&amp;gt;%   
-  summarise(consumption_binary = sum(consumption_binary)) %&amp;gt;%
-  ungroup() #(12,12,11,7)
-prop &amp;lt;- merge(a,b)
-prop &amp;lt;- prop %&amp;gt;%
-  mutate(no_eat = n-consumption_binary,
-         no_eat_pcnt = no_eat/n,
-         eat_pcnt = consumption_binary/n)
-# vertical plot with color coding 
-ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  scale_fill_manual(values=c(&amp;quot;cadetblue4&amp;quot;, &amp;quot;orange&amp;quot;, &amp;quot;pink&amp;quot;, &amp;quot;red&amp;quot;)) + #manually change point colors
-  labs(x=&amp;quot;Treatment&amp;quot;, y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;A&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;B&amp;quot;)), vjust=-1, size=4.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  theme(panel.grid.major.y  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=12),
-      axis.title.y = element_text(vjust=4, size=14),
-      axis.title.x = element_text(size=14),
-      plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# vertical plot with image coding (?!)
-library(ggtextures)
-ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
-    &amp;quot;https://live.staticflickr.com/7344/16596942925_ecbb1fed55_h.jpg&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/orange.jpg?raw=true&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/pink.jpg?raw=true&amp;quot;,
-    &amp;quot;https://github.com/stier-lab/Ritger-2019-Corynactis-urchin-deterrence/blob/master/media/red.jpg?raw=true&amp;quot;))) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  ggtextures::geom_textured_col(img_width=unit(3,&amp;quot;in&amp;quot;)) +
-  labs(x=&amp;quot;Treatment&amp;quot;, y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;A&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;B&amp;quot;)), vjust=-1, size=4.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  theme(panel.grid.major.y  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=12),
-      axis.title.y = element_text(vjust=4, size=14),
-      axis.title.x = element_text(size=14),
-      plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Let’s see how it looks flipped&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data=prop, aes(x=fct_reorder(treatment, -eat_pcnt), y=eat_pcnt)) +
-  geom_col(aes(fill=treatment), show.legend=FALSE) +
-  scale_fill_manual(values=c(&amp;quot;cadetblue4&amp;quot;, &amp;quot;orange&amp;quot;, &amp;quot;pink&amp;quot;, &amp;quot;red&amp;quot;)) + #manually change point colors
-  labs(x=expression(~italic(Corynactis)~&amp;#39; color morph&amp;#39;), y=&amp;quot;Proportion of urchins that consumed kelp&amp;quot;) +
-  geom_text(aes(label=c(&amp;quot;B&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;AB&amp;quot;, &amp;quot;A&amp;quot;)), hjust=-1, size=5) +
-  geom_text(label=c(&amp;quot;(n=15)&amp;quot;, &amp;quot;(n=19)&amp;quot;, &amp;quot;(n=18)&amp;quot;, &amp;quot;(n=18)&amp;quot;), color=c(&amp;quot;white&amp;quot;,&amp;quot;black&amp;quot;,&amp;quot;black&amp;quot;,&amp;quot;black&amp;quot;), y=0.07, size=3.5) +
-  scale_y_continuous(limits=c(0,1),expand = c(0,0), breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  coord_flip() +
-  theme(panel.grid.major.x  = element_line(color = &amp;quot;grey90&amp;quot;),
-      panel.background = element_rect(fill = &amp;quot;white&amp;quot;),
-      panel.border = element_rect(color = &amp;quot;white&amp;quot;, fill = NA),
-      axis.line = element_line(color = &amp;quot;black&amp;quot;),
-      axis.ticks = element_line(color = &amp;quot;black&amp;quot;),
-      axis.text = element_text(color = &amp;quot;black&amp;quot;, size=16),
-      axis.title.y = element_text(vjust=4, size=18),
-      axis.title.x = element_text(size=18),
-      plot.margin=unit(c(0,0.5,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Urchin Deterrence Experiment</title>
+      <title>Urchin deterrence experiment</title>
       <link>/post/kelp-consumption/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/kelp-consumption/</guid>
       <description>
 
 
+&lt;p&gt;This project explored how intraspecific variation might play a role in the ability of the strawberry anemone (Corynactis californica) to act as a deterrent to urchin foraging.&lt;/p&gt;
+&lt;p&gt;Purple urchins, starved for a minimum of 7 days, were placed in aquaria containing kelp (Macrocystis pyrifera) protected by a barrier of strawberry anemones. 3 color morphs of strawberry anemones were used (Red, Pink, and Orange) in trials to assess any differences in the ability of genets (genetically identical individuals) to deter urchins from grazing on kelp. Kelp consumption by urchins was measured using photos taken of kelp blades before and after experimental trials, which lasted between 19:00 and 7:00 (30 minutes before and after sunrise and sunset, respectively) in late August-early September. Urchin behavior was tracked using photos (taken by GoPro Hero3+) of the experimental set up each minute for approximately 5 hours at the start of each experiment. Urchin behavior was compared between genets to examine how intraspecific variation might play a role in the associational refuge offered by the strawberry anemone to macroalgae in temperate kelp forests.&lt;/p&gt;
+&lt;p&gt;The following code works through data organization and analysis of urchin foraging behavior ( minus video analysis), analysis using logistic regression treating binary kelp consumption (yes/no) as a Bernoulli distribution and mixed model ANOVA treating tile as a random effect in kelp consumption by urchins&lt;/p&gt;
 &lt;div id=&#34;load-packages-load-data-tidy-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Load packages, load data, tidy data&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;tidyverse&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;zoo&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#LOAD PACKAGES
+library(tidyverse)
+library(zoo)
+library(GGally)
+library(ggplot2)
+library(janitor)
+library(here)
+
+## LOAD DATA
+data &amp;lt;- read.csv(&amp;quot;raw.csv&amp;quot;)
+
+## TIDY DATA
+# my own OCD, fix &amp;quot;Trial&amp;quot; issue
+colnames(data)[colnames(data)==&amp;quot;ï..Trial.number&amp;quot;] &amp;lt;- &amp;quot;Trial&amp;quot;
+
+# Clean names for R
+data &amp;lt;- data %&amp;gt;%
+  clean_names()
+
+# To remove instances where we have video evidence of urchins not moving (and not eating kelp)
+data &amp;lt;- data[(data$urchin_deterred_during_video!=&amp;quot;urchin never tried&amp;quot; | data$kelp_visibly_consumed==&amp;quot;yes&amp;quot;),]
+
+# To compare across treatments, presence/absence of Corynactis
+data$corynactis_binary &amp;lt;- ifelse(data$treatment_number&amp;gt;1, &amp;quot;present&amp;quot;, &amp;quot;absent&amp;quot;)
+
+# Create variables: kelp area consumed, percent kelp consumed
+data &amp;lt;- data %&amp;gt;%
+  mutate(area_consumed=(kelp_before_cm_2-kelp_after_cm_2)) %&amp;gt;%
+  mutate(percent_consumed=(area_consumed/kelp_before_cm_2))
+
+# look at &amp;quot;minimum % kelp consumed cutoff&amp;quot; contradictions between ImageJ and visual analysis
+#datan &amp;lt;- subset(data, Visible_consumption==&amp;quot;no&amp;quot;)
+#datay &amp;lt;- subset(data, Visible_consumption==&amp;quot;yes&amp;quot;)
+#sort(datan$percent_consumed) #If any percent consumption is less than 0.04, we assume there was no consumption (aka &amp;#39;remove&amp;#39; ImageJ analysis error)...minus the one piece of kelp that definitely had a tiny bit of urchin chewing it
+#data$percent_corrected &amp;lt;- ifelse(data$`Percent of Kelp Consumed`&amp;gt;0.04, data$`Percent of Kelp Consumed`, 0)
+data$percent_corrected &amp;lt;- ifelse(data$kelp_visibly_consumed==&amp;quot;no&amp;quot;, 0, data$percent_consumed)
+data$area_corrected &amp;lt;- ifelse(data$kelp_visibly_consumed==&amp;quot;no&amp;quot;, 0, data$area_consumed)
+
+# To compare consumption (yes, no) across treatments
+data$consumption_binary &amp;lt;- ifelse(data$percent_corrected&amp;gt;0, 1, 0)
+
+# Average urchin body weight before and after trials
+data &amp;lt;- data %&amp;gt;%
+  mutate(urchin_avg_g = rowMeans(cbind(urchin_weight_before_g,urchin_weight_after_g)))
+
+# To see if balcony versus wet lab location had an effect
+data$experiment_location &amp;lt;- ifelse(data$tank_number&amp;gt;6, &amp;quot;Balcony&amp;quot;, &amp;quot;Lab&amp;quot;)
+
+# take averages (kelp consumption) of each tile, create new data frame from subsetted averages
+# keep all control values rather than average them (if I pursue averaging repeated tiles), assign each control trial a unique number
+#data$cory_tile_number[data$cory_tile_number==0] &amp;lt;- c(-1:-15)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;visualize-the-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Visualize the data&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data, aes(y=area_corrected, x=treatment)) +
+  geom_boxplot() +
+  geom_jitter(size=1.5,alpha=0.9, width=0.1) +
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;It looks like there are a lot more zeroes in the experimental treatments versus the control treatment so…&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;is-there-any-difference-between-urchins-that-ate-or-didnt-eat-kelp&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Is there any difference between urchins that ate or didn’t eat kelp?&lt;/h2&gt;
 &lt;div id=&#34;rough-visualization-of-distribution-using-chi-square-test&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Rough visualization of distribution using chi-square test&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;####################################################
+# Tiered Analysis: Urchins that ate vs didn&amp;#39;t eat kelp
+####################################################
+library(corrplot)
+library(boot)
+library(spdep)
+library(DCluster)
+
+# assign variables
+treat &amp;lt;- as.factor(data$treatment)
+eat &amp;lt;- data$consumption_binary
+cory &amp;lt;- data$corynactis_binary
+
+# Chi-square test for kelp consumption versus no consumption for yes/no Corynactis
+t1 &amp;lt;-table(cory, eat)
+chisq.test(cory,eat)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Pearson&amp;#39;s Chi-squared test with Yates&amp;#39; continuity correction
 ## 
 ## data:  cory and eat
 ## X-squared = 2.2096, df = 1, p-value = 0.1372&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Chi-square test for kelp consumption versus no consumption across treatments
+t1 &amp;lt;- table(treat, eat)
+chisq.test(t1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Pearson&amp;#39;s Chi-squared test
 ## 
 ## data:  t1
 ## X-squared = 5.9308, df = 3, p-value = 0.115&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## from fifer package (which no longer exists)
+chisq.post.hoc &amp;lt;- function(tbl,test=c(&amp;quot;fisher.test&amp;quot;), popsInRows=TRUE,control=c(&amp;quot;fdr&amp;quot;,&amp;quot;BH&amp;quot;,&amp;quot;BY&amp;quot;,&amp;quot;bonferroni&amp;quot;,&amp;quot;holm&amp;quot;,&amp;quot;hochberg&amp;quot;,&amp;quot;hommel&amp;quot;),digits=4, ...) {
+    #### extract correction method
+  control &amp;lt;- match.arg(control)
+    #### extract which test (fisher or chi square) 
+  test = match.fun(test)
+    #### test rows or columns
+  if (!popsInRows) tbl &amp;lt;- t(tbl)
+  popsNames &amp;lt;- rownames(tbl)
+    #### come up with all possible comparisons
+  prs &amp;lt;- combn(1:nrow(tbl),2)
+    #### preallocate  
+  tests &amp;lt;- ncol(prs)
+  pvals &amp;lt;- numeric(tests)
+  lbls &amp;lt;- character(tests)
+  for (i in 1:tests) {
+    pvals[i] &amp;lt;- test(tbl[prs[,i],], ...)$p.value
+    lbls[i] &amp;lt;- paste(popsNames[prs[,i]],collapse=&amp;quot; vs. &amp;quot;)
+  }
+  adj.pvals &amp;lt;- p.adjust(pvals,method=control)
+  cat(&amp;quot;Adjusted p-values used the&amp;quot;,control,&amp;quot;method.\n\n&amp;quot;)
+  data.frame(comparison=lbls,raw.p=round(pvals,digits),adj.p=round(adj.pvals,digits))
+}
+
+chisq.post.hoc(t1, control = &amp;quot;bonferroni&amp;quot;, popsInRows  = TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Adjusted p-values used the bonferroni method.&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##           comparison  raw.p  adj.p
 ## 1 Control vs. Orange 0.4513 1.0000
@@ -288,14 +153,47 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
 ## 4    Orange vs. Pink 1.0000 1.0000
 ## 5     Orange vs. Red 0.1939 1.0000
 ## 6       Pink vs. Red 0.3175 1.0000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Control and Red are different&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-is-the-effect-of-corynactis-color-on-whether-or-not-urchins-ate-kelp-averaged-amongst-tiles&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What is the effect of Corynactis color on whether or not urchins ate kelp (averaged amongst tiles)?&lt;/h2&gt;
 &lt;div id=&#34;treat-the-data-as-bernoulli-sucesses-vs.-failures&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Treat the data as Bernoulli (sucesses vs. failures)&lt;/h4&gt;
+&lt;p&gt;Because not every tile was actually used twice (thanks to urchins not moving, etc), get the total counts each tile was used and add it as a column to data frame&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- data[order(data$cory_tile_number),] #sort whole data frame by tile number
+
+df &amp;lt;- data # separate this organization from the whole data frame in case you mess something up
+
+df &amp;lt;- df[order(df$cory_tile_number),] #sort subsetted data frame by tile number
+
+df$cory_tile_number[df$cory_tile_number==0] &amp;lt;- c(-1:-15) #change all controls to unique negative numbers to get count values
+
+new &amp;lt;- count(df, cory_tile_number) #count values for each tile number
+
+duptimes &amp;lt;- c(new$n) #how many replicates I want of each row
+
+indx &amp;lt;- rep(1:nrow(new), duptimes) # Create an index of the rows I want with duplications
+dupdf &amp;lt;- new[indx,] # Use that index to generate new data frame
+dupdf$cory_tile_number[1:15] &amp;lt;-0 #change control values back to tile number &amp;quot;0&amp;quot;
+dupdf$n[1:15] &amp;lt;- 15 #change duplications for control tiles to 15
+data$count_per_tile &amp;lt;- dupdf$n #add the counts to the whole data frame
+
+#now put it all together 
+#library(dplyr)
+data_avg &amp;lt;- data %&amp;gt;%
+  group_by(cory_tile_number) %&amp;gt;%                                     # group tile numbers together
+  mutate(success=sum(consumption_binary, na.rm=TRUE)) %&amp;gt;%     #number of successes
+  mutate(failure=ifelse(count_per_tile==2, abs(success-2), ifelse(count_per_tile==1,abs(success-1), 3))) %&amp;gt;%  #number of failures, given number of times tile was used
+  mutate(binary_avg=mean(consumption_binary, na.rm=TRUE)) %&amp;gt;% #average successes/total attempts
+  mutate(avg_area=mean(area_consumed, na.rm=TRUE))  %&amp;gt;%       # mean kelp consumption of each tile group
+  mutate(avg_percent=mean(percent_consumed, na.rm=TRUE)) %&amp;gt;%  # mean % kelp consumption of each tile group
+  ungroup() %&amp;gt;%                                               # ungroup data REALLY IMPT when using group_by
+  distinct(cory_tile_number, .keep_all = TRUE) %&amp;gt;%                   # remove duplicate tiles
+  dplyr::select(treatment, cory_tile_number, urchin_avg_g, success, failure, binary_avg, count_per_tile, kelp_before_cm_2, kelp_after_cm_2, area_corrected) # clean up! extract only columns you want&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#create the model
 library(lme4)
+
 #treating the data as bernoulli, sucesses given failures amongst treatments and tiles
 m1 &amp;lt;- glm(cbind(success, count_per_tile-success) ~ treatment, family = binomial , data = data_avg)
 summary(m1)&lt;/code&gt;&lt;/pre&gt;
@@ -342,25 +240,57 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Among the urchins that ate, does Corynactis matter in how much kelp was consumed?&lt;/h2&gt;
 &lt;div id=&#34;look-at-univariate-distribution-of-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Look at univariate distribution of kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create new data frame for instances where urchins ate something (not nothing)
+data_consumption &amp;lt;- subset(data, data$area_corrected&amp;gt;0)
+
+# Univariate analysis for Y
+hist(data_consumption$area_corrected, main=&amp;quot;&amp;quot;) #looks fine&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(data_consumption$area_corrected) #2 outliers&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqnorm(data_consumption$area_corrected)
+qqline(data_consumption$area_corrected) #could be better, but let&amp;#39;s look at the model/residuals&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;maybe-remove-two-outliers&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Maybe remove two outliers?&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Isolate outliers in data
+outliers &amp;lt;- boxplot(data_consumption$area_corrected)$out&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_consumption &amp;lt;- data_consumption[-which(data_consumption$area_corrected %in% outliers),]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Univariate analysis for Y (minus outliers)
+hist(data_consumption$area_corrected, main=&amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(data_consumption$area_corrected)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqnorm(data_consumption$area_corrected)
+qqline(data_consumption$area_corrected)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Sure, looks better&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;now-visualize-the-relationship-between-treatment-and-kelp-consumption&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Now visualize the relationship between treatment and kelp consumption&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;
-&amp;lt;&amp;lt; This is a potential plot for WSN poster&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data_consumption,aes(x=corynactis_binary,y=area_corrected))+
+  geom_boxplot()+
+  geom_jitter()+
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed, when consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data_consumption,aes(x=treatment,y=area_corrected))+
+  geom_boxplot()+
+  geom_jitter()+
+  labs(x=&amp;quot;Treatment&amp;quot;, y=expression(&amp;quot;Kelp area consumed, when consumed &amp;quot;(~cm^2))) +
+  theme_bw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;There really is no apparent relationship between presence/absence Corynactis or Treatment and the amount of kelp consumed, but let’s run stats anyway for good measure&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;mixed-model-anova&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Mixed model ANOVA&lt;/h3&gt;
 &lt;div id=&#34;treatment-is-a-fixed-effect-tile-number-is-a-random-effect&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Treatment is a fixed effect, tile number is a random effect&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;lmerTest&amp;#39; was built under R version 3.6.2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# add tile as a random effect
+library(lmerTest)
+m2 &amp;lt;- lmer(area_corrected ~ treatment + (1|cory_tile_number), data = data_consumption)
+summary(m2)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Linear mixed model fit by REML. t-tests use Satterthwaite&amp;#39;s method [
 ## lmerModLmerTest]
 ## Formula: area_corrected ~ treatment + (1 | cory_tile_number)
@@ -390,10 +320,16 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 ## tretmntOrng -0.748              
 ## treatmntPnk -0.734  0.550       
 ## treatmentRd -0.589  0.441  0.433&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;anova(m2)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Type III Analysis of Variance Table with Satterthwaite&amp;#39;s method
 ##           Sum Sq Mean Sq NumDF DenDF F value Pr(&amp;gt;F)
 ## treatment 32.676  10.892     3     2  0.1101 0.9466&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# let&amp;#39;s look at the residuals
+data_consumption$predicted &amp;lt;- predict(m2)
+data_consumption$residuals &amp;lt;- residuals(m2)
+plot(residuals~predicted, data=data_consumption) #looks fine
+abline(0, 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Yep, as suspected, there was no effect of treatment on amount of kelp consumed by urchins, when any kelp was consumed&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -404,21 +340,25 @@ summary(m1)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;h4 id=&#34;red-color-morph-increases-probability-urchin-will-fail-to-eat-any-kelp&#34;&gt;Red color morph increases probability urchin will fail to eat any kelp&lt;/h4&gt;&lt;/li&gt;
 &lt;li&gt;&lt;h4 id=&#34;but-there-was-no-effect-of-color-morph-or-even-the-simple-presence-of-corynactis-on-amount-of-kelp-consumed-when-looking-only-at-urchins-that-did-consume-kelp&#34;&gt;But there was no effect of color morph (or even the simple presence of Corynactis) on amount of kelp consumed, when looking only at urchins that did consume kelp&lt;/h4&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div id=&#34;in-the-context-of-wsn-here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;In the context of WSN, here are a few plots that might be useful for presentations&lt;/h3&gt;
+&lt;div id=&#34;here-are-a-few-plots-that-might-be-useful-for-presentations&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Here are a few plots that might be useful for presentations&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- data %&amp;gt;%
   group_by(treatment) %&amp;gt;%
   tally() %&amp;gt;%
   ungroup() #(15,19,18,18)
+
 b &amp;lt;- data %&amp;gt;%
   group_by(treatment) %&amp;gt;%   
   summarise(consumption_binary = sum(consumption_binary)) %&amp;gt;%
   ungroup() #(12,12,11,7)
+
 prop &amp;lt;- merge(a,b)
+
 prop &amp;lt;- prop %&amp;gt;%
   mutate(no_eat = n-consumption_binary,
          no_eat_pcnt = no_eat/n,
          eat_pcnt = consumption_binary/n)
+
 # vertical plot with color coding 
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
   geom_col(aes(fill=treatment), show.legend=FALSE) +
@@ -435,7 +375,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt)) +
       axis.title.y = element_text(vjust=4, size=14),
       axis.title.x = element_text(size=14),
       plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# vertical plot with image coding (?!)
 library(ggtextures)
 ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
@@ -457,7 +397,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
       axis.title.y = element_text(vjust=4, size=14),
       axis.title.x = element_text(size=14),
       plot.margin=unit(c(0.5,0,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-12-2.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Let’s see how it looks flipped&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data=prop, aes(x=fct_reorder(treatment, -eat_pcnt), y=eat_pcnt)) +
   geom_col(aes(fill=treatment), show.legend=FALSE) +
@@ -476,7 +416,7 @@ ggplot(data=prop, aes(x=treatment, y=eat_pcnt, image=c(
       axis.title.y = element_text(vjust=4, size=18),
       axis.title.x = element_text(size=18),
       plot.margin=unit(c(0,0.5,0.2,0.5), &amp;quot;cm&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/cory-urchin-data-analysis/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;400px&#34; height=&#34;300px&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>

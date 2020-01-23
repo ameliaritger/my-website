@@ -53,38 +53,6 @@
     </item>
     
     <item>
-      <title>corynactis</title>
-      <link>/tags/corynactis/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/corynactis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kelp forest</title>
-      <link>/tags/kelp-forest/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/kelp-forest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>purple urchin</title>
-      <link>/tags/purple-urchin/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/purple-urchin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>species interaction</title>
-      <link>/tags/species-interaction/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/species-interaction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dogs</title>
       <link>/tags/dogs/</link>
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
@@ -97,6 +65,46 @@
       <link>/tags/hiking/</link>
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/tags/hiking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diet</title>
+      <link>/tags/diet/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/diet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>corynactis</title>
+      <link>/tags/corynactis/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/corynactis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kelp forest</title>
+      <link>/tags/kelp-forest/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/kelp-forest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>purple urchin</title>
+      <link>/tags/purple-urchin/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/purple-urchin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>species interaction</title>
+      <link>/tags/species-interaction/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/species-interaction/</guid>
       <description></description>
     </item>
     
