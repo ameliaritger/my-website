@@ -16,7 +16,7 @@ interests:
 - phenotypic plasticity
 - local adaptation
 - behavioral ecology
-name: Amelia the Panda
+name: Amelia the Penguin
 organizations:
 - name: University of California, Santa Barbara
   url: ""
@@ -40,6 +40,6 @@ user_groups:
 - Visitors
 ---
 
-Amelia eats grass because she is a panda.
+Amelia eats fish because she is a penguin.
 
 <a href="files/cv.pdf" target="_blank">View my CV</a> 

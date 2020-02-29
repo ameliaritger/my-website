@@ -113,6 +113,21 @@
   </url>
   
   <url>
+    <loc>/post/snowshoe-hare/</loc>
+    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/udsa-nutrients/</loc>
+    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hawaiian-watersheds/</loc>
+    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/dogs/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
@@ -124,16 +139,6 @@
   
   <url>
     <loc>/tags/hiking/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/my-new-project/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/my-new-project/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
@@ -185,11 +190,6 @@
   <url>
     <loc>/teaching/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -293,32 +293,12 @@
   </url>
   
   <url>
-    <loc>/tags/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/academic/</loc>
+    <loc>/post/getting-started/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/getting-started/</loc>
+    <loc>/tags/academic/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   

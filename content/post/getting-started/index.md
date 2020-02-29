@@ -17,7 +17,7 @@ subtitle: 'Create a beautifully simple website in under 10 minutes :rocket:'
 summary: Create a beautifully simple website in under 10 minutes.
 tags:
 - Academic
-title: 'Academic: the website builder for Hugo'
+title: '(save) Academic: the website builder for Hugo'
 ---
 
 **Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 _widgets_, _themes_, and _language packs_ included!**

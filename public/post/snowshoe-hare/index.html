@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Amelia the Penguin">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The following is a visualization of data collected on snowshoe hares (Lepus americanus) found in the Bonanza Creek Experimental Forest (Alaska) from 1999 to 2012. Check out this database for more information on the study.
+Wondering what a snowhoe hare looks like?Here’s an image of a snowshoe hare in the summer (Photo by Robb Hannawacker):
+And here’s an image of a snowshoe hare in the winter (Photo by Michael Cummings):">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/snowshoe-hare/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#A82D0F">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice%7CAlegreya%7CPlayfair+Display%7CCrimson+Text%7CCabin&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/snowshoe-hare/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ameliaritger">
+  <meta property="twitter:creator" content="@ameliaritger">
+  
+  <meta property="og:site_name" content="Amelia L. Ritger">
+  <meta property="og:url" content="/post/snowshoe-hare/">
+  <meta property="og:title" content="Assignment 1 - Task 1 | Amelia L. Ritger">
+  <meta property="og:description" content="The following is a visualization of data collected on snowshoe hares (Lepus americanus) found in the Bonanza Creek Experimental Forest (Alaska) from 1999 to 2012. Check out this database for more information on the study.
+Wondering what a snowhoe hare looks like?Here’s an image of a snowshoe hare in the summer (Photo by Robb Hannawacker):
+And here’s an image of a snowshoe hare in the winter (Photo by Michael Cummings):"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-02-28T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-01-09T15:02:28-08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/snowshoe-hare/"
+  },
+  "headline": "Assignment 1 - Task 1",
+  
+  "datePublished": "2020-02-28T00:00:00Z",
+  "dateModified": "2020-01-09T15:02:28-08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Amelia the Penguin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Amelia L. Ritger",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img//"
+    }
+  },
+  "description": "The following is a visualization of data collected on snowshoe hares (Lepus americanus) found in the Bonanza Creek Experimental Forest (Alaska) from 1999 to 2012. Check out this database for more information on the study.\nWondering what a snowhoe hare looks like?\rHere’s an image of a snowshoe hare in the summer (Photo by Robb Hannawacker):\nAnd here’s an image of a snowshoe hare in the winter (Photo by Michael Cummings):"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Assignment 1 - Task 1 | Amelia L. Ritger</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Amelia L. Ritger</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Amelia L. Ritger</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>ESM 244</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#research"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Assignment 1 - Task 1</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 9, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>The following is a visualization of data collected on snowshoe hares (<em>Lepus americanus</em>) found in the Bonanza Creek Experimental Forest (Alaska) from 1999 to 2012. <a href="https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14">Check out this database</a> for more information on the study.</p>
+<div id="wondering-what-a-snowhoe-hare-looks-like" class="section level3">
+<h3>Wondering what a snowhoe hare looks like?</h3>
+<p>Here’s an image of a snowshoe hare in the summer (Photo by Robb Hannawacker):</p>
+<p><img src="Snowshoe-hare.jpg" /></p>
+<p>And here’s an image of a snowshoe hare in the winter (Photo by Michael Cummings):</p>
+<p><img src="snowshoe-winter.jpg" /></p>
+<p>Because I don’t know much about the methods of trapping showshoe hares or snowshoe hare behavior, the following is an exploration of the data to answer the question: What are the characteristics of individuals that were trapped frequently? For example, are females more likely to be trapped frequently? Are larger individuals less likely to evade trapping?</p>
+<div id="lets-find-out" class="section level4">
+<h4>Let’s find out!</h4>
+<pre class="r"><code>#load packages
+library(tidyverse)
+library(lubridate)
+library(ggbeeswarm)
+library(kableExtra)
+library(janitor)
+
+#read in data
+snowshoe &lt;- read_csv(&quot;showshoe_lter.csv&quot;)
+
+#tidy up data
+hare_raw &lt;- snowshoe %&gt;%
+  mutate(date=lubridate::mdy(date)) %&gt;%  #convert to a date format R recognizes
+  select(date,trap,grid,b_key,sex,weight,hindft,session_id,study) #remove variables with not a lot of data
+
+#look at histograms of continuous data
+hare_raw %&gt;%
+keep(is.numeric) %&gt;% 
+  gather() %&gt;% 
+  ggplot(aes(value)) +
+    facet_wrap(~ key, scales = &quot;free&quot;) +
+    geom_histogram()</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>It might be interesting to look at weight across year for males and females at different locations.</p>
+</div>
+<div id="lets-take-a-look-at-the-data" class="section level4">
+<h4>Let’s take a look at the data:</h4>
+<pre class="r"><code>unique(snowshoe$sex)</code></pre>
+<pre><code>##  [1] NA   &quot;M&quot;  &quot;F&quot;  &quot;?&quot;  &quot;F?&quot; &quot;M?&quot; &quot;pf&quot; &quot;m&quot;  &quot;f&quot;  &quot;f?&quot; &quot;m?&quot;</code></pre>
+<pre class="r"><code>#definitely looks like there&#39;s some questioning of sex in here, let&#39;s remove those question marks
+
+hare_wt &lt;- hare_raw %&gt;% 
+  mutate(sex = str_to_lower(sex)) %&gt;%  #convert all values to lowercase
+  mutate(grid = str_to_lower(grid)) %&gt;%  #do this again for lcation (&quot;grid&quot;)
+  filter(sex %in% c(&quot;m&quot;,&quot;f&quot;)) %&gt;%  #remove all questionable values
+  drop_na(weight) %&gt;%  #remove rows without weight values
+  select(date,grid,sex,weight,hindft) #only keep variables I actually want
+
+ggplot(hare_wt, aes(x = date, y = weight)) +
+  geom_jitter(size = 1, 
+              alpha = 0.5,
+              aes(color = sex,
+                  pch = sex)) +
+  facet_wrap(~grid) +
+  scale_color_manual(values = c(&quot;pink&quot;,&quot;blue&quot;))</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Darn, it looks like only “bonrip” was continuously sampled from 2000-2015. So I’m going to focus on “bonrip” for my analysis.</p>
+</div>
+<div id="lets-focus-in-on-the-main-question-what-are-the-characteristics-of-individuals-that-are-trapped-more-than-once" class="section level4">
+<h4>Let’s focus in on the main question: What are the characteristics of individuals that are trapped more than once?</h4>
+<pre class="r"><code>hare_trap &lt;- hare_raw %&gt;% 
+  mutate(trap = str_to_lower(trap)) %&gt;%  #convert all values to lowercase
+  mutate(grid = str_to_lower(grid)) %&gt;%  #do this again for location (&quot;grid&quot;)
+  mutate(sex = str_to_lower(sex)) %&gt;% #do this again for sex
+  filter(grid==&quot;bonrip&quot;) #only look at individuals trapped in bonrip
+
+#visualize number of times each individual was trapped
+hare_counts &lt;- hare_trap %&gt;%
+  count(b_key)
+
+hist(hare_counts$n, breaks=20) #looks like a lot of individuals were trapped between 0-2 times</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>#isolate all individuals trapped more than twice
+many &lt;- plyr::ddply(hare_trap, &quot;b_key&quot;, function(d) {if(nrow(d)&gt;2) d else NULL}) %&gt;%
+  mutate(trapping=&quot;Trapped many times&quot;) #add so you can ID once you combine
+
+# isolate all individuals trapped only once or twice (and make sure the math adds up)
+few &lt;- plyr::ddply(hare_trap, &quot;b_key&quot;, function(d) {if(nrow(d)&lt;=2) d else NULL}) %&gt;%
+  mutate(trapping=&quot;Trapped few times&quot;) #add so you can ID once you combine
+
+#combine the two datasets
+hare_trap &lt;- rbind(many,few)</code></pre>
+</div>
+<div id="now-that-we-have-the-data-all-separated-out-lets-take-a-look-at-characteristics-of-individuals-trapped-many-times-versus-few-times" class="section level4">
+<h4>Now that we have the data all separated out, let’s take a look at characteristics of individuals trapped many times versus few times:</h4>
+<pre class="r"><code>trapped &lt;- hare_trap %&gt;%
+  mutate(bc = weight/hindft) %&gt;% #calculate body condition values (from Flora 2002)
+  drop_na(bc) %&gt;%  #drop na values
+  filter(sex %in% c(&quot;m&quot;,&quot;f&quot;)) #remove questionable sex values
+
+ggplot(trapped, aes(x = sex, y=bc)) +
+  geom_jitter(size = 1, 
+              alpha = 0.5,
+              aes(color = sex,
+                  pch = sex)) +
+  facet_wrap(~trapping)</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Let’s work a bit more with this.</p>
+</div>
+<div id="get-summary-statistics" class="section level4">
+<h4>Get summary statistics:</h4>
+<pre class="r"><code>trapped_summary &lt;- trapped %&gt;%
+  group_by(trapping,sex) %&gt;% #group by trapping status, then sex
+  summarize(mean_bc = mean(bc), #get the mean body condition
+            sd_bc = sd(bc), #get the s.d. body condition
+            sample_size = n(), #get the sample size
+            se_bc = sd(bc)/sqrt(n()), #get the s.e. body condition, in case it&#39;s useful
+            var_bc = var(bc)) #get the variance body condition, in case it&#39;s useful
+
+#put it all together in a nice looking table
+kable(trapped_summary,
+      col.names = c(&quot;Trapping frequency&quot;, &quot;Sex&quot;, &quot;Mean body condition&quot;, &quot;Standard deviation&quot;, &quot;Sample size&quot;, &quot;Standard error&quot;, &quot;Variance&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = &quot;striped&quot;,
+                full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Trapping frequency
+</th>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:right;">
+Mean body condition
+</th>
+<th style="text-align:right;">
+Standard deviation
+</th>
+<th style="text-align:right;">
+Sample size
+</th>
+<th style="text-align:right;">
+Standard error
+</th>
+<th style="text-align:right;">
+Variance
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+f
+</td>
+<td style="text-align:right;">
+9.498978
+</td>
+<td style="text-align:right;">
+2.580097
+</td>
+<td style="text-align:right;">
+199
+</td>
+<td style="text-align:right;">
+0.1828982
+</td>
+<td style="text-align:right;">
+6.656900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:right;">
+8.597230
+</td>
+<td style="text-align:right;">
+2.841294
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+0.2392801
+</td>
+<td style="text-align:right;">
+8.072950
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+f
+</td>
+<td style="text-align:right;">
+11.068322
+</td>
+<td style="text-align:right;">
+2.955386
+</td>
+<td style="text-align:right;">
+399
+</td>
+<td style="text-align:right;">
+0.1479543
+</td>
+<td style="text-align:right;">
+8.734305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:right;">
+10.516752
+</td>
+<td style="text-align:right;">
+2.508388
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+0.1483241
+</td>
+<td style="text-align:right;">
+6.292009
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="now-plot-it-up-and-make-it-pretty" class="section level4">
+<h4>Now plot it up and make it pretty:</h4>
+<pre class="r"><code>ggplot() +
+  geom_beeswarm(data=trapped,
+                aes(x=sex, y=bc, color=sex),
+                size=1,
+                alpha=0.6) +
+  geom_point(data=trapped_summary,
+             aes(x=sex, y=mean_bc),
+             color=&quot;black&quot;,
+             fill=&quot;black&quot;,
+             shape=23,
+             size=2) +
+  geom_errorbar(data=trapped_summary,
+                aes(x=sex,
+                    ymin=mean_bc - sd_bc,
+                    ymax=mean_bc + sd_bc), 
+                width=0.1) +
+  xlab(&quot;Sex&quot;) +
+  ylab(&quot;Body condition (g/mm)&quot;) +
+  scale_x_discrete(labels=c(&quot;Female&quot;, &quot;Male&quot;)) +
+  facet_wrap(~trapping) +
+  theme(legend.position=&quot;none&quot;,
+        panel.background =  element_rect(fill = &quot;white&quot;, colour = NA), 
+        panel.border =      element_rect(fill = NA, colour=&quot;grey50&quot;), 
+        panel.grid.major =  element_line(colour = &quot;grey90&quot;, size = 0.2),
+        panel.grid.minor =  element_line(colour = &quot;grey98&quot;, size = 0.5),
+        axis.line = element_line(),
+        strip.background = element_rect(colour = &quot;black&quot;, fill = &quot;white&quot;),
+        strip.text = element_text(size=12),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14))</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Figure 1. Body condition (g/mm) of snowshoe hares trapped few times (once or twice) or many times (more than twice), separated by sex. Black filled diamonds indicate mean values and error bars indicate standard deviation around the mean.</p>
+<p>In the Bonanza Riparian zone, it appears that snowshoe hares trapped more frequently tended to have slightly higher body conditions than snowshoe hares trapped less frequently. Males and females did not have different body conditions, nor did they appear to be trapped more or less frequently.</p>
+</div>
+<div id="make-a-nice-table-showing-percentages-of-each-sex-captured" class="section level4">
+<h4>Make a nice table showing percentages of each sex captured:</h4>
+<pre class="r"><code>trapped_table &lt;- trapped %&gt;%
+  group_by(trapping) %&gt;% #group by trapping status
+  count(sex) %&gt;% #get counts for each sex
+  pivot_wider(names_from=sex, values_from=n)
+
+trapped_props &lt;- trapped_table %&gt;%
+  adorn_percentages(denominator=&quot;row&quot;) %&gt;% #convert to percentages
+  adorn_pct_formatting(digits=1) %&gt;% #dictate sig figs
+  adorn_ns(position=&quot;front&quot;) #show counts follow by percentages
+
+#put it all together in a nice looking table
+kable(trapped_props,
+      col.names = c(&quot;Trapping frequency&quot;,&quot;Female&quot;, &quot;Male&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = &quot;striped&quot;,
+                full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Trapping frequency
+</th>
+<th style="text-align:left;">
+Female
+</th>
+<th style="text-align:left;">
+Male
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+199 (58.5%)
+</td>
+<td style="text-align:left;">
+141 (41.5%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+399 (58.2%)
+</td>
+<td style="text-align:left;">
+286 (41.8%)
+</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Numbers and percentages of each sex of snowshoe hares trapped frequently (“many”) or infrequently (“few”).</p>
+<p>In the Bonanza Riparian zone, female snowshoe hares were more likely to be trapped than male snowshoe hares. However, the percentages of each sex trapped did not change drastically between snowshoe hares trapped few or many times.</p>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/dogs/">dogs</a>
+  
+  <a class="badge badge-light" href="/tags/hiking/">hiking</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/snowshoe-hare/&amp;text=Assignment%201%20-%20Task%201" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/snowshoe-hare/&amp;t=Assignment%201%20-%20Task%201" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Assignment%201%20-%20Task%201&amp;body=/post/snowshoe-hare/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/snowshoe-hare/&amp;title=Assignment%201%20-%20Task%201" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Assignment%201%20-%20Task%201%20/post/snowshoe-hare/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/snowshoe-hare/&amp;title=Assignment%201%20-%20Task%201" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu0f0332da47b7e42197fc9db929953ccc_71256_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Amelia the Penguin</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/ameliaritger" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=fTXo-jMAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ameliaritger" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/udsa-nutrients/">Assignment 1 - Task 2</a></li>
+      
+      <li><a href="/post/hawaiian-watersheds/">Assignment 2 - Task 3</a></li>
+      
+      <li><a href="/teaching/my-new-project/">I will do this later!</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 ---
-title: My awesome post!
+title: Assignment 1 - Task 1
 author: ''
-date: '2020-01-09'
-slug: my-new-project
+date: '2020-02-28'
+slug: snowshoe-hare
 categories: []
 tags:
   - dogs
@@ -19,9 +19,339 @@ image:
 projects: []
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
-<p>Here’s some sweet code!</p>
-<p>An amazing plot!</p>
-<pre class="r"><code>plot(cars)</code></pre>
-<p><img src="/project/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The following is a visualization of data collected on snowshoe hares (<em>Lepus americanus</em>) found in the Bonanza Creek Experimental Forest (Alaska) from 1999 to 2012. <a href="https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14">Check out this database</a> for more information on the study.</p>
+<div id="wondering-what-a-snowhoe-hare-looks-like" class="section level3">
+<h3>Wondering what a snowhoe hare looks like?</h3>
+<p>Here’s an image of a snowshoe hare in the summer (Photo by Robb Hannawacker):</p>
+<p><img src="Snowshoe-hare.jpg" /></p>
+<p>And here’s an image of a snowshoe hare in the winter (Photo by Michael Cummings):</p>
+<p><img src="snowshoe-winter.jpg" /></p>
+<p>Because I don’t know much about the methods of trapping showshoe hares or snowshoe hare behavior, the following is an exploration of the data to answer the question: What are the characteristics of individuals that were trapped frequently? For example, are females more likely to be trapped frequently? Are larger individuals less likely to evade trapping?</p>
+<div id="lets-find-out" class="section level4">
+<h4>Let’s find out!</h4>
+<pre class="r"><code>#load packages
+library(tidyverse)
+library(lubridate)
+library(ggbeeswarm)
+library(kableExtra)
+library(janitor)
+
+#read in data
+snowshoe &lt;- read_csv(&quot;showshoe_lter.csv&quot;)
+
+#tidy up data
+hare_raw &lt;- snowshoe %&gt;%
+  mutate(date=lubridate::mdy(date)) %&gt;%  #convert to a date format R recognizes
+  select(date,trap,grid,b_key,sex,weight,hindft,session_id,study) #remove variables with not a lot of data
+
+#look at histograms of continuous data
+hare_raw %&gt;%
+keep(is.numeric) %&gt;% 
+  gather() %&gt;% 
+  ggplot(aes(value)) +
+    facet_wrap(~ key, scales = &quot;free&quot;) +
+    geom_histogram()</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>It might be interesting to look at weight across year for males and females at different locations.</p>
+</div>
+<div id="lets-take-a-look-at-the-data" class="section level4">
+<h4>Let’s take a look at the data:</h4>
+<pre class="r"><code>unique(snowshoe$sex)</code></pre>
+<pre><code>##  [1] NA   &quot;M&quot;  &quot;F&quot;  &quot;?&quot;  &quot;F?&quot; &quot;M?&quot; &quot;pf&quot; &quot;m&quot;  &quot;f&quot;  &quot;f?&quot; &quot;m?&quot;</code></pre>
+<pre class="r"><code>#definitely looks like there&#39;s some questioning of sex in here, let&#39;s remove those question marks
+
+hare_wt &lt;- hare_raw %&gt;% 
+  mutate(sex = str_to_lower(sex)) %&gt;%  #convert all values to lowercase
+  mutate(grid = str_to_lower(grid)) %&gt;%  #do this again for lcation (&quot;grid&quot;)
+  filter(sex %in% c(&quot;m&quot;,&quot;f&quot;)) %&gt;%  #remove all questionable values
+  drop_na(weight) %&gt;%  #remove rows without weight values
+  select(date,grid,sex,weight,hindft) #only keep variables I actually want
+
+ggplot(hare_wt, aes(x = date, y = weight)) +
+  geom_jitter(size = 1, 
+              alpha = 0.5,
+              aes(color = sex,
+                  pch = sex)) +
+  facet_wrap(~grid) +
+  scale_color_manual(values = c(&quot;pink&quot;,&quot;blue&quot;))</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Darn, it looks like only “bonrip” was continuously sampled from 2000-2015. So I’m going to focus on “bonrip” for my analysis.</p>
+</div>
+<div id="lets-focus-in-on-the-main-question-what-are-the-characteristics-of-individuals-that-are-trapped-more-than-once" class="section level4">
+<h4>Let’s focus in on the main question: What are the characteristics of individuals that are trapped more than once?</h4>
+<pre class="r"><code>hare_trap &lt;- hare_raw %&gt;% 
+  mutate(trap = str_to_lower(trap)) %&gt;%  #convert all values to lowercase
+  mutate(grid = str_to_lower(grid)) %&gt;%  #do this again for location (&quot;grid&quot;)
+  mutate(sex = str_to_lower(sex)) %&gt;% #do this again for sex
+  filter(grid==&quot;bonrip&quot;) #only look at individuals trapped in bonrip
+
+#visualize number of times each individual was trapped
+hare_counts &lt;- hare_trap %&gt;%
+  count(b_key)
+
+hist(hare_counts$n, breaks=20) #looks like a lot of individuals were trapped between 0-2 times</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>#isolate all individuals trapped more than twice
+many &lt;- plyr::ddply(hare_trap, &quot;b_key&quot;, function(d) {if(nrow(d)&gt;2) d else NULL}) %&gt;%
+  mutate(trapping=&quot;Trapped many times&quot;) #add so you can ID once you combine
+
+# isolate all individuals trapped only once or twice (and make sure the math adds up)
+few &lt;- plyr::ddply(hare_trap, &quot;b_key&quot;, function(d) {if(nrow(d)&lt;=2) d else NULL}) %&gt;%
+  mutate(trapping=&quot;Trapped few times&quot;) #add so you can ID once you combine
+
+#combine the two datasets
+hare_trap &lt;- rbind(many,few)</code></pre>
+</div>
+<div id="now-that-we-have-the-data-all-separated-out-lets-take-a-look-at-characteristics-of-individuals-trapped-many-times-versus-few-times" class="section level4">
+<h4>Now that we have the data all separated out, let’s take a look at characteristics of individuals trapped many times versus few times:</h4>
+<pre class="r"><code>trapped &lt;- hare_trap %&gt;%
+  mutate(bc = weight/hindft) %&gt;% #calculate body condition values (from Flora 2002)
+  drop_na(bc) %&gt;%  #drop na values
+  filter(sex %in% c(&quot;m&quot;,&quot;f&quot;)) #remove questionable sex values
+
+ggplot(trapped, aes(x = sex, y=bc)) +
+  geom_jitter(size = 1, 
+              alpha = 0.5,
+              aes(color = sex,
+                  pch = sex)) +
+  facet_wrap(~trapping)</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Let’s work a bit more with this.</p>
+</div>
+<div id="get-summary-statistics" class="section level4">
+<h4>Get summary statistics:</h4>
+<pre class="r"><code>trapped_summary &lt;- trapped %&gt;%
+  group_by(trapping,sex) %&gt;% #group by trapping status, then sex
+  summarize(mean_bc = mean(bc), #get the mean body condition
+            sd_bc = sd(bc), #get the s.d. body condition
+            sample_size = n(), #get the sample size
+            se_bc = sd(bc)/sqrt(n()), #get the s.e. body condition, in case it&#39;s useful
+            var_bc = var(bc)) #get the variance body condition, in case it&#39;s useful
+
+#put it all together in a nice looking table
+kable(trapped_summary,
+      col.names = c(&quot;Trapping frequency&quot;, &quot;Sex&quot;, &quot;Mean body condition&quot;, &quot;Standard deviation&quot;, &quot;Sample size&quot;, &quot;Standard error&quot;, &quot;Variance&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = &quot;striped&quot;,
+                full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Trapping frequency
+</th>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:right;">
+Mean body condition
+</th>
+<th style="text-align:right;">
+Standard deviation
+</th>
+<th style="text-align:right;">
+Sample size
+</th>
+<th style="text-align:right;">
+Standard error
+</th>
+<th style="text-align:right;">
+Variance
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+f
+</td>
+<td style="text-align:right;">
+9.498978
+</td>
+<td style="text-align:right;">
+2.580097
+</td>
+<td style="text-align:right;">
+199
+</td>
+<td style="text-align:right;">
+0.1828982
+</td>
+<td style="text-align:right;">
+6.656900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:right;">
+8.597230
+</td>
+<td style="text-align:right;">
+2.841294
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+0.2392801
+</td>
+<td style="text-align:right;">
+8.072950
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+f
+</td>
+<td style="text-align:right;">
+11.068322
+</td>
+<td style="text-align:right;">
+2.955386
+</td>
+<td style="text-align:right;">
+399
+</td>
+<td style="text-align:right;">
+0.1479543
+</td>
+<td style="text-align:right;">
+8.734305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:right;">
+10.516752
+</td>
+<td style="text-align:right;">
+2.508388
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+0.1483241
+</td>
+<td style="text-align:right;">
+6.292009
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="now-plot-it-up-and-make-it-pretty" class="section level4">
+<h4>Now plot it up and make it pretty:</h4>
+<pre class="r"><code>ggplot() +
+  geom_beeswarm(data=trapped,
+                aes(x=sex, y=bc, color=sex),
+                size=1,
+                alpha=0.6) +
+  geom_point(data=trapped_summary,
+             aes(x=sex, y=mean_bc),
+             color=&quot;black&quot;,
+             fill=&quot;black&quot;,
+             shape=23,
+             size=2) +
+  geom_errorbar(data=trapped_summary,
+                aes(x=sex,
+                    ymin=mean_bc - sd_bc,
+                    ymax=mean_bc + sd_bc), 
+                width=0.1) +
+  xlab(&quot;Sex&quot;) +
+  ylab(&quot;Body condition (g/mm)&quot;) +
+  scale_x_discrete(labels=c(&quot;Female&quot;, &quot;Male&quot;)) +
+  facet_wrap(~trapping) +
+  theme(legend.position=&quot;none&quot;,
+        panel.background =  element_rect(fill = &quot;white&quot;, colour = NA), 
+        panel.border =      element_rect(fill = NA, colour=&quot;grey50&quot;), 
+        panel.grid.major =  element_line(colour = &quot;grey90&quot;, size = 0.2),
+        panel.grid.minor =  element_line(colour = &quot;grey98&quot;, size = 0.5),
+        axis.line = element_line(),
+        strip.background = element_rect(colour = &quot;black&quot;, fill = &quot;white&quot;),
+        strip.text = element_text(size=12),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14))</code></pre>
+<p><img src="/post/my-new-project/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Figure 1. Body condition (g/mm) of snowshoe hares trapped few times (once or twice) or many times (more than twice), separated by sex. Black filled diamonds indicate mean values and error bars indicate standard deviation around the mean.</p>
+<p>In the Bonanza Riparian zone, it appears that snowshoe hares trapped more frequently tended to have slightly higher body conditions than snowshoe hares trapped less frequently. Males and females did not have different body conditions, nor did they appear to be trapped more or less frequently.</p>
+</div>
+<div id="make-a-nice-table-showing-percentages-of-each-sex-captured" class="section level4">
+<h4>Make a nice table showing percentages of each sex captured:</h4>
+<pre class="r"><code>trapped_table &lt;- trapped %&gt;%
+  group_by(trapping) %&gt;% #group by trapping status
+  count(sex) %&gt;% #get counts for each sex
+  pivot_wider(names_from=sex, values_from=n)
+
+trapped_props &lt;- trapped_table %&gt;%
+  adorn_percentages(denominator=&quot;row&quot;) %&gt;% #convert to percentages
+  adorn_pct_formatting(digits=1) %&gt;% #dictate sig figs
+  adorn_ns(position=&quot;front&quot;) #show counts follow by percentages
+
+#put it all together in a nice looking table
+kable(trapped_props,
+      col.names = c(&quot;Trapping frequency&quot;,&quot;Female&quot;, &quot;Male&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = &quot;striped&quot;,
+                full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Trapping frequency
+</th>
+<th style="text-align:left;">
+Female
+</th>
+<th style="text-align:left;">
+Male
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Trapped few times
+</td>
+<td style="text-align:left;">
+199 (58.5%)
+</td>
+<td style="text-align:left;">
+141 (41.5%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trapped many times
+</td>
+<td style="text-align:left;">
+399 (58.2%)
+</td>
+<td style="text-align:left;">
+286 (41.8%)
+</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Numbers and percentages of each sex of snowshoe hares trapped frequently (“many”) or infrequently (“few”).</p>
+<p>In the Bonanza Riparian zone, female snowshoe hares were more likely to be trapped than male snowshoe hares. However, the percentages of each sex trapped did not change drastically between snowshoe hares trapped few or many times.</p>
+</div>
+</div>

@@ -24,8 +24,11 @@ preview_only: no
 projects: []
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<p>Diet choice in marine species is typically derived from indirect methods such as stomach contents and stable isotope analysis, while choice experiments in controlled laboratory settings are used to infer foraging decisions in the wild. However, these methods are limited in their capacity to make inferences about foraging decisions by predators in variable environments or recreate the array of factors (such as prey traits, predator condition, and environmental conditions) present in natural systems which may interact to affect diet decisions by predators. Recent work has provided evidence for selectivity in the invasive Indo-Pacific lionfish (Pterois volitans/miles) despite the predator’s apparent opportunistic, generalist feeding behavior. We directly tested diet choice by presenting wild-caught lionfish with multi-species prey assemblages in field enclosures. We offered lionfish equal biomasses of prey species sharing similar prey traits that are both highly abundant on coral reefs and prevalent in the lionfish diet across the invaded range. We then applied compositional analyses to determine relative prey consumption given prey availability. We observed lionfish selectively foraging on prey and manifesting strong consistent preferences for one prey species. Additionally, we observed condition-dependent foraging behavior, as lionfish with higher body conditions were more likely to exhibit selective foraging behavior. Our findings provide direct evidence for diet choice in an invasive generalist species and highlight the importance of preserving the ecological complexity of natural ecosystems in choice experiments, particularly when investigating predator-prey interactions in complex environments.</p>
+<p>The following code walks through the data analysis for this project:</p>
 <pre class="r"><code># Lion fish preference index
 # june 2018 written
 # Cleaned by Amelia Ritger in January 2020
@@ -44,18 +47,8 @@ data_x &lt;-data.frame(Starve_time = data_all$Starvationtime_hours,
 counts &lt;- data.frame(N_chromis = data_all$Numberchromisconsumed, N_goby = data_all$Numbergobyconsumed,N_wrasse = data_all$Numberwrasseconsumed)
 ########################
 # Use zCompositions to replace zeros using bayesian multiplicative methods
-library(&#39;zCompositions&#39;)</code></pre>
-<pre><code>## Warning: package &#39;zCompositions&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## Loading required package: MASS</code></pre>
-<pre><code>## Loading required package: NADA</code></pre>
-<pre><code>## Loading required package: survival</code></pre>
-<pre><code>## 
-## Attaching package: &#39;NADA&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     cor</code></pre>
-<pre><code>## Loading required package: truncnorm</code></pre>
-<pre class="r"><code>c_tot &lt;- counts$N_chromis + counts$N_wrasse + counts$N_goby
+library(&#39;zCompositions&#39;)
+c_tot &lt;- counts$N_chromis + counts$N_wrasse + counts$N_goby
 rep_p &lt;- cmultRepl(counts,method = &quot;SQ&quot;) # proportions data with zeros replaced</code></pre>
 <pre><code>## No. corrected values:  3</code></pre>
 <pre class="r"><code>rep_count&lt;-rep_p*c_tot
@@ -68,16 +61,8 @@ rep_biomass &lt;- rep_count*matrix(rep(c(0.641,0.129,0.655),nrow = nrow(rep_coun
 ### 11chromis, 55 gobies, 11wrasses
 #############################
 # T^2 hotelling
-library(rrcov)</code></pre>
-<pre><code>## Warning: package &#39;rrcov&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## Loading required package: robustbase</code></pre>
-<pre><code>## 
-## Attaching package: &#39;robustbase&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:survival&#39;:
-## 
-##     heart</code></pre>
-<pre><code>## Scalable Robust Estimators with High Breakdown Point (version 1.4-9)</code></pre>
-<pre class="r"><code>#
+library(rrcov)
+#
 fsbp2ilr&lt;-function(s){
   # given a vector (or a set of vectors) of a SBP formed by 0,+1,-1 
   # returns the ilr-vector (or set of) or balance
@@ -220,28 +205,8 @@ for (i in 1:nrow(rep_count)){ait &lt;- c(ait,fdAit(as.numeric(rep_count[i,]),c(1
 #########################################
 #########################################
 ### levels curves for Scaled index
-library(compositions)</code></pre>
-<pre><code>## Loading required package: tensorA</code></pre>
-<pre><code>## 
-## Attaching package: &#39;tensorA&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:base&#39;:
-## 
-##     norm</code></pre>
-<pre><code>## Loading required package: bayesm</code></pre>
-<pre><code>## Welcome to compositions, a package for compositional data analysis.
-## Find an intro with &quot;? compositions&quot;</code></pre>
-<pre><code>## 
-## Attaching package: &#39;compositions&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:NADA&#39;:
-## 
-##     cor</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     cor, cov, dist, var</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     %*%, scale, scale.default</code></pre>
-<pre class="r"><code>##
+library(compositions)
+##
 # freq repeated
 (rep_count/apply(rep_count,1,sum))</code></pre>
 <pre><code>##     N_chromis     N_goby   N_wrasse
@@ -301,10 +266,8 @@ b &lt;- mse[which(mse[,2] == min(mse[,2])),1]
 b &lt;- 0.0124
 
 ## Two sample t-test to compare group means
-library(car)</code></pre>
-<pre><code>## Warning: package &#39;car&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## Loading required package: carData</code></pre>
-<pre class="r"><code>reg_data$group[reg_data$Bodycondition &gt; b] &lt;- 2
+library(car)
+reg_data$group[reg_data$Bodycondition &gt; b] &lt;- 2
 reg_data$group[reg_data$Bodycondition &lt; b] &lt;- 1
 reg_data$group &lt;- as.factor(reg_data$group)
 leveneTest(reg_data$Index, reg_data$group) #not signficant, variance can be considered equal (TRUE)</code></pre>
@@ -358,20 +321,8 @@ pred1 &lt;- predict(piecewise1,newdata = data.frame(Bodycondition = breaks[break
 ######################################
 ###From Amelia
 library(ggplot2)
-library(tidyverse)</code></pre>
-<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## -- Attaching packages ---------------------------------- tidyverse 1.3.0 --</code></pre>
-<pre><code>## v tibble  2.1.3     v dplyr   0.8.3
-## v tidyr   1.0.0     v stringr 1.4.0
-## v readr   1.3.1     v forcats 0.4.0
-## v purrr   0.3.3</code></pre>
-<pre><code>## -- Conflicts ------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-## x dplyr::recode() masks car::recode()
-## x dplyr::select() masks MASS::select()
-## x purrr::some()   masks car::some()</code></pre>
-<pre class="r"><code>library(grid)
+library(tidyverse)
+library(grid)
 #create new column for each category
 norm_data &lt;-  data.frame(bodycondition = data_all$BodyCondition, index =reg_data$Index)
 #names(norm_data) &lt;- c(&quot;bodycondition&quot;, &quot;lindex&quot;)
