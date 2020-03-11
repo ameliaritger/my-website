@@ -5,15 +5,15 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false  # Activate this widget? true/false
-weight = 15  # Order that this section will appear.
+active = true  # Activate this widget? true/false
+weight = 10  # Order that this section will appear.
 
-title = "DEMO"
+title = ""
 subtitle = ""
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -29,8 +29,8 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  image = "headers/dolomites.jpg"  # Name of image in `static/img/`.
-  image_darken = 0.8  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image = "corycory.jpg"  # Name of image in `static/img/`.
+  image_darken = 0  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
   image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
@@ -40,7 +40,7 @@ subtitle = ""
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["20px", "0", "20px", "0"]
+  padding = ["400px", "0", "300px", "0"]
 
 [advanced]
  # Custom CSS. 
@@ -49,11 +49,3 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
-**Amelia L. Ritger**
-
-- [**see my blog**](https://amelialillie.wordpress.com)
-
-{{% alert note %}}
-This is a PSA.
-{{% /alert %}}
