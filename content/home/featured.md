@@ -2,17 +2,17 @@
 widget = "pages"
 headless = true  # This file represents a page section.
 active = false  # Activate this widget? true/false
-weight = 1000  # Order that this section will appear.
+weight = 1 # Order that this section will appear.
 
 title = "FEATS YAS"
 subtitle = ""
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
-  page_type = "esm244"
+  page_type = ""
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 3
+  count = 0
   
   # Choose how many pages you would like to offset by
   offset = 0
