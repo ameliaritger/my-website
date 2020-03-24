@@ -66,8 +66,8 @@ subtitle = ""
  
  # CSS class.
  css_class = ""
+ 
+# *[Search publications]({{< ref "/publication/_index.md" >}})*
 +++
 
-*[Search publications]({{< ref "/publication/_index.md" >}})*
-
-<font size="3"><i><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Search publications here</span></a></i></font>
+<font size="3"><i><p align="right"><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Filter publications</span></a></p></i></font>
