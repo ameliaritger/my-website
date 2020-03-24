@@ -67,6 +67,6 @@ subtitle = ""
  css_class = ""
 +++
 
-{{% alert note %}}
-[Filter publications]({{< ref "/publication/_index.md" >}}).
-{{% /alert %}}
+*[Search publications]({{< ref "/publication/_index.md" >}})*
+
+<a href="https://ameliaritger.netlify.com/publication/"><span style="color:#35ab82">HTML link test</span></a>
