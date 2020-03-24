@@ -1,0 +1,23 @@
+---
+date: "2018-01-01"
+external_link: ""
+image:
+  caption: 
+  focal_point:
+links:
+- icon: github
+  icon_pack: fab
+  name: The Kronauer Lab
+  url: https://google.com
+slides: 
+summary: What do you want to know about these guys?
+tags:
+- nostoc
+title: The Clonal Raider Ant
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+---
+
+Insert project details right here
