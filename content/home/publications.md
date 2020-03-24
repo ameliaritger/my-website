@@ -36,7 +36,7 @@ subtitle = ""
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view = 1
+  view = 4
   
 [design.background]
   # Apply a background color, gradient, or image.
@@ -70,4 +70,4 @@ subtitle = ""
 # *[Search publications]({{< ref "/publication/_index.md" >}})*
 +++
 
-<font size="3"><i><p align="right"><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Filter publications</span></a></p></i></font>
+<font size="4"><i><p align="left"><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Filter publications</span></a></p></i></font>
