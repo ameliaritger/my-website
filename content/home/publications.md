@@ -46,7 +46,8 @@ subtitle = ""
     
   # Background color.
   #color = "#A1BDC7"
-  color = "#E6BC97"
+  #color = "#E6BC97"
+  color = "#ebc4ae"
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -57,7 +58,7 @@ subtitle = ""
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
-  text_color_light = false 
+  text_color_light = false
   
 [advanced]
  # Custom CSS. 
@@ -69,4 +70,4 @@ subtitle = ""
 
 *[Search publications]({{< ref "/publication/_index.md" >}})*
 
-<a href="https://ameliaritger.netlify.com/publication/"><span style="color:#35ab82">HTML link test</span></a>
+<font size="3"><i><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Search publications here</span></a></i></font>

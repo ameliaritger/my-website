@@ -2,16 +2,16 @@
 name = "Amelia's theme"
 
 # Is theme light or dark?
-light = true
+light = false
 
 # Primary
-primary = "#A82D0F"
+primary = "#A82D0F" #dark red main text color
 
 # Menu
-menu_primary = "#F0EBDE"
-menu_text = "	#261D1B"
-menu_text_active = "#CE5638"
-menu_title = "#261D1B"
+menu_primary = "#F0EBDE" #menu bar top color
+menu_text = "	#261D1B" #menu bar text color
+menu_text_active = "#CE5638" #salmon red text color
+menu_title = "#261D1B" #menu bar text color
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"
