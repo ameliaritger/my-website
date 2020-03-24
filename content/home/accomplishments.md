@@ -18,13 +18,13 @@ subtitle = ""
   # color = "#E6BC97"
   
   image = "poppies.jpg"  # Name of image in `static/img/`.
-  image_darken = 0.1  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image_darken = 0.4  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
   image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
   
    # Text color (true=light or false=dark).
-  text_color_light = false
+  text_color_light = true
 
 # Date format
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -36,14 +36,16 @@ date_format = "Jan 2006"
 #   Leave other parameters empty if not required.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
-[[item]]
-  organization = "Ocean Global Change Biology REU"
-  organization_url = "https://oceanchangereuucsb.com/"
-  title = "Xavius Boone, UC Davis"
-  url = ""
-  certificate_url = ""
-  date_start = "2019-06-24"
-  date_end = "2019-08-24"
-  description = ""
+# [[item]]
+  # organization = "Ocean Global Change Biology REU"
+  # organization_url = "https://oceanchangereuucsb.com/"
+  # title = "Xavius Boone, UC Davis"
+  # url = ""
+  # certificate_url = ""
+  # date_start = "2019-06-24"
+  # date_end = "2019-08-24"
+  # description = ""
   
 +++
+
+**Xavius Boone** (UC Davis): <a href="https://oceanchangereuucsb.com/" target="_blank">Ocean Global Change Biology REU</a>, *Jun – Aug 2019*
