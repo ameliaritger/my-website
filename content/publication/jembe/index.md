@@ -28,7 +28,7 @@ tags:
   - animal behavior
   - Curaçao
   - post baccalaureate
-title: Diet choice in a generalist predator, the invasive lionfish (*Pterois volitans/miles*)
+title: Diet choice in a generalist predator, the invasive lionfish (Pterois volitans/miles)
 url_code: ""
 url_dataset: ""
 url_pdf: ""
@@ -38,5 +38,3 @@ url_slides: ""
 url_source: ""
 url_video: ""
 ---
-
-Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
