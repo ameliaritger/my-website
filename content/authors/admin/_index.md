@@ -24,7 +24,7 @@ role: PhD Student
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: 'mailto:aritger@ucsb.edu'
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=fTXo-jMAAAAJ&hl=en&oi=ao
@@ -40,6 +40,15 @@ user_groups:
 - Visitors
 ---
 
-Amelia eats fish because she is a penguin.
+Something about science:
 
-<a href="files/cv.pdf" target="_blank">View my CV</a> 
+Something about experience:
+Prior to joining the graduate program in Ecology, Evolution, and Marine Biology at UC Santa Barbara, I worked as a research assistant with the 
+<a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/" target="_blank">Kronauer Lab</a>
+at Rockefeller University and as an independent scientist at the 
+<a href="http://www.researchstationcarmabi.org/" target="_blank">Caribbean Marine Biological Institute</a>
+in Curaçao. I am currently a proud member of the 
+<a href="http://www.hofmannlab.com/" target="_blank">Hofmann Lab</a>, 
+where I use the strawberry anemone (*Corynactis californica*) to better understand the connections between intraspecific variation, phenotypic plasticity, and biogeography.
+
+Something personal:
