@@ -25,12 +25,12 @@ subtitle = ""
     tag = "*"
   
   [[content.filter_button]]
-    name = "Past"
-    tag = "past research"
-  
-  [[content.filter_button]]
     name = "Current"
     tag = "current research"
+    
+  [[content.filter_button]]
+    name = "Past"
+    tag = "past research"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
