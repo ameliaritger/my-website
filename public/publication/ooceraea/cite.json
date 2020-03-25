@@ -1,0 +1,63 @@
+{
+    "source": "PubMed",
+    "accessed": {
+        "date-parts": [
+            [
+                2020,
+                3,
+                25
+            ]
+        ]
+    },
+    "id": "pmid:30049879",
+    "title": "Social regulation of insulin signaling and the evolution of eusociality in ants",
+    "author": [
+        {
+            "family": "Chandra",
+            "given": "Vikram"
+        },
+        {
+            "family": "Fetter-Pruneda",
+            "given": "Ingrid"
+        },
+        {
+            "family": "Oxley",
+            "given": "Peter R"
+        },
+        {
+            "family": "Ritger",
+            "given": "Amelia L"
+        },
+        {
+            "family": "McKenzie",
+            "given": "Sean K"
+        },
+        {
+            "family": "Libbrecht",
+            "given": "Romain"
+        },
+        {
+            "family": "Kronauer",
+            "given": "Daniel J C"
+        }
+    ],
+    "container-title-short": "Science",
+    "container-title": "Science (New York, N.Y.)",
+    "ISSN": "0036-8075",
+    "issued": {
+        "date-parts": [
+            [
+                2018,
+                7,
+                27
+            ]
+        ]
+    },
+    "page": "398-402",
+    "volume": "361",
+    "issue": "6400",
+    "PMID": "30049879",
+    "PMCID": "PMC6178808",
+    "DOI": "10.1126/science.aar5723",
+    "type": "article-journal"
+}

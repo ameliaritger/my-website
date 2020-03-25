@@ -1,0 +1,110 @@
+PMID- 30049879
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20180926
+LR  - 20190727
+IS  - 1095-9203 (Electronic)
+IS  - 0036-8075 (Print)
+IS  - 0036-8075 (Linking)
+VI  - 361
+IP  - 6400
+DP  - 2018 Jul 27
+TI  - Social regulation of insulin signaling and the evolution of eusociality in ants.
+PG  - 398-402
+LID - 10.1126/science.aar5723 [doi]
+AB  - Queens and workers of eusocial Hymenoptera are considered homologous to the 
+      reproductive and brood care phases of an ancestral subsocial life cycle. However, 
+      the molecular mechanisms underlying the evolution of reproductive division of labor 
+      remain obscure. Using a brain transcriptomics screen, we identified a single gene, 
+      insulin-like peptide 2 (ilp2), which is always up-regulated in ant reproductives, 
+      likely because they are better nourished than their nonreproductive nestmates. In 
+      clonal raider ants (Ooceraea biroi), larval signals inhibit adult reproduction by 
+      suppressing ilp2, thus producing a colony reproductive cycle reminiscent of 
+      ancestral subsociality. However, increasing ILP2 peptide levels overrides larval 
+      suppression, thereby breaking the colony cycle and inducing a stable division of 
+      labor. These findings suggest a simple model for the origin of ant eusociality via 
+      nutritionally determined reproductive asymmetries potentially amplified by larval 
+      signals.
+CI  - Copyright © 2018 The Authors, some rights reserved; exclusive licensee American 
+      Association for the Advancement of Science. No claim to original U.S. Government 
+      Works.
+FAU - Chandra, Vikram
+AU  - Chandra V
+AUID- ORCID: 0000-0002-8020-0664
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA. vchandra@rockefeller.edu ifetter@rockefeller.edu 
+      dkronauer@rockefeller.edu.
+FAU - Fetter-Pruneda, Ingrid
+AU  - Fetter-Pruneda I
+AUID- ORCID: 0000-0002-9122-3159
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA. vchandra@rockefeller.edu ifetter@rockefeller.edu 
+      dkronauer@rockefeller.edu.
+FAU - Oxley, Peter R
+AU  - Oxley PR
+AUID- ORCID: 0000-0001-6170-1220
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA.
+AD  - Samuel J. Wood Library, Weill Cornell Medicine, 1300 York Avenue, New York, NY 
+      10065, USA.
+FAU - Ritger, Amelia L
+AU  - Ritger AL
+AUID- ORCID: 0000-0003-2338-6439
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA.
+FAU - McKenzie, Sean K
+AU  - McKenzie SK
+AUID- ORCID: 0000-0002-8238-4735
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA.
+AD  - Department of Ecology and Evolution, University of Lausanne, Biophore Building, 1015 
+      Lausanne, Switzerland.
+FAU - Libbrecht, Romain
+AU  - Libbrecht R
+AUID- ORCID: 0000-0003-4397-000X
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA.
+AD  - Institute of Organismic and Molecular Evolution, Johannes Gutenberg University, 
+      Johannes-von-Müller-Weg 6, 55128 Mainz, Germany.
+FAU - Kronauer, Daniel J C
+AU  - Kronauer DJC
+AUID- ORCID: 0000-0002-4103-7729
+AD  - Laboratory of Social Evolution and Behavior, The Rockefeller University, 1230 York 
+      Avenue, New York, NY 10065, USA. vchandra@rockefeller.edu ifetter@rockefeller.edu 
+      dkronauer@rockefeller.edu.
+LA  - eng
+GR  - DP2 GM105454/GM/NIGMS NIH HHS/United States
+PT  - Journal Article
+PT  - Research Support, N.I.H., Extramural
+TA  - Science
+JT  - Science (New York, N.Y.)
+JID - 0404511
+RN  - 0 (Insulin)
+SB  - IM
+CIN - Nat Rev Genet. 2018 Oct;19(10):592. PMID: 30082854
+MH  - Animals
+MH  - Ants/genetics/*growth & development/metabolism
+MH  - Biological Evolution
+MH  - Brain/metabolism
+MH  - Gene Expression
+MH  - Insulin/genetics/*metabolism
+MH  - Larva/genetics/growth & development/metabolism
+MH  - Reproduction
+MH  - Signal Transduction
+MH  - *Social Behavior
+PMC - PMC6178808
+MID - NIHMS990029
+COIS- Competing interests: The authors declare no competing interests
+EDAT- 2018/07/28 06:00
+MHDA- 2018/09/27 06:00
+CRDT- 2018/07/28 06:00
+PHST- 2017/11/22 00:00 [received]
+PHST- 2018/04/01 00:00 [revised]
+PHST- 2018/05/30 00:00 [accepted]
+PHST- 2018/07/28 06:00 [entrez]
+PHST- 2018/07/28 06:00 [pubmed]
+PHST- 2018/09/27 06:00 [medline]
+AID - 361/6400/398 [pii]
+AID - 10.1126/science.aar5723 [doi]
+PST - ppublish
+SO  - Science. 2018 Jul 27;361(6400):398-402. doi: 10.1126/science.aar5723.

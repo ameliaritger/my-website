@@ -14,7 +14,8 @@ image:
   caption: ""
   focal_point: ""
   preview_only: true
-projects: []
+projects: 
+  - lionfish
 publication: '*Journal of Experimental Marine Biology and Ecology* (524)'
 publication_short: ""
 publication_types:
@@ -33,7 +34,7 @@ url_code: ""
 url_dataset: ""
 url_pdf: ""
 url_poster: ""
-url_project: ""
+url_project: "https://ameliaritger.netlify.com/research/lionfish"
 url_slides: ""
 url_source: ""
 url_video: ""

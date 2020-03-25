@@ -10,10 +10,10 @@ links:
   name: Repository
   url: https://github.com/ameliaritger/nostoc
 slides: 
-summary: What do you want to know about these guys?
+summary: "Nostoc pruniforme"
 tags:
-- nostoc
-title: Sea tomatoes!
+- past research
+title: Sea tomatoes
 url_code: ""
 url_pdf: ""
 url_slides: ""

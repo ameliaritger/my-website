@@ -10,10 +10,9 @@ links:
   name: Repository
   url: https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence
 slides: 
-summary: Here's what we know
+summary: "Corynactis californica"
 tags:
-  - corynactis
-  - species interaction
+  - current research
 title: The strawberry anemone
 url_code: ""
 url_pdf: ""
@@ -21,4 +20,4 @@ url_slides: ""
 url_video: ""
 ---
 
-Insert details here!
+Insert project details right here!

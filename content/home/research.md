@@ -25,12 +25,12 @@ subtitle = ""
     tag = "*"
   
   [[content.filter_button]]
-    name = "Lionfish"
-    tag = "lionfish"
+    name = "Past"
+    tag = "past research"
   
   [[content.filter_button]]
-    name = "Corynactis"
-    tag = "corynactis"
+    name = "Current"
+    tag = "current research"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.

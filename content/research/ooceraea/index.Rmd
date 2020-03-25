@@ -5,14 +5,14 @@ image:
   caption: 
   focal_point:
 links:
-- icon: github
-  icon_pack: fab
+- icon: bug
+  icon_pack: fas
   name: The Kronauer Lab
-  url: https://google.com
+  url: https://www.rockefeller.edu/research/2280-kronauer-laboratory/
 slides: 
-summary: What do you want to know about these guys?
+summary: "Ooceraea biroi"
 tags:
-- nostoc
+- past research
 title: The Clonal Raider Ant
 url_code: ""
 url_pdf: ""
@@ -20,4 +20,4 @@ url_slides: ""
 url_video: ""
 ---
 
-Insert project details right here
+Insert project details right here!
