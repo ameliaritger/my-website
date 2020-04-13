@@ -40,6 +40,7 @@ user_groups:
 - Visitors
 ---
 
+<br />
 I am a proud member of the <a href="http://www.hofmannlab.com/" target="_blank">Hofmann Lab</a> working on my PhD in Ecology, Evolution, and Marine Biology at UC Santa Barbara. Prior to joining the graduate program at UCSB, I worked as a research assistant with the 
 <a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/" target="_blank">Kronauer Lab</a> at Rockefeller University and as an independent scientist at the <a href="http://www.researchstationcarmabi.org/" target="_blank">Caribbean Marine Biological Institute</a>
 in Curaçao. I received my BA from Dartmouth College, where I was able to explore my love for Biology and realize a new interest in Anthropology.

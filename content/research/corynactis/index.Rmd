@@ -12,7 +12,7 @@ links:
 slides: 
 summary: "Corynactis californica"
 tags:
-  - current research
+  - present research
 title: The strawberry anemone
 url_code: ""
 url_pdf: ""

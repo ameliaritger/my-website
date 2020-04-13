@@ -25,8 +25,8 @@ subtitle = ""
     tag = "*"
   
   [[content.filter_button]]
-    name = "Current"
-    tag = "current research"
+    name = "Present"
+    tag = "present research"
     
   [[content.filter_button]]
     name = "Past"
