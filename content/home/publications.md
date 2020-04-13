@@ -70,4 +70,4 @@ subtitle = ""
 # *[Search publications]({{< ref "/publication/_index.md" >}})*
 +++
 
-<font size="4"><p align="left"><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#0fa887">Filter publications</span></a></p></font>
+<font size="3.5"><p align="right"><i><b><a href="https://ameliaritger.netlify.com/publication/"><span style="color:#8f240a">Filter publications</span></a></b></i></p></font>
