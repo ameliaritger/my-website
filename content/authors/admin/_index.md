@@ -40,15 +40,8 @@ user_groups:
 - Visitors
 ---
 
-Something about science:
+I am a proud member of the <a href="http://www.hofmannlab.com/" target="_blank">Hofmann Lab</a> working on my PhD in Ecology, Evolution, and Marine Biology at UC Santa Barbara. Prior to joining the graduate program at UCSB, I worked as a research assistant with the 
+<a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/" target="_blank">Kronauer Lab</a> at Rockefeller University and as an independent scientist at the <a href="http://www.researchstationcarmabi.org/" target="_blank">Caribbean Marine Biological Institute</a>
+in Curaçao. I received my BA from Dartmouth College, where I was able to explore my love for Biology and realize a new interest in Anthropology.
 
-Something about experience:
-Prior to joining the graduate program in Ecology, Evolution, and Marine Biology at UC Santa Barbara, I worked as a research assistant with the 
-<a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/" target="_blank">Kronauer Lab</a>
-at Rockefeller University and as an independent scientist at the 
-<a href="http://www.researchstationcarmabi.org/" target="_blank">Caribbean Marine Biological Institute</a>
-in Curaçao. I am currently a proud member of the 
-<a href="http://www.hofmannlab.com/" target="_blank">Hofmann Lab</a>, 
-where I use the strawberry anemone (*Corynactis californica*) to better understand the connections between intraspecific variation, phenotypic plasticity, and biogeography.
-
-Something personal:
+While I have explored a variety of questions in an array of systems, my current research involves using the strawberry anemone (*Corynactis californica*) to better understand the connections between intraspecific variation, phenotypic plasticity, and biogeography. I am an experimental ecologist at heart, happiest when I am exploring out in the field and making new discoveries in the lab.
