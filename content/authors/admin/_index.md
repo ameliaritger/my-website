@@ -16,7 +16,7 @@ interests:
 - phenotypic plasticity
 - local adaptation
 - behavioral ecology
-name: Amelia the Penguin
+name: Amelia L. Ritger
 organizations:
 - name: University of California, Santa Barbara
   url: ""
