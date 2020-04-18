@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
@@ -25,6 +10,16 @@
   <url>
     <loc>/talk/example/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/shiny-mbon/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -113,12 +108,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/lionfish-diet-choice/</loc>
+    <loc>/projects/lionfish-diet-choice/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
   </url>
   
@@ -143,13 +133,8 @@
   </url>
   
   <url>
-    <loc>/post/kelp-consumption/</loc>
+    <loc>/projects/kelp-consumption/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -170,11 +155,6 @@
   <url>
     <loc>/teaching/</loc>
     <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -293,7 +273,7 @@
   </url>
   
   <url>
-    <loc>/post/getting-started/</loc>
+    <loc>/projects/getting-started/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
