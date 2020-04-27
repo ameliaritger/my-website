@@ -34,4 +34,4 @@ HUGO_ENABLEGITINFO = "true"
   to = "https://ameliaritger.shinyapps.io/mbon-shiny-app/"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
+  #headers = {X-From = "Netlify"}
