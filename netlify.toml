@@ -30,8 +30,8 @@ HUGO_VERSION = "0.62.2"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "Shiny"
+  from = "/"
   to = "https://ameliaritger.shinyapps.io/mbon-shiny-app/"
   status = 200
   force = true
-  #headers = {X-From = "Netlify"}
+  headers = {X-From = "Netlify"}
