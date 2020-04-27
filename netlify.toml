@@ -32,6 +32,6 @@ HUGO_ENABLEGITINFO = "true"
 [[redirects]]
   from = "https://ameliaritger.netlify.app/https:/ameliaritger.shinyapps.io/mbon-shiny-app/"
   to = "https://ameliaritger.shinyapps.io/mbon-shiny-app/"
-  status = 200
-  force = true
+  #status = 200
+  #force = true
   #headers = {X-From = "Netlify"}
