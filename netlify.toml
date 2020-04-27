@@ -30,7 +30,7 @@ HUGO_VERSION = "0.62.2"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "/"
+  from = "Shiny"
   to = "https://ameliaritger.shinyapps.io/mbon-shiny-app/"
   status = 200
   force = true
