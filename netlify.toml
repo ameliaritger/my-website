@@ -28,3 +28,10 @@ HUGO_VERSION = "0.62.2"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+  from = "Shiny"
+  to = "https://ameliaritger.shinyapps.io/mbon-shiny-app/"
+  status = 200
+  force = true
+  #headers = {X-From = "Netlify"}
