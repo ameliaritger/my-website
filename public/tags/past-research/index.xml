@@ -5,7 +5,7 @@
     <link>/tags/past-research/</link>
       <atom:link href="/tags/past-research/index.xml" rel="self" type="application/rss+xml" />
     <description>past research</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 29 Jun 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>past research</title>
@@ -15,39 +15,51 @@
     <item>
       <title>The Clonal Raider Ant</title>
       <link>/research/ooceraea/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       <guid>/research/ooceraea/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Insert project details right here!&lt;/p&gt;
+&lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn’t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ovaries.png&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Invasive lionfish</title>
       <link>/research/lionfish/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Jun 2016 00:00:00 +0000</pubDate>
       <guid>/research/lionfish/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Insert project details right here&lt;/p&gt;
+&lt;p&gt;My research on invasive lionfish (&lt;em&gt;Pterois volitans/miles&lt;/em&gt;) in the Caribbean Sea focused on two main aspects - &lt;strong&gt;predator prey interactions&lt;/strong&gt; and &lt;strong&gt;pollutant bioaccumulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;predator-prey-interactions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Predator-prey interactions&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;enclosure.JPG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Invasive lionfish are creating extensive problems for many coral reef ecosystems by consuming massive numbers of reef fishes. Many scientists attribute this to the lionfish being a generalist predator - for example, when scientists dissect the stomachs of invasive lionfish across the Caribbean, they find a diversity of species (although some species are more common than others). I wanted to know if, when given a choice between prey items, lionfish are selective foragers. My field assistant extraordinaire, Tyler Fountain, and I stocked a large underwater enclosure containing an artificial reef with 3 prey species frequently consumed by invasive lionfish and observed what lionfish ate when released into the enclosures. Surprisingly, we found that lionfish consistently exhibited a preference for one prey species in particular - brown chromis. Knowing that lionfish exhibit active prey discrimination will help researchers better understand and predict the effects of lionfish on coral reef fish communities. You can learn more in the publication &lt;a href=&#34;https://doi.org/10.1016/j.jembe.2020.151311&#34;&gt;here&lt;/a&gt;, the repository &lt;a href=&#34;https://github.com/ameliaritger/lionfish-diet-choice&#34;&gt;here&lt;/a&gt;, and in a blog I maintained while working in Curaçao &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pollutant-bioaccumulation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Pollutant bioaccumulation&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;dissection.JPG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;One way that humans are fighting to control invasive lionfish on coral reefs is by eating them. Because lionfish are a mesopredator (one step below apex predators), they have the capacity to bioaccumulate high, and possibly dangerous, levels of pollutants such as mercury and other heavy metals. On the island of Curaçao, there is an oil refinery that releases contaminants into the air and marine environment. I collected hundreds of lionfish around Curaçao and analyzed their tissue for metal contaminants. Unsurprisingly, mercury concentrations were higher in larger fish, but mercury concentrations overall were well below the human health criterion established by the Environmental Protection Agency. Lionfish also contained low levels of other metals such as arsenic and selenium. These findings support continued - and enthusiastic - consumption of invasive lionfish as a sustainable and environmentally-beneficial source of protein and income for local communities and tourists. You can read more about this research &lt;a href=&#34;https://doi.org/10.1016/j.marpolbul.2018.03.035&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Sea tomatoes</title>
       <link>/research/nostoc/</link>
-      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
       <guid>/research/nostoc/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Insert project details right here&lt;/p&gt;
+&lt;p&gt;As an undergraduate at Dartmouth, I worked with Jessica Trout-Haney in the &lt;a href=&#34;https://sites.dartmouth.edu/CottinghamLab/&#34;&gt;Cottingham Lab&lt;/a&gt; on &lt;em&gt;Nostoc pruniforme&lt;/em&gt; (known colloquially as the sea tomato), a benthic cyanobacteria found in ponds and lakes in Greenland. &lt;em&gt;Nostoc&lt;/em&gt; can be incredibly dense in some lakes (over 9000/square meter) and likely contribute microcystins (a cyanotoxin) into aquatic ecosystems. Our study coupled observations and experiments to examine how &lt;em&gt;Nostoc&lt;/em&gt; produce and release microcystins, and my focus was on how microcystin production varies throughout the colony. We found microcystins throughout the colony and observed undamaged colonies leaking microcystins into the surrounding water. Coupled with field observations of elevated microcystin concentrations around &lt;em&gt;Nostoc&lt;/em&gt; colonies in Greenlandic lakes, these results provide strong evidence for &lt;em&gt;Nostoc pruniforme&lt;/em&gt; as microcystin producers in Arctic freshwater ecosystems. Learn more about this research in the publication &lt;a href=&#34;www.ameliaritger.netlify.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;elisa.jpg&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

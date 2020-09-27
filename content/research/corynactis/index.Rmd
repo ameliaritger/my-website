@@ -1,5 +1,5 @@
 ---
-date: "2019-01-01"
+date: "2018-08-15"
 external_link: ""
 image:
   caption: 
@@ -20,4 +20,6 @@ url_slides: ""
 url_video: ""
 ---
 
-Insert project details right here!
+This page is a work in progress
+
+![](leica.jpg)
