@@ -49,6 +49,8 @@ date_format = "Jan 2006"
 +++
 
 
-**Carlyn Hamel** (Pacific Ridge School): <a href="https://www.summer.ucsb.edu/pre-college/research-mentorship-program-rmp" target="_blank">Research Mentorship Program</a>, *Jun – July 2020*
+**Carlyn Hamel** (Pacific Ridge School): <a href="https://www.summer.ucsb.edu/pre-college/research-mentorship-program-rmp" target="_blank">Research Mentorship Program</a>, *June – July 2020*
 
-**Xavius Boone** (UC Davis): <a href="https://oceanchangereuucsb.com/" target="_blank">Ocean Global Change Biology REU</a>, *Jun – Aug 2019*
+**Xavius Boone** (UC Davis): <a href="https://oceanchangereuucsb.com/" target="_blank">Ocean Global Change Biology REU</a>, *June – Aug 2019*
+
+**BIOL 27 - Animal Behavior** (Dartmouth College): Undergraduate teaching assistant, *Fall 2014*
