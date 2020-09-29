@@ -53,4 +53,4 @@ date_format = "Jan 2006"
 
 **Xavius Boone** (UC Davis): <a href="https://oceanchangereuucsb.com/" target="_blank">Ocean Global Change Biology REU</a>, *June – Aug 2019*
 
-**BIOL 27 - Animal Behavior** (Dartmouth College): Undergraduate teaching assistant, *Fall 2014*
+**BIOL 27 - Animal Behavior** (Dartmouth): Undergraduate teaching assistant, *Fall 2014*
