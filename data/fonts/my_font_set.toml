@@ -2,10 +2,10 @@
 name = "Hello, world!"
 
 # Optional Google font URL
-google_fonts = "Alice|Alegreya|Playfair+Display|Crimson+Text|Cabin"
+google_fonts = "Alice|Alegreya|Crimson+Text|Cabin+Condensed"
 
 # Font families
 heading_font = "Alice"
 body_font = "Alegreya"
 nav_font = "Crimson Text"
-mono_font = "Cabin"
+mono_font = "Cabin Condensed"
