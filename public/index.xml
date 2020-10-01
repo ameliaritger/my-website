@@ -107,18 +107,6 @@
     </item>
     
     <item>
-      <title>Corynactis californica</title>
-      <link>/research-home/corynactis/</link>
-      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/research-home/corynactis/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-</description>
-    </item>
-    
-    <item>
       <title>Nostoc pruniforme</title>
       <link>/research-home/nostoc/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
@@ -160,18 +148,6 @@
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/projects/shiny-mbon/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Tegula funebralis</title>
-      <link>/research-home/tegula/</link>
-      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/research-home/tegula/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-</description>
     </item>
     
     <item>
@@ -564,6 +540,18 @@ gt &amp;lt;- ggplot_gtable(ggplot_build(c))
 gt$layout$clip[gt$layout$name == &amp;quot;panel&amp;quot;] &amp;lt;- &amp;quot;off&amp;quot;
 grid.draw(gt)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/lionfish-data-analysis/index_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tegula funebralis</title>
+      <link>/research-home/tegula/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/research-home/tegula/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
 </description>
     </item>
     
@@ -1126,6 +1114,18 @@ Three
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://spectrum.chat/academic&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Corynactis californica</title>
+      <link>/research-home/corynactis/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/research-home/corynactis/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
 </description>
     </item>
     
