@@ -8,6 +8,6 @@ date: "2020-04-17T00:00:00Z"
 external_link: https://ameliaritger.shinyapps.io/mbon-shiny-app/
 
 image:
-  caption: Photo by Toa Heftiba on Unsplash
+  caption: 
   focal_point: Smart
 ---
