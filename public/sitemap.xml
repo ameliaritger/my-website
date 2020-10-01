@@ -108,7 +108,12 @@
   </url>
   
   <url>
-    <loc>/research-home/lionfish/</loc>
+    <loc>/research-home/corynactis/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/research-home/nostoc/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,17 +138,12 @@
   </url>
   
   <url>
-    <loc>/research-home/nostoc/</loc>
+    <loc>/research-home/lionfish/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/projects/shiny-mbon/</loc>
-    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/research-home/corynactis/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   

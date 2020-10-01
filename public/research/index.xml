@@ -40,13 +40,13 @@
       <link>/research/past/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/research/past/</guid>
-      <description>&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;sea-tomatoes&#34;&gt;Sea tomatoes&lt;/h2&gt;
 &lt;p&gt;As an undergraduate at Dartmouth, I worked with Jessica Trout-Haney in the &lt;a href=&#34;https://sites.dartmouth.edu/CottinghamLab/&#34;&gt;Cottingham Lab&lt;/a&gt; on &lt;em&gt;Nostoc pruniforme&lt;/em&gt; (known colloquially as the sea tomato), a benthic cyanobacteria found in ponds and lakes in Greenland. &lt;em&gt;Nostoc&lt;/em&gt; can be incredibly dense in some lakes (over 9000/square meter) and likely contribute microcystins (a cyanotoxin) into aquatic ecosystems. Our study coupled observations and experiments to examine how &lt;em&gt;Nostoc&lt;/em&gt; produce and release microcystins, and my focus was on how microcystin production varies throughout the colony. We found microcystins throughout the colony and observed undamaged colonies leaking microcystins into the surrounding water. Coupled with field observations of elevated microcystin concentrations around &lt;em&gt;Nostoc&lt;/em&gt; colonies in Greenlandic lakes, these results provide strong evidence for &lt;em&gt;Nostoc pruniforme&lt;/em&gt; as microcystin producers in Arctic freshwater ecosystems. Learn more about this research in the publication &lt;a href=&#34;www.ameliaritger.netlify.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/elisa.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ooceraea&#34;&gt;Ooceraea&lt;/h2&gt;
+&lt;h2 id=&#34;clonal-raider-ant&#34;&gt;Clonal raider ant&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;/img/ovaries.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn&amp;rsquo;t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;lionfish&#34;&gt;Lionfish&lt;/h2&gt;
+&lt;h2 id=&#34;invasive-lionfish&#34;&gt;Invasive lionfish&lt;/h2&gt;
 &lt;p&gt;My research on invasive lionfish (&lt;em&gt;Pterois volitans/miles&lt;/em&gt;) in the Caribbean Sea focused on two main aspects - &lt;strong&gt;predator prey interactions&lt;/strong&gt; and &lt;strong&gt;pollutant bioaccumulation&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;predator-prey-interactions&#34;&gt;Predator-prey interactions&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;/img/enclosure.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -75,10 +75,10 @@
     </item>
     
     <item>
-      <title>Lionfish</title>
-      <link>/research-home/lionfish/</link>
+      <title>Corynactis californica</title>
+      <link>/research-home/corynactis/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/research-home/lionfish/</guid>
+      <guid>/research-home/corynactis/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -87,19 +87,7 @@
     </item>
     
     <item>
-      <title>Ooceraea</title>
-      <link>/research-home/ooceraea/</link>
-      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/research-home/ooceraea/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-</description>
-    </item>
-    
-    <item>
-      <title>Sea Tomatoes</title>
+      <title>Nostoc pruniforme</title>
       <link>/research-home/nostoc/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/research-home/nostoc/</guid>
@@ -111,10 +99,22 @@
     </item>
     
     <item>
-      <title>Strawberry anem</title>
-      <link>/research-home/corynactis/</link>
+      <title>Ooceraea biroi</title>
+      <link>/research-home/ooceraea/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/research-home/corynactis/</guid>
+      <guid>/research-home/ooceraea/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Pterois volitans</title>
+      <link>/research-home/lionfish/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/research-home/lionfish/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
