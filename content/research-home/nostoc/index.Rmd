@@ -1,6 +1,6 @@
 ---
 title: Nostoc pruniforme
-summary: Subtext...
+summary:
 tags:
   - past research
 date: "2020-04-17T00:00:00Z"

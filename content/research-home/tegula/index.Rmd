@@ -1,12 +1,12 @@
 ---
-title: Ooceraea biroi
+title: Tegula funebralis
 summary:
 tags:
-  - past research
+  - present research
 date: "2020-04-17T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://ameliaritger.netlify.app/research/past/#clonal-raider-ant
+external_link: https://ameliaritger.netlify.app/research/past/#black-turban-snail
 
 image: 
   caption: Wutever u want

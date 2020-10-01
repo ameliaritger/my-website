@@ -21,13 +21,13 @@ menu:
     weight: 2
 ---
 
-## Coryn
+## Strawberry anemone
 
 This page is a work in progress
 
 ![](/img/232o.jpg)
 
-## Tegula
+## Black turban snail
 
 WOWOW Tegula are cool!
 
