@@ -21,6 +21,10 @@ menu:
     weight: 1
 ---
 
+[header]
+image = "headers/dolomites.jpg" #the image path is header/...jpg
+caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+
 ## Flexibility
 
 This feature can be used for publishing content such as:

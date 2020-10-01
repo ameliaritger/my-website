@@ -14,12 +14,10 @@ menu:
 weight: 1
 ---
 
-In this tutorial, I'll share my top 10 tips for getting started with Academic:
+WOWOW Tegula are cool!
 
-## Nostoc
+## Cool because they're snails
 
-Here's some text
+## Cool because they have shells
 
-## Ants
-
-Here's more text!
+## Cool because they can get cold

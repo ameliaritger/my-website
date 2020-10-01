@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | Amelia L. Ritger</title>
+    <link>/research/publication/</link>
+      <atom:link href="/research/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Publications</title>
+      <link>/research/publication/</link>
+    </image>
+    
+    <item>
+      <title>Benthic cyanobacteria of the genus Nostoc are a source of microcystins in Greenlandic lakes and ponds</title>
+      <link>/research/publication/freshbio/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/research/publication/freshbio/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Diet choice in a generalist predator, the invasive lionfish (Pterois volitans/miles)</title>
+      <link>/research/publication/jembe/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/research/publication/jembe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Social regulation of insulin signaling and the evolution of eusociality in ants</title>
+      <link>/research/publication/ooceraea/</link>
+      <pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/research/publication/ooceraea/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Bioaccumulation of mercury and other metal contaminants in invasive lionfish (Pterois volitans/miles) from Curaçao</title>
+      <link>/research/publication/mpb/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>/research/publication/mpb/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

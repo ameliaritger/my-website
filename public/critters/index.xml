@@ -17,11 +17,20 @@
       <link>/critters/ooceraea/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/critters/ooceraea/</guid>
-      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s some text&lt;/p&gt;
-&lt;h2 id=&#34;ants&#34;&gt;Ants&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s more text!&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;/img/ovaries.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn&amp;rsquo;t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+ &lt;img src=&#34;/img/ovaries.png&#34; alt=&#34;Img not loading&#34;&gt; 
+</description>
+    </item>
+    
+    <item>
+      <title>corythingz</title>
+      <link>/critters/corynactis/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      <guid>/critters/corynactis/</guid>
+      <description>&lt;h2 id=&#34;coryn&#34;&gt;Coryn&lt;/h2&gt;
+&lt;p&gt;This page is a work in progress&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/232o.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -30,11 +39,10 @@
       <link>/critters/tegula/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/critters/tegula/</guid>
-      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s some text&lt;/p&gt;
-&lt;h2 id=&#34;ants&#34;&gt;Ants&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s more text!&lt;/p&gt;
+      <description>&lt;p&gt;WOWOW Tegula are cool!&lt;/p&gt;
+&lt;h2 id=&#34;cool-because-theyre-snails&#34;&gt;Cool because they&amp;rsquo;re snails&lt;/h2&gt;
+&lt;h2 id=&#34;cool-because-they-have-shells&#34;&gt;Cool because they have shells&lt;/h2&gt;
+&lt;h2 id=&#34;cool-because-they-can-get-cold&#34;&gt;Cool because they can get cold&lt;/h2&gt;
 </description>
     </item>
     
@@ -43,34 +51,20 @@
       <link>/critters/past/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/critters/past/</guid>
-      <description>&lt;h2 id=&#34;number-uno&#34;&gt;Number uno&lt;/h2&gt;
-&lt;p&gt;This feature can be used for publishing content such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Online courses&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Project or software documentation&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The &lt;code&gt;courses&lt;/code&gt; folder may be renamed. For example, we can rename it to &lt;code&gt;docs&lt;/code&gt; for software/project documentation or &lt;code&gt;tutorials&lt;/code&gt; for creating an online course.&lt;/p&gt;
-&lt;h2 id=&#34;two-tutorials&#34;&gt;TWO tutorials&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;To remove these pages, delete the &lt;code&gt;courses&lt;/code&gt; folder and see below to delete the associated menu link.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;thres&#34;&gt;thres&lt;/h2&gt;
-&lt;p&gt;After renaming or deleting the &lt;code&gt;courses&lt;/code&gt; folder, you may wish to update any &lt;code&gt;[[main]]&lt;/code&gt; menu links to it by editing your menu configuration at &lt;code&gt;config/_default/menus.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;For example, if you delete this folder, you can remove the following from your menu configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[main]]
-  name = &amp;quot;Courses&amp;quot;
-  url = &amp;quot;courses/&amp;quot;
-  weight = 50
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Or, if you are creating a software documentation site, you can rename the &lt;code&gt;courses&lt;/code&gt; folder to &lt;code&gt;docs&lt;/code&gt; and update the associated &lt;em&gt;Courses&lt;/em&gt; menu configuration to:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[main]]
-  name = &amp;quot;Docs&amp;quot;
-  url = &amp;quot;docs/&amp;quot;
-  weight = 50
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;fur&#34;&gt;fur&lt;/h2&gt;
-&lt;p&gt;If you use the &lt;em&gt;docs&lt;/em&gt; layout, note that the name of the menu in the front matter should be in the form &lt;code&gt;[menu.X]&lt;/code&gt; where &lt;code&gt;X&lt;/code&gt; is the folder name. Hence, if you rename the &lt;code&gt;courses/example/&lt;/code&gt; folder, you should also rename the menu definitions in the front matter of files within &lt;code&gt;courses/example/&lt;/code&gt; from &lt;code&gt;[menu.example]&lt;/code&gt; to &lt;code&gt;[menu.&amp;lt;NewFolderName&amp;gt;]&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s some text about Nostoc&lt;/p&gt;
+      <description>&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
+&lt;p&gt;As an undergraduate at Dartmouth, I worked with Jessica Trout-Haney in the &lt;a href=&#34;https://sites.dartmouth.edu/CottinghamLab/&#34;&gt;Cottingham Lab&lt;/a&gt; on &lt;em&gt;Nostoc pruniforme&lt;/em&gt; (known colloquially as the sea tomato), a benthic cyanobacteria found in ponds and lakes in Greenland. &lt;em&gt;Nostoc&lt;/em&gt; can be incredibly dense in some lakes (over 9000/square meter) and likely contribute microcystins (a cyanotoxin) into aquatic ecosystems. Our study coupled observations and experiments to examine how &lt;em&gt;Nostoc&lt;/em&gt; produce and release microcystins, and my focus was on how microcystin production varies throughout the colony. We found microcystins throughout the colony and observed undamaged colonies leaking microcystins into the surrounding water. Coupled with field observations of elevated microcystin concentrations around &lt;em&gt;Nostoc&lt;/em&gt; colonies in Greenlandic lakes, these results provide strong evidence for &lt;em&gt;Nostoc pruniforme&lt;/em&gt; as microcystin producers in Arctic freshwater ecosystems. Learn more about this research in the publication &lt;a href=&#34;www.ameliaritger.netlify.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/elisa.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ooceraea&#34;&gt;Ooceraea&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/ovaries.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn&amp;rsquo;t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;lionfish&#34;&gt;Lionfish&lt;/h2&gt;
+&lt;p&gt;My research on invasive lionfish (&lt;em&gt;Pterois volitans/miles&lt;/em&gt;) in the Caribbean Sea focused on two main aspects - &lt;strong&gt;predator prey interactions&lt;/strong&gt; and &lt;strong&gt;pollutant bioaccumulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;predator-prey-interactions&#34;&gt;Predator-prey interactions&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/img/enclosure.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Invasive lionfish are creating extensive problems for many coral reef ecosystems by consuming massive numbers of reef fishes. Many scientists attribute this to the lionfish being a generalist predator - for example, when scientists dissect the stomachs of invasive lionfish across the Caribbean, they find a diversity of species (although some species are more common than others). I wanted to know if, when given a choice between prey items, lionfish are selective foragers. My field assistant extraordinaire, Tyler Fountain, and I stocked a large underwater enclosure containing an artificial reef with 3 prey species frequently consumed by invasive lionfish and observed what lionfish ate when released into the enclosures. Surprisingly, we found that lionfish consistently exhibited a preference for one prey species in particular - brown chromis. Knowing that lionfish exhibit active prey discrimination will help researchers better understand and predict the effects of lionfish on coral reef fish communities. You can learn more in the publication &lt;a href=&#34;https://doi.org/10.1016/j.jembe.2020.151311&#34;&gt;here&lt;/a&gt;, the repository &lt;a href=&#34;https://github.com/ameliaritger/lionfish-diet-choice&#34;&gt;here&lt;/a&gt;, and in a blog I maintained while working in Curaçao &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;pollutant-bioaccumulation&#34;&gt;Pollutant bioaccumulation&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/img/dissection.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;One way that humans are fighting to control invasive lionfish on coral reefs is by eating them. Because lionfish are a mesopredator (one step below apex predators), they have the capacity to bioaccumulate high, and possibly dangerous, levels of pollutants such as mercury and other heavy metals. On the island of Curaçao, there is an oil refinery that releases contaminants into the air and marine environment. I collected hundreds of lionfish around Curaçao and analyzed their tissue for metal contaminants. Unsurprisingly, mercury concentrations were higher in larger fish, but mercury concentrations overall were well below the human health criterion established by the Environmental Protection Agency. Lionfish also contained low levels of other metals such as arsenic and selenium. These findings support continued - and enthusiastic - consumption of invasive lionfish as a sustainable and environmentally-beneficial source of protein and income for local communities and tourists. You can read more about this research &lt;a href=&#34;https://doi.org/10.1016/j.marpolbul.2018.03.035&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -79,11 +73,8 @@
       <link>/critters/nostoc/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/critters/nostoc/</guid>
-      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s some text&lt;/p&gt;
-&lt;h2 id=&#34;ants&#34;&gt;Ants&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s more text!&lt;/p&gt;
+      <description>&lt;p&gt;As an undergraduate at Dartmouth, I worked with Jessica Trout-Haney in the &lt;a href=&#34;https://sites.dartmouth.edu/CottinghamLab/&#34;&gt;Cottingham Lab&lt;/a&gt; on &lt;em&gt;Nostoc pruniforme&lt;/em&gt; (known colloquially as the sea tomato), a benthic cyanobacteria found in ponds and lakes in Greenland. &lt;em&gt;Nostoc&lt;/em&gt; can be incredibly dense in some lakes (over 9000/square meter) and likely contribute microcystins (a cyanotoxin) into aquatic ecosystems. Our study coupled observations and experiments to examine how &lt;em&gt;Nostoc&lt;/em&gt; produce and release microcystins, and my focus was on how microcystin production varies throughout the colony. We found microcystins throughout the colony and observed undamaged colonies leaking microcystins into the surrounding water. Coupled with field observations of elevated microcystin concentrations around &lt;em&gt;Nostoc&lt;/em&gt; colonies in Greenlandic lakes, these results provide strong evidence for &lt;em&gt;Nostoc pruniforme&lt;/em&gt; as microcystin producers in Arctic freshwater ecosystems. Learn more about this research in the publication &lt;a href=&#34;www.ameliaritger.netlify.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/elisa.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -128,19 +119,15 @@
       <link>/critters/lionfish/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/critters/lionfish/</guid>
-      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <description>&lt;p&gt;My research on invasive lionfish (&lt;em&gt;Pterois volitans/miles&lt;/em&gt;) in the Caribbean Sea focused on two main aspects - &lt;strong&gt;predator prey interactions&lt;/strong&gt; and &lt;strong&gt;pollutant bioaccumulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;predator-prey-interactions&#34;&gt;Predator-prey interactions&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/enclosure.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Invasive lionfish are creating extensive problems for many coral reef ecosystems by consuming massive numbers of reef fishes. Many scientists attribute this to the lionfish being a generalist predator - for example, when scientists dissect the stomachs of invasive lionfish across the Caribbean, they find a diversity of species (although some species are more common than others). I wanted to know if, when given a choice between prey items, lionfish are selective foragers. My field assistant extraordinaire, Tyler Fountain, and I stocked a large underwater enclosure containing an artificial reef with 3 prey species frequently consumed by invasive lionfish and observed what lionfish ate when released into the enclosures. Surprisingly, we found that lionfish consistently exhibited a preference for one prey species in particular - brown chromis. Knowing that lionfish exhibit active prey discrimination will help researchers better understand and predict the effects of lionfish on coral reef fish communities. You can learn more in the publication &lt;a href=&#34;https://doi.org/10.1016/j.jembe.2020.151311&#34;&gt;here&lt;/a&gt;, the repository &lt;a href=&#34;https://github.com/ameliaritger/lionfish-diet-choice&#34;&gt;here&lt;/a&gt;, and in a blog I maintained while working in Curaçao &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;heres-a-sub-image&#34;&gt;Here&amp;rsquo;s a sub image&lt;/h3&gt;
+&lt;p&gt;Text&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;pollutant-bioaccumulation&#34;&gt;Pollutant bioaccumulation&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/dissection.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;One way that humans are fighting to control invasive lionfish on coral reefs is by eating them. Because lionfish are a mesopredator (one step below apex predators), they have the capacity to bioaccumulate high, and possibly dangerous, levels of pollutants such as mercury and other heavy metals. On the island of Curaçao, there is an oil refinery that releases contaminants into the air and marine environment. I collected hundreds of lionfish around Curaçao and analyzed their tissue for metal contaminants. Unsurprisingly, mercury concentrations were higher in larger fish, but mercury concentrations overall were well below the human health criterion established by the Environmental Protection Agency. Lionfish also contained low levels of other metals such as arsenic and selenium. These findings support continued - and enthusiastic - consumption of invasive lionfish as a sustainable and environmentally-beneficial source of protein and income for local communities and tourists. You can read more about this research &lt;a href=&#34;https://doi.org/10.1016/j.marpolbul.2018.03.035&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://amelialillie.wordpress.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

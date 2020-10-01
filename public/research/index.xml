@@ -5,7 +5,7 @@
     <link>/research/</link>
       <atom:link href="/research/index.xml" rel="self" type="application/rss+xml" />
     <description>Researches</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 17 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Researches</title>
@@ -44,7 +44,10 @@
 
 
 &lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn’t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;ovaries.png&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;img/ovaries.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;alt text&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     

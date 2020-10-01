@@ -378,6 +378,28 @@
         
         
         
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/critters/"><span>eSEARCH</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
           
           
           
@@ -558,23 +580,6 @@
 
   </div>
   
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/critters/past/">Past!</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="/critters/lionfish/">lion</a>
-      </li>
-      
-      <li >
-        <a href="/critters/nostoc/">Nostoc puney</a>
-      </li>
-      
-    </ul>
-    
-
-  </div>
-  
   <div class="docs-toc-item">
     <a class="docs-toc-link" href="/critters/present/">Present</a>
     <ul class="nav docs-sidenav">
@@ -585,6 +590,27 @@
       
       <li >
         <a href="/critters/tegula/">Teg</a>
+      </li>
+      
+      <li >
+        <a href="/critters/corynactis/">Cory</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/critters/past/">Past!</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/critters/lionfish/">lion</a>
+      </li>
+      
+      <li >
+        <a href="/critters/nostoc/">Nostoc puney</a>
       </li>
       
     </ul>
@@ -605,11 +631,14 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#number-uno">Number uno</a></li>
-    <li><a href="#two-tutorials">TWO tutorials</a></li>
-    <li><a href="#thres">thres</a></li>
-    <li><a href="#fur">fur</a></li>
     <li><a href="#nostoc">Nostoc</a></li>
+    <li><a href="#ooceraea">Ooceraea</a></li>
+    <li><a href="#lionfish">Lionfish</a>
+      <ul>
+        <li><a href="#predator-prey-interactions">Predator-prey interactions</a></li>
+        <li><a href="#pollutant-bioaccumulation">Pollutant bioaccumulation</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -625,34 +654,20 @@
           <h1>THE TITLE</h1>
 
           <div class="article-style">
-            <h2 id="number-uno">Number uno</h2>
-<p>This feature can be used for publishing content such as:</p>
-<ul>
-<li><strong>Online courses</strong></li>
-<li><strong>Project or software documentation</strong></li>
-<li><strong>Tutorials</strong></li>
-</ul>
-<p>The <code>courses</code> folder may be renamed. For example, we can rename it to <code>docs</code> for software/project documentation or <code>tutorials</code> for creating an online course.</p>
-<h2 id="two-tutorials">TWO tutorials</h2>
-<p><strong>To remove these pages, delete the <code>courses</code> folder and see below to delete the associated menu link.</strong></p>
-<h2 id="thres">thres</h2>
-<p>After renaming or deleting the <code>courses</code> folder, you may wish to update any <code>[[main]]</code> menu links to it by editing your menu configuration at <code>config/_default/menus.toml</code>.</p>
-<p>For example, if you delete this folder, you can remove the following from your menu configuration:</p>
-<pre><code class="language-toml">[[main]]
-  name = &quot;Courses&quot;
-  url = &quot;courses/&quot;
-  weight = 50
-</code></pre>
-<p>Or, if you are creating a software documentation site, you can rename the <code>courses</code> folder to <code>docs</code> and update the associated <em>Courses</em> menu configuration to:</p>
-<pre><code class="language-toml">[[main]]
-  name = &quot;Docs&quot;
-  url = &quot;docs/&quot;
-  weight = 50
-</code></pre>
-<h2 id="fur">fur</h2>
-<p>If you use the <em>docs</em> layout, note that the name of the menu in the front matter should be in the form <code>[menu.X]</code> where <code>X</code> is the folder name. Hence, if you rename the <code>courses/example/</code> folder, you should also rename the menu definitions in the front matter of files within <code>courses/example/</code> from <code>[menu.example]</code> to <code>[menu.&lt;NewFolderName&gt;]</code>.</p>
-<h2 id="nostoc">Nostoc</h2>
-<p>Here&rsquo;s some text about Nostoc</p>
+            <h2 id="nostoc">Nostoc</h2>
+<p>As an undergraduate at Dartmouth, I worked with Jessica Trout-Haney in the <a href="https://sites.dartmouth.edu/CottinghamLab/">Cottingham Lab</a> on <em>Nostoc pruniforme</em> (known colloquially as the sea tomato), a benthic cyanobacteria found in ponds and lakes in Greenland. <em>Nostoc</em> can be incredibly dense in some lakes (over 9000/square meter) and likely contribute microcystins (a cyanotoxin) into aquatic ecosystems. Our study coupled observations and experiments to examine how <em>Nostoc</em> produce and release microcystins, and my focus was on how microcystin production varies throughout the colony. We found microcystins throughout the colony and observed undamaged colonies leaking microcystins into the surrounding water. Coupled with field observations of elevated microcystin concentrations around <em>Nostoc</em> colonies in Greenlandic lakes, these results provide strong evidence for <em>Nostoc pruniforme</em> as microcystin producers in Arctic freshwater ecosystems. Learn more about this research in the publication <a href="www.ameliaritger.netlify.com">here</a>.</p>
+<p><img src="/img/elisa.jpg" alt=""></p>
+<h2 id="ooceraea">Ooceraea</h2>
+<p><img src="/img/ovaries.png" alt=""></p>
+<p>As a research assistant in the <a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/">Kronauer lab</a> at Rockefeller University, I worked on many projects developing the clonal raider ant (<em>Ooceraea biroi</em>) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn&rsquo;t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication <a href="https://science.sciencemag.org/content/361/6400/398.full">here</a>.</p>
+<h2 id="lionfish">Lionfish</h2>
+<p>My research on invasive lionfish (<em>Pterois volitans/miles</em>) in the Caribbean Sea focused on two main aspects - <strong>predator prey interactions</strong> and <strong>pollutant bioaccumulation</strong>.</p>
+<h3 id="predator-prey-interactions">Predator-prey interactions</h3>
+<p><img src="/img/enclosure.jpg" alt=""></p>
+<p>Invasive lionfish are creating extensive problems for many coral reef ecosystems by consuming massive numbers of reef fishes. Many scientists attribute this to the lionfish being a generalist predator - for example, when scientists dissect the stomachs of invasive lionfish across the Caribbean, they find a diversity of species (although some species are more common than others). I wanted to know if, when given a choice between prey items, lionfish are selective foragers. My field assistant extraordinaire, Tyler Fountain, and I stocked a large underwater enclosure containing an artificial reef with 3 prey species frequently consumed by invasive lionfish and observed what lionfish ate when released into the enclosures. Surprisingly, we found that lionfish consistently exhibited a preference for one prey species in particular - brown chromis. Knowing that lionfish exhibit active prey discrimination will help researchers better understand and predict the effects of lionfish on coral reef fish communities. You can learn more in the publication <a href="https://doi.org/10.1016/j.jembe.2020.151311">here</a>, the repository <a href="https://github.com/ameliaritger/lionfish-diet-choice">here</a>, and in a blog I maintained while working in Curaçao <a href="https://amelialillie.wordpress.com">here</a>.</p>
+<h3 id="pollutant-bioaccumulation">Pollutant bioaccumulation</h3>
+<p><img src="/img/dissection.jpg" alt=""></p>
+<p>One way that humans are fighting to control invasive lionfish on coral reefs is by eating them. Because lionfish are a mesopredator (one step below apex predators), they have the capacity to bioaccumulate high, and possibly dangerous, levels of pollutants such as mercury and other heavy metals. On the island of Curaçao, there is an oil refinery that releases contaminants into the air and marine environment. I collected hundreds of lionfish around Curaçao and analyzed their tissue for metal contaminants. Unsurprisingly, mercury concentrations were higher in larger fish, but mercury concentrations overall were well below the human health criterion established by the Environmental Protection Agency. Lionfish also contained low levels of other metals such as arsenic and selenium. These findings support continued - and enthusiastic - consumption of invasive lionfish as a sustainable and environmentally-beneficial source of protein and income for local communities and tourists. You can read more about this research <a href="https://doi.org/10.1016/j.marpolbul.2018.03.035">here</a> and <a href="https://amelialillie.wordpress.com">here</a>.</p>
 
           </div>
 

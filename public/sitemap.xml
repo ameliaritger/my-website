@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>/critters/corynactis/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/critters/tegula/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -73,7 +78,7 @@
   </url>
   
   <url>
-    <loc>/publication/freshbio/</loc>
+    <loc>/research/publication/freshbio/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,7 +108,12 @@
   </url>
   
   <url>
-    <loc>/publication/</loc>
+    <loc>/research/publication/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/research/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -128,11 +138,6 @@
   </url>
   
   <url>
-    <loc>/research/</loc>
-    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/projects/shiny-mbon/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -153,7 +158,7 @@
   </url>
   
   <url>
-    <loc>/publication/jembe/</loc>
+    <loc>/research/publication/jembe/</loc>
     <lastmod>2020-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -303,7 +308,7 @@
   </url>
   
   <url>
-    <loc>/publication/ooceraea/</loc>
+    <loc>/research/publication/ooceraea/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -343,7 +348,7 @@
   </url>
   
   <url>
-    <loc>/publication/mpb/</loc>
+    <loc>/research/publication/mpb/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
   </url>
   
