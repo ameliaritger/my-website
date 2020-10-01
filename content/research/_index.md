@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: 
 summary: 
-weight: 3
+weight: 1
 
 # Page metadata.
 title: 
@@ -18,8 +18,8 @@ type: docs  # Do not modify.
 menu: 
   example:
     name: The Hofmann Lab
-    weight: 1
+    weight: 4
 ---
 
-Check out current research being conducted by scientists in the Hofmann Lab at the University of California, Santa Barbara [HERE](http://www.hofmannlab.com/)!
+Check out current research being conducted by my fellow scientists in the Hofmann Lab at the University of California, Santa Barbara [here](http://www.hofmannlab.com/){target="_blank"}!
 
