@@ -108,11 +108,6 @@
   </url>
   
   <url>
-    <loc>/projects/test-course/</loc>
-    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/animal-behavior/</loc>
     <lastmod>2020-03-01T00:00:00+00:00</lastmod>
   </url>
@@ -163,16 +158,6 @@
   </url>
   
   <url>
-    <loc>/tags/diet/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/lionfish-diet-choice/</loc>
-    <lastmod>2020-01-09T15:02:28-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/present-research/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -180,31 +165,6 @@
   <url>
     <loc>/research-home/tegula/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/corynactis/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/kelp-forest/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/purple-urchin/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/species-interaction/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/kelp-consumption/</loc>
-    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -338,32 +298,16 @@
   </url>
   
   <url>
-    <loc>/projects/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/research-home/nostoc/</loc>
     <lastmod>2015-06-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/home/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
   </url>
   
 </urlset>
