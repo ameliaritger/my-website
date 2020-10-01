@@ -1,25 +1,14 @@
 ---
-date: "2018-08-15"
-external_link: ""
-image:
-  caption: 
-  focal_point: 
-links:
-- icon: github
-  icon_pack: fab
-  name: Repository
-  url: https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence
-slides: 
-summary: "Corynactis californica"
+title: Strawberry anem
+summary: Subtext..?
 tags:
   - present research
-title: The strawberry anemone
-url_code: ""
-url_pdf: ""
-url_slides: ""
-url_video: ""
+date: "2020-04-17T00:00:00Z"
+
+# Optional external URL for project (replaces project detail page).
+external_link: https://ameliaritger.netlify.app/critters/past/#corynactis
+
+image: 
+  caption: Wutever u want
+  focal_point: Smart
 ---
-
-This page is a work in progress
-
-![](leica.jpg)

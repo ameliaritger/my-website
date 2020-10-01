@@ -108,7 +108,7 @@
   </url>
   
   <url>
-    <loc>/research/course/</loc>
+    <loc>/research/lionfish/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,6 +123,11 @@
   </url>
   
   <url>
+    <loc>/tags/present-research/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -133,7 +138,17 @@
   </url>
   
   <url>
+    <loc>/research/nostoc/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/shiny-mbon/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/research/corynactis/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -258,16 +273,6 @@
   </url>
   
   <url>
-    <loc>/tags/present-research/</loc>
-    <lastmod>2018-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/research/corynactis/</loc>
-    <lastmod>2018-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/ants/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
   </url>
@@ -348,11 +353,6 @@
   </url>
   
   <url>
-    <loc>/research/lionfish/</loc>
-    <lastmod>2016-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/projects/getting-started/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -370,11 +370,6 @@
   <url>
     <loc>/categories/demo/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/research/nostoc/</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
