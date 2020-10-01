@@ -17,8 +17,8 @@ type: docs  # Do not modify.
 # - weight: Position of link in menu.
 menu: 
   example:
-    name: Past!
-    weight: 4
+    name: Past research
+    weight: 3
 ---
 
 ## Nostoc
