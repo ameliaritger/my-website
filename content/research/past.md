@@ -1,11 +1,11 @@
 ---
 # Course title, summary, and position.
-linktitle: Past research!
-summary: Here's a summary of past thingz
+linktitle:
+summary:
 weight: 1
 
 # Page metadata.
-title: THE TITLE
+title:
 date: "2018-09-09T00:00:00Z"
 lastmod: "2018-09-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -18,19 +18,19 @@ type: docs  # Do not modify.
 menu: 
   example:
     name: Past research
-    weight: 3
+    weight: 2
 ---
 
 ## Clonal raider ant
 
-![](/img/ovaries.png)
+As a research assistant in the [Kronauer Lab](https://www.rockefeller.edu/research/2280-kronauer-laboratory/) at Rockefeller University, I worked on many projects developing the clonal raider ant (*Ooceraea biroi*) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn't be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication [here](https://science.sciencemag.org/content/361/6400/398.full). 
 
-As a research assistant in the [Kronauer lab](https://www.rockefeller.edu/research/2280-kronauer-laboratory/) at Rockefeller University, I worked on many projects developing the clonal raider ant (*Ooceraea biroi*) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn't be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication [here](https://science.sciencemag.org/content/361/6400/398.full). 
+![](/img/ovaries.png)
 
 
 ## Invasive lionfish
 
-My research on invasive lionfish (*Pterois volitans/miles*) in the Caribbean Sea focused on two main aspects - **predator prey interactions** and **pollutant bioaccumulation**.
+My research on invasive lionfish (*Pterois volitans/miles*) based out of the [Caribbean Marine Biological Institute](http://www.researchstationcarmabi.org/) had two major focuses - **predator prey interactions** and **pollutant bioaccumulation**.
 
 ### Predator-prey interactions
 

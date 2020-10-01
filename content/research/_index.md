@@ -18,8 +18,10 @@ type: docs  # Do not modify.
 menu: 
   example:
     name: The Hofmann Lab
-    weight: 4
+    weight: 3
 ---
 
-Check out current research being conducted by my fellow scientists in the Hofmann Lab at the University of California, Santa Barbara [here](http://www.hofmannlab.com/){target="_blank"}!
+![](/img/bodega.jpg)
+
+Check out current research being conducted by my fellow scientists in the Hofmann Lab at the University of California, Santa Barbara <a href="http://www.hofmannlab.com/" target="_blank">here</a>!
 

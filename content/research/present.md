@@ -1,8 +1,8 @@
 ---
 # Course title, summary, and position.
-linktitle: Present research!
-summary: Here's a summary of present thingz
-weight: 2
+linktitle: 
+summary: 
+weight: 1
 
 # Page metadata.
 title: 
@@ -18,23 +18,18 @@ type: docs  # Do not modify.
 menu: 
   example:
     name: Present research
-    weight: 2
+    weight: 1
 ---
 
 ## Strawberry anemone
 
-This page is a work in progress
+This page is under construction. Please check back later! 
+
+In the meantime, check out my Github repositories for my research-in-progress on Corynactis californica [here](https://github.com/ameliaritger/Ritger-2019-Corynactis-measurements) and [here](https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence).
 
 ![](/img/232o.jpg)
 
 ## Black turban snail
 
-WOWOW Tegula are cool!
+This page is under construction. Please check back later! 
 
-### Cool because they're snails
-
-no explanation
-
-### Cool because they have shells
-
-### Cool because they can get cold
