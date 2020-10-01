@@ -5,7 +5,7 @@ name = "Hello, world!"
 google_fonts = "Alice|Alegreya|Crimson+Text|Cabin+Condensed|Trocchi|Sansita+Swashed|Lusitana"
 
 # Font families
-heading_font = "Lusitana"
-body_font = "Alegreya"
-nav_font = "Crimson Text"
+heading_font = "Lusitana" #THIS IS FOR EACH SECTION TITLE AND PROJECT CARD FONTS
+body_font = "Alegreya" #THIS IS FOR MAIN TEXT FONT
+nav_font = "Crimson Text" #THIS IS FOR THE VERY TOP HEADER FONT
 mono_font = "Cabin Condensed"
