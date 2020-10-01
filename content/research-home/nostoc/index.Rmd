@@ -9,6 +9,6 @@ date: "2020-04-17T00:00:00Z"
 external_link: https://ameliaritger.netlify.app/research/past/#sea-tomatoes
 
 image: 
-  caption: Wutever u want
+  caption: Image by Jessica Trout-Haney
   focal_point: Smart
 ---

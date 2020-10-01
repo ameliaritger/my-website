@@ -9,6 +9,6 @@ date: "2020-04-17T00:00:00Z"
 external_link: https://ameliaritger.netlify.app/research/past/#strawberry-anemone
 
 image: 
-  caption: Wutever u want
+  caption: image by amelia ritger
   focal_point: Smart
 ---

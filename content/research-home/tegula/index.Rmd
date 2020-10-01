@@ -9,6 +9,6 @@ date: "2020-04-17T00:00:00Z"
 external_link: https://ameliaritger.netlify.app/research/past/#black-turban-snail
 
 image: 
-  caption: Wutever u want
+  caption: Image by Amelia Ritger
   focal_point: Smart
 ---
