@@ -133,6 +133,16 @@
   </url>
   
   <url>
+    <loc>/research/ooceraea/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/past-research/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -315,16 +325,6 @@
   <url>
     <loc>/authors/vikram-chandra/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/past-research/</loc>
-    <lastmod>2018-06-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/research/ooceraea/</loc>
-    <lastmod>2018-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>

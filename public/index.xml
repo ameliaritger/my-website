@@ -83,34 +83,15 @@
       <link>/critters/present/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       <guid>/critters/present/</guid>
-      <description>&lt;h2 id=&#34;number-uno&#34;&gt;Number uno&lt;/h2&gt;
-&lt;p&gt;This feature can be used for publishing content such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Online courses&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Project or software documentation&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The &lt;code&gt;courses&lt;/code&gt; folder may be renamed. For example, we can rename it to &lt;code&gt;docs&lt;/code&gt; for software/project documentation or &lt;code&gt;tutorials&lt;/code&gt; for creating an online course.&lt;/p&gt;
-&lt;h2 id=&#34;two-tutorials&#34;&gt;TWO tutorials&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;To remove these pages, delete the &lt;code&gt;courses&lt;/code&gt; folder and see below to delete the associated menu link.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;thres&#34;&gt;thres&lt;/h2&gt;
-&lt;p&gt;After renaming or deleting the &lt;code&gt;courses&lt;/code&gt; folder, you may wish to update any &lt;code&gt;[[main]]&lt;/code&gt; menu links to it by editing your menu configuration at &lt;code&gt;config/_default/menus.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;For example, if you delete this folder, you can remove the following from your menu configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[main]]
-  name = &amp;quot;Courses&amp;quot;
-  url = &amp;quot;courses/&amp;quot;
-  weight = 50
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Or, if you are creating a software documentation site, you can rename the &lt;code&gt;courses&lt;/code&gt; folder to &lt;code&gt;docs&lt;/code&gt; and update the associated &lt;em&gt;Courses&lt;/em&gt; menu configuration to:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[main]]
-  name = &amp;quot;Docs&amp;quot;
-  url = &amp;quot;docs/&amp;quot;
-  weight = 50
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;fur&#34;&gt;fur&lt;/h2&gt;
-&lt;p&gt;If you use the &lt;em&gt;docs&lt;/em&gt; layout, note that the name of the menu in the front matter should be in the form &lt;code&gt;[menu.X]&lt;/code&gt; where &lt;code&gt;X&lt;/code&gt; is the folder name. Hence, if you rename the &lt;code&gt;courses/example/&lt;/code&gt; folder, you should also rename the menu definitions in the front matter of files within &lt;code&gt;courses/example/&lt;/code&gt; from &lt;code&gt;[menu.example]&lt;/code&gt; to &lt;code&gt;[menu.&amp;lt;NewFolderName&amp;gt;]&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;nostoc&#34;&gt;Nostoc&lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s some text about Nostoc&lt;/p&gt;
+      <description>&lt;h2 id=&#34;coryn&#34;&gt;Coryn&lt;/h2&gt;
+&lt;p&gt;This page is a work in progress&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/232o.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tegula&#34;&gt;Tegula&lt;/h2&gt;
+&lt;p&gt;WOWOW Tegula are cool!&lt;/p&gt;
+&lt;h3 id=&#34;cool-because-theyre-snails&#34;&gt;Cool because they&amp;rsquo;re snails&lt;/h3&gt;
+&lt;p&gt;no explanation&lt;/p&gt;
+&lt;h3 id=&#34;cool-because-they-have-shells&#34;&gt;Cool because they have shells&lt;/h3&gt;
+&lt;h3 id=&#34;cool-because-they-can-get-cold&#34;&gt;Cool because they can get cold&lt;/h3&gt;
 </description>
     </item>
     
@@ -169,6 +150,18 @@
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/research/course/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Ooceraea</title>
+      <link>/research/ooceraea/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/research/ooceraea/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+</description>
     </item>
     
     <item>
@@ -1157,23 +1150,6 @@ Three
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-</description>
-    </item>
-    
-    <item>
-      <title>The Clonal Raider Ant</title>
-      <link>/research/ooceraea/</link>
-      <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>/research/ooceraea/</guid>
-      <description>
-&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;As a research assistant in the &lt;a href=&#34;https://www.rockefeller.edu/research/2280-kronauer-laboratory/&#34;&gt;Kronauer lab&lt;/a&gt; at Rockefeller University, I worked on many projects developing the clonal raider ant (&lt;em&gt;Ooceraea biroi&lt;/em&gt;) as a model organism to answer evolutionary, molecular, and neurobiological questions. One project sought to better understand the mechanistic basis of reproductive division of labor, the phenomenon attributed to eusocial insects (like bees, wasps, and ants) in which a single individual (the queen) lays eggs and all other individuals (the workers) carry out the other tasks necessary for the colony to function. For this project, I worked with graduate student Vikram Chandra and explored the role of ILP2 (insulin-like peptide 2) to the reproductive and brood-care phases of the clonal raider ant. We injected ants with ILP2 during their brood-care phase (when they shouldn’t be reproducing) and measured significant oocyte activity (egg production). Coupled with transcriptomics and brain antibody staining, our study provides strong evidence for the role of ILP2, nutrition, and larval signals in the evolution of eusociality. You can read more about this research in the publication &lt;a href=&#34;https://science.sciencemag.org/content/361/6400/398.full&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;img/ovaries.png&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;alt text&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     
