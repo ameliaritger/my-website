@@ -12,6 +12,7 @@ education:
     # year:
 email: ""
 interests:
+- biogeography
 - intraspecific variation
 - phenotypic plasticity
 - local adaptation
@@ -45,4 +46,4 @@ I am a proud member of the <a href="http://www.hofmannlab.com/" target="_blank">
 <a href="https://www.rockefeller.edu/research/2280-kronauer-laboratory/" target="_blank">Kronauer Lab</a> at Rockefeller University and as an independent scientist at the <a href="http://www.researchstationcarmabi.org/" target="_blank">Caribbean Marine Biological Institute</a>
 in Curaçao. I received my BA from Dartmouth College, where I was able to explore my love for Ecology and realize a new interest in Anthropology.
 
-While I have explored a variety of questions in an array of systems, my current research involves using the strawberry anemone (*Corynactis californica*) to better understand the connections between intraspecific variation, phenotypic plasticity, and biogeography. I am an experimental ecologist at heart, happiest when I am exploring out in the field and making new discoveries in the lab.
+While I have explored a variety of questions in an array of systems, my current research uses the strawberry anemone (*Corynactis californica*) and the black turban snail (*Tegula funebralis*) to better understand large-scale patterns of intraspecific variation, phenotypic plasticity, and local adaptation. I am an experimental ecologist at heart, happiest when I am exploring out in the field and making new discoveries in the lab.
