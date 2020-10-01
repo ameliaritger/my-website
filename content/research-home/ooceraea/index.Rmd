@@ -1,12 +1,12 @@
 ---
-title: Ooceraea
+title: Ooceraea biroi
 summary: Subtext?
 tags:
   - past research
 date: "2020-04-17T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://ameliaritger.netlify.app/research/past/#ooceraea
+external_link: https://ameliaritger.netlify.app/research/past/#clonal-raider-ant
 
 image: 
   caption: Wutever u want
