@@ -5,13 +5,8 @@
   
 [[main]]
   name = "Research"
-  url = "#research"
+  url = "#research-home"
   weight = 10
-  
-[[main]]
-  name = "eSEARCH"
-  url = "critters/"
-  weight = 30
   
 [[main]]
   name = "Teaching"

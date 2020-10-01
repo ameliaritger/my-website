@@ -3,27 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/critters/corynactis/</loc>
+    <loc>/research/corynactis/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/critters/tegula/</loc>
+    <loc>/research/tegula/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/critters/past/</loc>
+    <loc>/research/past/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/critters/</loc>
+    <loc>/research/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/critters/present/</loc>
+    <loc>/research/present/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -108,12 +108,12 @@
   </url>
   
   <url>
-    <loc>/research/lionfish/</loc>
+    <loc>/research-home/lionfish/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/research/ooceraea/</loc>
+    <loc>/research-home/ooceraea/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,12 +133,7 @@
   </url>
   
   <url>
-    <loc>/research/</loc>
-    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/research/nostoc/</loc>
+    <loc>/research-home/nostoc/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -148,7 +143,7 @@
   </url>
   
   <url>
-    <loc>/research/corynactis/</loc>
+    <loc>/research-home/corynactis/</loc>
     <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
