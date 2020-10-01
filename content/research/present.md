@@ -21,15 +21,15 @@ menu:
     weight: 1
 ---
 
-## Strawberry anemone
+## Strawberry anemones
 
 This page is under construction. Please check back later! 
 
-In the meantime, check out my Github repositories for my research-in-progress on Corynactis californica [here](https://github.com/ameliaritger/Ritger-2019-Corynactis-measurements) and [here](https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence).
+In the meantime, check out my Github repositories for my research-in-progress on Corynactis californica <a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-measurements" target="_blank">here</a> and <a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence" target="_blank">here</a>.
 
 ![](/img/232o.jpg)
 
-## Black turban snail
+## Black turban snails
 
 This page is under construction. Please check back later! 
 
