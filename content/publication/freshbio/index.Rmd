@@ -21,7 +21,6 @@ publication_types:
 publishDate: ""
 slides:
 summary:
-share: false
 tags:
   - cyanobacteria
   - toxins
