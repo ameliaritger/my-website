@@ -14,7 +14,7 @@ image:
   focal_point: ""
   preview_only: true
 projects: []
-publication: '*Freshwater Biology*'
+publication: '*Freshwater Biology* (66)'
 publication_short: ""
 publication_types:
 - "2"
