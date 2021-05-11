@@ -30,14 +30,12 @@ In the meantime, check out my Github repositories for my research-in-progress on
 ![](/img/232o.jpg)
 
 ![](/img/lol2.jpg)
-##### Lompoc Landing, one of my field sites for my research with Tegula funebralis
+##### Lompoc Landing, one of my field sites for my research with **Tegula funebralis**
 
 ## Black turban snails
 
-I am using the black turban snail (Tegula funebralis) to explore large-scale patterns of intraspecific variation. 
+I am using the black turban snail (**Tegula funebralis**) to explore large-scale patterns of intraspecific variation. 
 
-Tegula funebralis exist across the California Current Large Marine Ecosystem, which extends from Baja California (Mexico) to British Columbia (Canada). Across this incredibly broad geographic range, Tegula funebralis populations are exposed to a mosaic of intertidal pH conditions (thanks to variable upwelling regimes) as well as different predator communities. 
+**Tegula funebralis** exist across the California Current Large Marine Ecosystem, which extends from Baja California (Mexico) to British Columbia (Canada). Across this broad geographic range, Tegula funebralis populations are exposed to a mosaic of intertidal pH conditions (thanks to variable upwelling regimes) as well as different predator communities. 
 
-
-
-
+My research explores how **Tegula funebralis** populations may be responding differently to variable pH conditions and predator communities across their range - which has important implications for calcifying intertidal organisms in the context of ocean acidification and future climate change scenarios.
