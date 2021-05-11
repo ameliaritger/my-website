@@ -33,3 +33,4 @@ In the meantime, check out my Github repositories for my research-in-progress on
 
 This page is under construction. Please check back later! 
 
+![](/img/lol2.jpg)
