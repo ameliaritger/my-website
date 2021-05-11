@@ -23,9 +23,19 @@ menu:
 
 ## Strawberry anemones
 
-This page is under construction. Please check back later! 
+I am using the strawberry anemone (*Corynactis californica*) to study the ecological consequences of intraspecific variation at the population level. 
 
-In the meantime, check out my Github repositories for my research-in-progress on Corynactis californica <a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-measurements" target="_blank">here</a> and <a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence" target="_blank">here</a>.
+![Red, pink, and orange strawberry anemones in the lab](/img/cory-lab.jpg)
+
+Traditionally, ecologists have viewed between-species (interspecific) diversity as a crucial element of the natural world. However, we are increasingly recognizing the influence of within-species (intraspecific) diversity to ecosystem structure and community dynamics.
+
+The strawberry anemone (*Corynactis californica*) is a phenotypically diverse, clonal organism found on temperate rocky reefs in the California Current Large Marine Ecosystem. The strawberry anemone is a fierce competitor that aggressively defends its territory by growing colonies through asexual reproduction and using its nematocysts (stinging cells) against other benthic species. As a result, strawberry anemones have the capacity to provide an associational refuge to macroalgae and invertebrates from benthic predators that avoid contact with the nematocysts. 
+
+Variation between strawberry anemone colonies likely has important implications for their ecological role on temperate rocky reefs. For example, sea urchins forage less when in the presence of particular strawberry anemone color morphs (<a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-urchin-deterrence" target="_blank">see experimental results here</a>), and individual strawberry anemone colonies vary in the rate at which they kill corals and anemones using their nematocysts.
+
+Likewise, ecosystem state – whether a reef is a kelp forest or an urchin barren – may also determine the ecological interactions between strawberry anemones and their fellow reef inhabitants. Algae biomass is greater in urchin barrens than in kelp forests in the presence of strawberry anemones (18), a pattern that is likely due to differences in the foraging behavior and starvation state of urchins found in barrens and kelp forests (Boone and Ritger, unpublished data).
+
+Check out my Github repositories for my research-in-progress on Corynactis californica <a href="https://github.com/ameliaritger/Ritger-2019-Corynactis-measurements" target="_blank">here</a> and 
 
 ![Macro photo of a pink strawberry anemone polyp](/img/232o.jpg)
 
