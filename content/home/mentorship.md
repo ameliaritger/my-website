@@ -48,6 +48,7 @@ date_format = "Jan 2006"
   
 +++
 
+**Ellyse Anderson** (UC Santa Barbara): <a href="https://undergrad.biology.ucsb.edu/current/biology-honors" target="_blank">Senior Honors Program</a>, *Spring 2020 – June 2021*
 
 **Carlyn Hamel** (Pacific Ridge School): <a href="https://www.summer.ucsb.edu/pre-college/research-mentorship-program-rmp" target="_blank">Research Mentorship Program</a>, *June – July 2020*
 
