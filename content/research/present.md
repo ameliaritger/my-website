@@ -36,6 +36,8 @@ I am using the black turban snail (**Tegula funebralis**) to explore large-scale
 ![](/img/lol2.jpg)
 ###### Lompoc Landing (CA), one of my field sites for my research on **Tegula funebralis**
 
-**Tegula funebralis** exist across the California Current Large Marine Ecosystem, which extends from Baja California (Mexico) to British Columbia (Canada). Across this broad geographic range, Tegula funebralis populations are exposed to a mosaic of intertidal pH conditions (thanks to variable upwelling regimes) as well as different predator communities. 
+**Tegula funebralis** exist across the California Current Large Marine Ecosystem, which extends from Baja California (Mexico) to British Columbia (Canada). Across this broad geographic range, Tegula funebralis populations are exposed to a mosaic of intertidal pH conditions (thanks to variable upwelling regimes) as well as different predator communities.
 
-My research explores how **Tegula funebralis** populations may be responding differently to variable pH conditions and predator communities across their range - which has important implications for calcifying intertidal organisms in the context of ocean acidification and future climate change scenarios.
+Climate change is predicted to intensify upwelling and shift ecological communities, but there is limited research on how marine populations across the CCLME may differ in their response to OA and altered community structure. 
+
+My research explores how **Tegula funebralis** populations may be responding differently to variable pH conditions and predator communities across their range. This research will reveal how a species may vary in its vulnerability and resiliency to environmental change across its range, and may inform ecosystem management and conservation strategies in the context of future climate change scenarios.
